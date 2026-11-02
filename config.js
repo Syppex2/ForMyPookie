@@ -111,7 +111,7 @@ const ALTAR = {
     { name: "Rem",           from: "Re:Zero",                   img: "rem.png",      emoji: "💙" },
     { name: "Miyo / Muge",   from: "A Whisker Away",            img: "muge.jpg",     emoji: "🐱", ani: "Nakitai Watashi wa Neko wo Kaburu", match: "Miyo" },
     { name: "Okarun",        from: "Dandadan",                  img: "okarun.png",   emoji: "👽", ani: "Dandadan", match: "Ken" },
-    { name: "Anya Forger",   from: "Spy x Family",              img: "anya.png",     emoji: "🥜", ani: "Spy x Family", match: "Anya" },
+    { name: "Loid Forger",   from: "Spy x Family",              img: "loid.png",     emoji: "🕵️", ani: "Spy x Family", match: "Loid" },
     { name: "Legoshi",       from: "Beastars",                  img: "legoshi.png",  emoji: "🐺", ani: "Beastars", match: "Legoshi" },
     { name: "Power",         from: "Chainsaw Man",              img: "power.png",    emoji: "🩸", ani: "Chainsaw Man", match: "Power" },
     { name: "Nazuna",        from: "Call of the Night",         img: "nazuna.png",   emoji: "🌙", ani: "Yofukashi no Uta", match: "Nazuna" },
