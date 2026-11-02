@@ -11,12 +11,16 @@
     stopSong();
     SFX.duck(true);
     song = new Audio(ALTAR.maxwellSong || "audio/maxwell.mp3");
-    song.loop = true; song.volume = 0.8;
-    song.play().catch(() => { song = null; synthTimer = SFX.maxwellLoop(); });
+    song.loop = true; song.volume = 0;
+    // fade in softly up to MAXWELL_VOLUME so it doesn't blast her ears
+    const target = ALTAR.maxwellVolume ?? 0.3, me = song;
+    song.play().then(() => {
+      let v = 0; const f = setInterval(() => { v += target / 25; if (song !== me || v >= target) { clearInterval(f); if (song === me) me.volume = target; } else me.volume = v; }, 60);
+    }).catch(() => { song = null; synthTimer = SFX.maxwellLoop(); });
     song.addEventListener("error", () => { if (song) { song = null; synthTimer = SFX.maxwellLoop(); } });
   }
   function stopSong() {
-    if (song) { const s = song; song = null; let v = s.volume; const f = setInterval(() => { v -= 0.08; if (v <= 0) { s.pause(); clearInterval(f); } else s.volume = v; }, 60); }
+    if (song) { const s = song; song = null; let v = s.volume; const f = setInterval(() => { v -= 0.03; if (v <= 0) { s.pause(); clearInterval(f); } else s.volume = v; }, 60); }
     if (synthTimer) { clearInterval(synthTimer); synthTimer = null; }
   }
   async function callCrow() {
@@ -114,7 +118,7 @@
     $("#cert-forms").innerHTML = "";
     C.breathing.forEach((b) => { const li = document.createElement("li"); li.textContent = b; $("#cert-forms").appendChild(li); });
     const d = ALTAR.togetherSince ? Math.floor((Date.now() - new Date(ALTAR.togetherSince + "T00:00:00")) / 864e5) : -1;
-    $("#cert-days").textContent = d >= 0 ? `Years of service: ${d} days and counting` : "";
+    $("#cert-days").textContent = d >= 0 ? `Together since July 25, 2021. ${d} days and counting` : "";
     requestAnimationFrame(() => cer.classList.add("open"));
 
     await wait(400);

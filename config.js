@@ -169,21 +169,23 @@ const ALTAR = {
 
   // ---------- THE BIG SURPRISE (Maxwell, love letter, Hashira scroll) ----------
   // The date you started dating (YYYY-MM-DD). Leave "" to hide the day counter.
-  togetherSince: "",
+  togetherSince: "2021-07-25",
 
-  // Maxwell's song. Put the mp3 at audio/maxwell.mp3 (see README).
-  // If the file isn't there, a little synth tune plays instead.
+  // Maxwell's song (audio/maxwell.mp3). If the file is missing, a synth tune plays instead.
   maxwellSong: "audio/maxwell.mp3",
+  // How loud it plays, from 0 to 1. It fades in up to this.
+  maxwellVolume: 0.3,
 
   // WRITE THIS IN YOUR OWN WORDS. It's the most important part of the site.
   letter: {
     greeting: "Hi pookie,",
     paragraphs: [
-      "I made you an altar because you deserve one. Everything you like is here, the characters, our matching pfps, and the screenshots of you being dramatic in my DMs.",
-      "You're loud and dramatic and a little poisonous like Shinobu, and you're also the softest person I know. You wake me up with ten WAKEUPs and it's still my favorite alarm.",
-      "Thank you for picking me, for watching all of this with me, and for being my gigantic angry wife. I'll be your Giyu, quiet and always next to you.",
+      "I'm sorry for every fight we've had, and for all the nights I stayed up way past my bedtime after promising you I'd go to sleep. I know I'm not always easy.",
+      "But every moment I've spent by your side has been the best thing that's ever happened to me. Five years together and my heart still jumps when your name shows up on my phone, even when it's ten WAKEUPs in a row.",
+      "Thank you for loving me, for all our matching pfps, for Miru, Lloyd and Gato Chico, and for being my gigantic angry wife.",
+      "And if I ever get reincarnated, I'd find you again and choose you again. In every life, it's always going to be you.",
     ],
-    signature: "Yours, your Giyu",
+    signature: "Yours always, your Giyu",
   },
   certificate: {
     rank: "Butterfly Hashira of My Heart",
