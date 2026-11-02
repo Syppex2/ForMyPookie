@@ -35,6 +35,9 @@ const ALTAR = {
     "Shinobu smiled at you. Either she likes you or you've been poisoned",
     "We're GiyuShino in real life. I'm Giyu, sorry",
     "Loading matching pfp number 1000...",
+    "Miru and Lloyd say hi to their mom",
+    "Lloyd, also known as ÑOYD, approves of this altar",
+    "Miru wants to know when you're coming over",
     "Eepy and in love with Shinobu. I read your bio, I know everything",
   ],
 
@@ -180,7 +183,8 @@ const ALTAR = {
     breathing: [
       "First Form: Four WAKEUPs in the same minute",
       "Second Form: Gigantic Angry Wife",
-      "Third Form: Showing me the cat instead of her face",
+      "Third Form: Showing me ÑOYD instead of her face",
+      "Fourth Form: Being the best mom to Miru and Lloyd",
       "Final Form: Making me fall for her again every day",
     ],
     finale: "Ara ara. It's official, you're stuck with me now",
