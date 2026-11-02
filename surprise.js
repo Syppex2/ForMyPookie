@@ -133,8 +133,9 @@
     $("#hanko").classList.add("stamped");
     await wait(260);
     SFX.stamp();
-    document.body.classList.add("shake");
-    setTimeout(() => document.body.classList.remove("shake"), 500);
+    // shake only the scroll (shaking the whole page made the scroll jump off-screen)
+    scroll.classList.add("shake");
+    setTimeout(() => scroll.classList.remove("shake"), 500);
     await wait(500);
     // grand finale
     SFX.fanfare();

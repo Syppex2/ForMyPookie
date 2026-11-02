@@ -483,7 +483,7 @@ html, body { overflow-x: clip; }
 .finale { min-height: 1.6em; margin: 22px 0 8px; text-align: center; font-family: var(--serif); font-size: clamp(1.3rem, 4.5vw, 2rem); color: var(--cream); text-shadow: 0 0 24px rgba(246,166,203,.9); }
 .finale-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 #ceremony { align-content: center; }
-body.shake { animation: shake .45s; }
+.scroll.shake { animation: shake .45s; }
 @keyframes shake { 20% { transform: translate(-6px, 3px); } 40% { transform: translate(5px, -4px); } 60% { transform: translate(-4px, 2px); } 80% { transform: translate(3px, -1px); } }
 .stage[hidden], .crow[hidden], .crow-bubble[hidden], .letter[hidden], .envelope[hidden], .finale-btns[hidden], .doujin-wrap[hidden], .days[hidden], #accept[hidden] { display: none !important; }
 /* fixes: bigger crow under the bubble, stamp below the text, readable name on paper */
