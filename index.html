@@ -11,19 +11,25 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- floating butterflies + petals layer -->
+  <!-- floating butterflies, petals, sparkles -->
   <div id="sky" aria-hidden="true"></div>
+  <div id="fx" aria-hidden="true"></div>
 
-  <!-- ENTRANCE -->
+  <!-- ENTRANCE: shoji doors that slide open -->
   <section id="gate">
+    <div class="shoji left" aria-hidden="true"></div>
+    <div class="shoji right" aria-hidden="true"></div>
     <div class="gate-inner">
-      <svg class="butterfly big" viewBox="0 0 100 80" aria-hidden="true"><use href="#bfly" /></svg>
+      <svg id="gate-bfly" class="butterfly big" viewBox="0 0 100 80" aria-hidden="true"><use href="#bfly" /></svg>
       <p class="kicker">蝶屋敷 · the butterfly mansion</p>
-      <h1>The Altar of <span class="her-name"></span></h1>
-      <p id="welcome" class="sub"></p>
-      <button id="enter" class="btn">Enter the altar ✿</button>
+      <h1 id="gate-title"></h1>
+      <p id="welcome" class="sub typed"></p>
+      <button id="enter" class="btn"><span>Enter the altar ✿</span></button>
+      <p class="hint">🔊 turn your sound on</p>
     </div>
   </section>
+
+  <button id="sound" class="sound-btn" aria-label="Toggle sound" hidden>🔊</button>
 
   <!-- ALTAR -->
   <main id="altar" hidden>
@@ -33,33 +39,37 @@
       <p class="sub">Lovingly assembled. Bow before entering. Shoes off.</p>
     </header>
 
-    <section class="shrine">
+    <section class="shrine reveal">
       <div class="torii" aria-hidden="true"><span></span><span></span></div>
+      <div class="lanterns" aria-hidden="true"><i></i><i></i></div>
       <div id="favorites" class="favorites"></div>
       <div class="candles">
         <button class="candle" aria-label="Light a candle"><i></i></button>
         <button class="candle" aria-label="Light a candle"><i></i></button>
         <button class="candle" aria-label="Light a candle"><i></i></button>
       </div>
-      <p class="hint">tap the candles 🕯️</p>
+      <p class="hint">tap the candles 🕯️ (all three for a surprise)</p>
       <p id="candle-msg" class="candle-msg" aria-live="polite"></p>
     </section>
 
     <section>
-      <h3 class="section-title"><span>Offerings</span><small>every show she has blessed with her eyes</small></h3>
+      <h3 class="section-title reveal"><span>Offerings</span><small>every show she has blessed with her eyes</small></h3>
       <div id="offerings" class="grid"></div>
     </section>
 
     <section>
-      <h3 class="section-title"><span>Hall of Shame</span><small>(with love) — evidence collected from the chat</small></h3>
+      <h3 class="section-title reveal"><span>Hall of Shame</span><small>(with love) — evidence collected from the chat</small></h3>
       <div id="chats" class="chats"></div>
     </section>
 
-    <footer>
+    <footer class="reveal">
       <svg class="butterfly" viewBox="0 0 100 80" aria-hidden="true"><use href="#bfly" /></svg>
       <p id="from"></p>
     </footer>
   </main>
+
+  <!-- surprise overlay (all candles lit) -->
+  <div id="wish" hidden><div class="wish-card"><div class="big-heart">💗</div><p></p><small>tap to close</small></div></div>
 
   <!-- lightbox -->
   <div id="lightbox" hidden><img alt="" /><p></p></div>
@@ -82,6 +92,7 @@
   </svg>
 
   <script src="config.js"></script>
+  <script src="sfx.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

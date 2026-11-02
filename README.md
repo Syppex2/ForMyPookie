@@ -10,12 +10,20 @@ A Shinobu-themed (Kimetsu no Yaiba) altar website for my favorite person.
 | `images/characters/`  | Character pictures (`denji.png`, `akaza.png`, ...)            |
 | `images/chat/`        | Chat screenshots for the "Hall of Shame"                      |
 | `index.html`, `style.css`, `script.js` | The site itself                              |
+| `sfx.js`              | Sound effects + music box (made in code, no audio files)      |
 
 ## Add a picture
 
 1. Save the image into `images/characters/` (or `images/chat/`).
 2. Name it exactly like the `img:` in `config.js` (e.g. `denji.png`), **or** change the `img:` to match your file.
-3. Missing pictures show a cute placeholder card, so nothing breaks.
+3. Pictures are chosen in this order: your own file → official art fetched from AniList
+   (uses `ani` + `match` in `config.js`) → a cute emoji placeholder. Nothing breaks.
+   If AniList picks the wrong character, just drop your own picture in, it always wins.
+
+## Secret things she can find
+- Click the big butterfly on the entrance 5 times.
+- Light all three candles.
+- Click any empty spot → butterflies.
 
 ## Preview on your computer
 
