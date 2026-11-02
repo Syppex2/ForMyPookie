@@ -69,12 +69,13 @@
       chunk.forEach((a) => (pending[a] = p));
     });
   }
+  let aniStarted = false;
   function aniImage(c) {
     if (!c.ani) return Promise.resolve(null);
+    if (!aniStarted) { aniStarted = true; loadAniList(); } // only used if a local picture is missing
     if (cache[c.ani]) return Promise.resolve(pickCharacter(cache[c.ani], c.match));
     return (pending[c.ani] || Promise.resolve()).then(() => pickCharacter(cache[c.ani], c.match));
   }
-  loadAniList();
 
   /* ================= cards ================= */
   function placeholder(c) {
