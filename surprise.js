@@ -118,7 +118,7 @@
     $("#cert-forms").innerHTML = "";
     C.breathing.forEach((b) => { const li = document.createElement("li"); li.textContent = b; $("#cert-forms").appendChild(li); });
     const d = ALTAR.togetherSince ? Math.floor((Date.now() - new Date(ALTAR.togetherSince + "T00:00:00")) / 864e5) : -1;
-    $("#cert-days").textContent = d >= 0 ? `Together since July 25, 2021. ${d} days and counting` : "";
+    $("#cert-days").textContent = d >= 0 ? `Together since ${new Date(ALTAR.togetherSince + "T00:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}. ${d} days and counting` : "";
     requestAnimationFrame(() => cer.classList.add("open"));
 
     await wait(400);
