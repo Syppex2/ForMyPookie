@@ -85,6 +85,31 @@ const SFX = (() => {
       bell(hz(79), 0, 0.14, 1.2); bell(hz(84), 0.14, 0.14, 1.4);
       tone(hz(55), { dur: 0.18, vol: 0.25 }); tone(hz(55), { t: 0.22, dur: 0.18, vol: 0.2 });
     },
+    /* crow: two raspy caws */
+    caw() {
+      [0, 0.38].forEach((t) => {
+        tone(620, { t, dur: 0.28, type: "sawtooth", vol: 0.12, glide: 380 });
+        tone(910, { t, dur: 0.22, type: "square", vol: 0.04, glide: 560 });
+        noise({ t, dur: 0.28, vol: 0.12, from: 1400, to: 700, q: 2 });
+      });
+    },
+    wingbeat() { for (let i = 0; i < 3; i++) noise({ t: i * 0.12, dur: 0.1, vol: 0.12, from: 300, to: 900, q: 0.8, type: "lowpass" }); },
+    crack() { noise({ dur: 0.08, vol: 0.4, from: 3000, to: 1200, q: 1.5 }); noise({ t: 0.05, dur: 0.12, vol: 0.25, from: 1500, to: 400, q: 1 }); },
+    rustle() { for (let i = 0; i < 6; i++) noise({ t: i * 0.07, dur: 0.12, vol: 0.08, from: 2000 + Math.random() * 2000, to: 1200, q: 0.7 }); },
+    type() { noise({ dur: 0.03, vol: 0.05, from: 2500, to: 2000, q: 3 }); },
+    stamp() {
+      tone(70, { dur: 0.5, vol: 0.5, glide: 40 });
+      noise({ dur: 0.18, vol: 0.4, from: 600, to: 150, q: 0.7, type: "lowpass" });
+    },
+    unroll() { noise({ dur: 1.2, vol: 0.1, from: 400, to: 2500, q: 0.6 }); },
+    fanfare() {
+      const chord = [60, 64, 67, 72];
+      chord.forEach((n) => tone(hz(n), { dur: 3.5, vol: 0.09, type: "triangle", attack: 0.08 }));
+      [72, 76, 79, 84, 88, 91, 96, 100].forEach((n, i) => bell(hz(n), 0.1 + i * 0.1, 0.13, 2.2));
+      [65, 69, 72, 77].forEach((n) => tone(hz(n), { t: 1.2, dur: 3, vol: 0.08, type: "triangle", attack: 0.1 }));
+      [67, 71, 74, 79].forEach((n) => tone(hz(n), { t: 2.2, dur: 3.5, vol: 0.08, type: "triangle", attack: 0.1 }));
+      [72, 76, 79, 84].forEach((n) => tone(hz(n), { t: 3.2, dur: 4.5, vol: 0.1, type: "triangle", attack: 0.1 }));
+    },
     pop() { tone(500, { dur: 0.12, vol: 0.12, glide: 1200 }); },
 
     /* soft generative music box loop */
@@ -104,5 +129,6 @@ const SFX = (() => {
       play(); musicTimer = setInterval(play, 2520);
     },
     stopMusic() { clearInterval(musicTimer); musicTimer = null; },
+    duck(on) { if (musicGain) musicGain.gain.setTargetAtTime(on ? 0.05 : 0.22, ctx.currentTime, 0.5); },
   };
 })();

@@ -237,6 +237,67 @@
     wis.appendChild(st);
   }
 
+
+  /* ================= looping videos (GIF-style) ================= */
+  function loopVideo(name) {
+    const v = document.createElement("video");
+    v.muted = true; v.loop = true; v.playsInline = true; v.preload = "none";
+    v.setAttribute("muted", ""); v.setAttribute("playsinline", "");
+    v.poster = "images/gifs/" + name + ".jpg";
+    v.src = "images/gifs/" + name + ".mp4";
+    vio.observe(v);
+    return v;
+  }
+  // only play videos that are on screen (saves battery on her phone)
+  const vio = new IntersectionObserver((es) => es.forEach((e) => {
+    if (e.isIntersecting) { const p = e.target.play(); if (p) p.catch(() => {}); } else e.target.pause();
+  }), { threshold: 0.25 });
+
+  /* ================= GiyuShino archive ================= */
+  (ALTAR.giyushino || []).forEach((m, i) => {
+    const li = document.createElement("li");
+    li.className = "moment reveal" + (i % 2 ? " flip" : "");
+    const media = document.createElement("div");
+    media.className = "moment-media";
+    if (m.video) media.appendChild(loopVideo(m.video));
+    else { const im = document.createElement("img"); im.src = "images/" + m.img; im.alt = m.title; im.loading = "lazy"; media.appendChild(im);
+      media.addEventListener("click", (e) => { e.stopPropagation(); openLightbox(im.src, m.title); }); }
+    const txt = document.createElement("div");
+    txt.className = "moment-text";
+    txt.innerHTML = `<span class="moment-num">${String(i + 1).padStart(2, "0")}</span><h4>${esc(m.title)}</h4><p>${esc(m.text)}</p>`;
+    li.append(media, txt);
+    li.addEventListener("pointerenter", () => SFX.hover());
+    $("#archive").appendChild(li);
+  });
+  if ((ALTAR.doujinshi || []).length) {
+    $("#doujin-wrap").hidden = false;
+    ALTAR.doujinshi.forEach((d) => {
+      const li = document.createElement("li");
+      li.innerHTML = `${d.link ? `<a href="${esc(d.link)}" target="_blank" rel="noopener">${esc(d.title)}</a>` : `<b>${esc(d.title)}</b>`}${d.by ? ` <small>by ${esc(d.by)}</small>` : ""}${d.note ? `<span>${esc(d.note)}</span>` : ""}`;
+      $("#doujin").appendChild(li);
+    });
+  }
+
+  /* ================= butterfly cinema ================= */
+  (ALTAR.cinema || []).forEach((c, i) => {
+    const f = document.createElement("figure");
+    f.className = "screen reveal";
+    f.style.setProperty("--d", (i % 3) * 0.1 + "s");
+    const frame = document.createElement("div");
+    frame.className = "screen-frame";
+    frame.appendChild(loopVideo(c.video));
+    f.appendChild(frame);
+    const cap = document.createElement("figcaption"); cap.textContent = c.caption; f.appendChild(cap);
+    f.addEventListener("pointerenter", () => SFX.hover());
+    f.addEventListener("click", (e) => { e.stopPropagation(); SFX.chime(); burst(e.clientX, e.clientY, 3); f.classList.toggle("big"); });
+    $("#cinema").appendChild(f);
+  });
+
+  if (ALTAR.togetherSince) {
+    const days = Math.floor((Date.now() - new Date(ALTAR.togetherSince + "T00:00:00")) / 864e5);
+    if (days >= 0) { $("#days").hidden = false; $("#days").textContent = `${days} days of being matching souls 🦋`; }
+  }
+
   /* ================= hall of shame ================= */
   ALTAR.chats.forEach((c, i) => {
     const el = document.createElement("figure");
@@ -409,4 +470,5 @@
     const on = SFX.toggle();
     e.currentTarget.textContent = on ? "🔊" : "🔇";
   });
+  window.FX = { burst, heartRain, flyer, heartsAt, openLightbox, reduced };
 })();

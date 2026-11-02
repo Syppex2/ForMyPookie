@@ -115,6 +115,61 @@ const ALTAR = {
   // ---------- HALL OF SHAME (with love) — her chat screenshots ----------
   chats: [
     { img: "pookie-wakeup.png", caption: "Exhibit A: 'WAKEUP' 'I MISS U' — 4 messages in 0 seconds. Then asked ChatGPT to draw what talking to her is like. It was accurate." },
-    // { img: "another-one.png", caption: "Exhibit B: ..." },
+    { img: "u-gigantic-angry-wife.png", caption: "Exhibit B: She sent this and only wrote 'U'. Yes, I'm the small one gazing lovingly. She's the gigantic angry wife. No notes." },
+    { img: "panda-dance.webp", caption: "Exhibit C: Her doing the victory dance after winning an argument (that she started)." },
+    { img: "videocall-cat.webp", caption: "Exhibit D: Me: 'let me see you' 🥺 — Her: shows me the cat. Every. Single. Call." },
+    { img: "gato-no-da-mas.png", caption: "Exhibit E: Her after studying for 10 minutes. 'gato culiao que no da más' 😭" },
   ],
+
+  // ---------- BUTTERFLY CINEMA (looping animations, in images/gifs/) ----------
+  // Each one is a small .mp4 that loops like a GIF (much lighter than a real GIF).
+  cinema: [
+    { video: "shinobu-victory-2", caption: "\"Oh, did I use too much poison? Silly me.\"" },
+    { video: "shinobu-dragonfly", caption: "Insect Breathing · Dance of the Dragonfly: Compound Eye Hexagon" },
+    { video: "shinobu-academy",   caption: "Kimetsu Academy Shinobu (school uniform era)" },
+    { video: "shinobu-horsefly",  caption: "Insect Breathing · Dance of the Horsefly" },
+    { video: "shinobu-victory",   caption: "Leaving the battlefield like a lady" },
+    { video: "shinobu-centipede", caption: "Insect Breathing · Dance of the Centipede: Hundred-Legged Zigzag" },
+  ],
+
+  // ---------- GIYUSHINO ARCHIVE (canon moments, timeline) ----------
+  giyushino: [
+    { video: "giyushino-mission",   title: "Always sent on missions together", text: "The Master sends both of them to Mount Natagumo. The Hashira were usually paired up like this. Fate? Fate." },
+    { video: "giyushino-victory",   title: "\"If only humans and demons could get along…\"", text: "She says it with a smile. He stands next to her saying nothing, as always. Iconic duo energy." },
+    { img: "couples/giyu-shinobu-official.webp", title: "\"That's why everyone dislikes you\"", text: "Giyu blocks her attack to protect Nezuko, and she roasts him: people dislike him because of how he acts. His answer: \"I'm not disliked.\" (He is a little bit.)" },
+    { video: "giyushino-victory-2", title: "She wishes he would talk more", text: "She teases him constantly, but she actually wants him to open up. He compliments her hard work and quietly worries about her. Gyomei even noticed the two of them enjoy talking to each other." },
+    { img: "shinobu/shinobu-2.webp", title: "He remembers her smile", text: "When the news reaches Giyu, the first thing he remembers is her smiling face. 🦋 (Pass the tissues.)" },
+  ],
+
+  // Optional: your favorite GiyuShino doujinshi / fan comics.
+  // The section only shows up when this list has something in it.
+  // { title: "Name of the doujin", by: "artist or circle", link: "https://...", note: "why we love it" },
+  doujinshi: [
+  ],
+
+  // ---------- THE BIG SURPRISE (crow → love letter → Hashira ceremony) ----------
+  // The date you started dating (YYYY-MM-DD). Leave "" to hide the day counter.
+  togetherSince: "",
+
+  // ✍️ WRITE THIS IN YOUR OWN WORDS — it's the most important part of the whole site.
+  letter: {
+    greeting: "To my favorite butterfly,",
+    paragraphs: [
+      "I made you an altar because you deserve one. Every character you love, every matching pfp we've worn, every chaotic message you send me at once — it's all here, because all of it is you.",
+      "You are loud, dramatic, a little bit poisonous (in the Shinobu way) and the softest person I know. You wake me up with ten 'WAKEUP's and somehow it's my favorite alarm.",
+      "Thank you for choosing me, for watching all these shows with me, and for being my gigantic angry wife. I'd stand next to you in silence like Giyu, but I'd never let you fight alone.",
+    ],
+    signature: "Yours, always — your Giyu ♡",
+  },
+  certificate: {
+    rank: "Butterfly Hashira of My Heart",
+    kanji: "蝶柱",
+    breathing: [
+      "First Form: Four 'WAKEUP' messages in zero seconds",
+      "Second Form: Gigantic Angry Wife",
+      "Third Form: Showing me the cat instead of her face",
+      "Final Form: Making me fall for her again, every day",
+    ],
+    finale: "Ara ara~ it's official. You're stuck with me now. 🦋",
+  },
 };

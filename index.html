@@ -75,6 +75,20 @@
     </section>
 
     <section>
+      <h3 class="section-title reveal"><span>GiyuShino Archive</span><small>canon moments (he's not hated, he's just quiet)</small></h3>
+      <ol id="archive" class="archive"></ol>
+      <div id="doujin-wrap" class="doujin-wrap reveal" hidden>
+        <h4>📚 Our GiyuShino doujinshi shelf</h4>
+        <ul id="doujin" class="doujin"></ul>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title reveal"><span>Butterfly Cinema</span><small>now playing: her favorite Hashira, on loop</small></h3>
+      <div id="cinema" class="cinema"></div>
+    </section>
+
+    <section>
       <h3 class="section-title reveal"><span>Offerings</span><small>every show she has blessed with her eyes</small></h3>
       <div id="offerings" class="grid"></div>
     </section>
@@ -87,11 +101,72 @@
     <footer class="reveal">
       <svg class="butterfly" viewBox="0 0 100 80" aria-hidden="true"><use href="#bfly" /></svg>
       <p id="from"></p>
+      <p id="days" class="days" hidden></p>
+      <button id="call-crow" class="btn ghost">🐦‍⬛ The crow has a message for you</button>
     </footer>
   </main>
 
   <!-- surprise overlay (all candles lit) -->
   <div id="wish" hidden><div class="wish-card"><div class="big-heart">💗</div><p></p><small>tap to close</small></div></div>
+
+  <!-- ===== THE BIG SURPRISE ===== -->
+  <div id="crow" class="crow" hidden aria-hidden="true">
+    <svg viewBox="0 0 160 120">
+      <g class="crow-wing back"><path d="M70 55 C50 20, 20 10, 5 18 C25 30, 35 45, 60 62 Z" fill="#14101a"/></g>
+      <ellipse cx="80" cy="68" rx="34" ry="22" fill="#1d1724"/>
+      <path d="M48 70 L18 88 L30 72 L14 74 Z" fill="#14101a"/>
+      <circle cx="112" cy="54" r="15" fill="#1d1724"/>
+      <path d="M124 52 L146 57 L124 60 Z" fill="#e8a33d"/>
+      <circle cx="116" cy="51" r="3" fill="#fff"/><circle cx="117" cy="51" r="1.6" fill="#000"/>
+      <rect x="96" y="70" width="18" height="12" rx="2" fill="#f3e2f2" stroke="#b07fd9" stroke-width="1.5" transform="rotate(-10 105 76)"/>
+      <circle cx="105" cy="76" r="3" fill="#ff6fae"/>
+      <path d="M78 88 L74 104 M90 88 L92 104" stroke="#e8a33d" stroke-width="3" stroke-linecap="round"/>
+      <g class="crow-wing front"><path d="M88 58 C78 18, 50 0, 30 4 C48 20, 58 40, 70 66 Z" fill="#2a2233"/></g>
+    </svg>
+  </div>
+  <div id="crow-bubble" class="crow-bubble" hidden>
+    <p><b>CAW! CAW!</b> <span id="crow-text"></span></p>
+    <button id="take-letter" class="btn">Take the letter 💌</button>
+  </div>
+
+  <div id="letter-stage" class="stage" hidden>
+    <div id="envelope" class="envelope" role="button" tabindex="0" aria-label="Open the envelope">
+      <div class="env-back"></div>
+      <div class="paper-peek"></div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+      <div class="seal"><svg viewBox="0 0 100 80"><use href="#bfly" /></svg></div>
+      <p class="env-hint">tap the butterfly seal</p>
+    </div>
+    <article id="letter" class="letter" hidden>
+      <div id="letter-body"></div>
+      <button id="accept" class="btn" hidden>Receive your new rank ⚔️</button>
+    </article>
+  </div>
+
+  <div id="ceremony" class="stage" hidden>
+    <div id="scroll" class="scroll">
+      <div class="rod top"></div>
+      <div class="scroll-paper">
+        <p class="cert-org">鬼殺隊 · Demon Slayer Corps of My Heart</p>
+        <p class="cert-small">It is hereby declared that</p>
+        <h2 class="cert-name her-name"></h2>
+        <p class="cert-small">is promoted to the rank of</p>
+        <div class="cert-kanji" id="cert-kanji"></div>
+        <h3 class="cert-rank" id="cert-rank"></h3>
+        <p class="cert-small">Mastered breathing style · <b>Breath of Love</b></p>
+        <ul id="cert-forms" class="cert-forms"></ul>
+        <p id="cert-days" class="cert-small"></p>
+        <div id="hanko" class="hanko">愛<br/>印</div>
+      </div>
+      <div class="rod bottom"></div>
+    </div>
+    <p id="finale" class="finale"></p>
+    <div class="finale-btns" id="finale-btns" hidden>
+      <button id="again" class="btn ghost">Read the letter again 💌</button>
+      <button id="close-ceremony" class="btn">Back to the altar 🦋</button>
+    </div>
+  </div>
 
   <!-- lightbox -->
   <div id="lightbox" hidden><img alt="" /><p></p></div>
@@ -116,5 +191,6 @@
   <script src="config.js"></script>
   <script src="sfx.js"></script>
   <script src="script.js"></script>
+  <script src="surprise.js"></script>
 </body>
 </html>
