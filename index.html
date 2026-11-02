@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Butterfly Altar</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦋</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- floating butterflies + petals layer -->
+  <div id="sky" aria-hidden="true"></div>
+
+  <!-- ENTRANCE -->
+  <section id="gate">
+    <div class="gate-inner">
+      <svg class="butterfly big" viewBox="0 0 100 80" aria-hidden="true"><use href="#bfly" /></svg>
+      <p class="kicker">蝶屋敷 · the butterfly mansion</p>
+      <h1>The Altar of <span class="her-name"></span></h1>
+      <p id="welcome" class="sub"></p>
+      <button id="enter" class="btn">Enter the altar ✿</button>
+    </div>
+  </section>
+
+  <!-- ALTAR -->
+  <main id="altar" hidden>
+    <header class="hero">
+      <p class="kicker">✦ shrine of the most important person ✦</p>
+      <h2>Everything <span class="her-name"></span> loves</h2>
+      <p class="sub">Lovingly assembled. Bow before entering. Shoes off.</p>
+    </header>
+
+    <section class="shrine">
+      <div class="torii" aria-hidden="true"><span></span><span></span></div>
+      <div id="favorites" class="favorites"></div>
+      <div class="candles">
+        <button class="candle" aria-label="Light a candle"><i></i></button>
+        <button class="candle" aria-label="Light a candle"><i></i></button>
+        <button class="candle" aria-label="Light a candle"><i></i></button>
+      </div>
+      <p class="hint">tap the candles 🕯️</p>
+      <p id="candle-msg" class="candle-msg" aria-live="polite"></p>
+    </section>
+
+    <section>
+      <h3 class="section-title"><span>Offerings</span><small>every show she has blessed with her eyes</small></h3>
+      <div id="offerings" class="grid"></div>
+    </section>
+
+    <section>
+      <h3 class="section-title"><span>Hall of Shame</span><small>(with love) — evidence collected from the chat</small></h3>
+      <div id="chats" class="chats"></div>
+    </section>
+
+    <footer>
+      <svg class="butterfly" viewBox="0 0 100 80" aria-hidden="true"><use href="#bfly" /></svg>
+      <p id="from"></p>
+    </footer>
+  </main>
+
+  <!-- lightbox -->
+  <div id="lightbox" hidden><img alt="" /><p></p></div>
+
+  <!-- Shinobu butterfly shape, reused everywhere -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="wing" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#fff6fb" />
+        <stop offset=".45" stop-color="#e7b6f0" />
+        <stop offset=".8" stop-color="#b07fd9" />
+        <stop offset="1" stop-color="#4fb6a3" />
+      </linearGradient>
+      <symbol id="bfly" viewBox="0 0 100 80">
+        <path fill="url(#wing)" stroke="#2b1838" stroke-width="2" d="M50 40 C40 5, 5 0, 4 20 C3 38, 30 42, 48 42 C30 46, 10 58, 20 72 C30 82, 46 62, 50 46 Z" />
+        <path fill="url(#wing)" stroke="#2b1838" stroke-width="2" d="M50 40 C60 5, 95 0, 96 20 C97 38, 70 42, 52 42 C70 46, 90 58, 80 72 C70 82, 54 62, 50 46 Z" />
+        <ellipse cx="50" cy="44" rx="2.6" ry="14" fill="#2b1838" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
