@@ -163,6 +163,12 @@
   $("#call-crow").addEventListener("click", (e) => { e.stopPropagation(); callCrow(); });
   // the crow arrives by itself the first time she reaches the end of the altar
   new IntersectionObserver((es, obs) => {
-    if (es.some((x) => x.isIntersecting) && !crowCame && !$("#altar").hidden) { obs.disconnect(); setTimeout(callCrow, 1200); }
+    // only when she really scrolled down to the end (not while the page is still loading and short)
+    if (es.some((x) => x.isIntersecting) && !crowCame && !$("#altar").hidden && scrollY > innerHeight * 2) {
+      setTimeout(() => {
+        const r = document.querySelector("footer").getBoundingClientRect();
+        if (!crowCame && r.top < innerHeight && r.bottom > 0) { obs.disconnect(); callCrow(); }
+      }, 1200);
+    }
   }, { threshold: 0.6 }).observe(document.querySelector("footer"));
 })();

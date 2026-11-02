@@ -137,7 +137,7 @@ const ALTAR = {
   chats: [
     { img: "pookie-wakeup.png", caption: "WAKEUP, I MISS U, POOKIE. Four messages in the same minute. Then she asked ChatGPT to draw what talking to her is like, and it was right" },
     { img: "u-gigantic-angry-wife.png", caption: "She sent this with just \"U\". I'm the little one, she's the gigantic angry wife. Correct" },
-    { img: "panda-dance.webp", caption: "Her after winning an argument she started" },
+    { img: "panda-dance.webp", caption: "PANDA" },
     { img: "videocall-cat.webp", caption: "She showing me our son, ÑOYD" },
     { img: "gato-no-da-mas.png", caption: "Her after studying for ten minutes. Gato culiao que no da más" },
   ],
