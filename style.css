@@ -547,3 +547,42 @@ body.shake { animation: shake .45s; }
 .word { display: inline-block; white-space: nowrap; }
 .gate-inner { max-width: min(94vw, 960px); }
 .chats { align-items: start; }
+
+/* ================= entrance: rainy night on the roof ================= */
+#gate { background: #0d0a1c url("images/gate/rooftop.webp") center 65% / cover no-repeat; }
+#gate::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(26,15,34,.45), rgba(13,8,24,.85) 75%); }
+.night { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.moon {
+  position: absolute; top: 8%; right: 12%; width: clamp(80px, 13vw, 150px); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 38% 35%, #fffef6, #f3ecd2 45%, #d9cfb0 70%, #c7bb98);
+  box-shadow: 0 0 40px 10px rgba(255,248,220,.45), 0 0 120px 40px rgba(231,182,240,.25);
+  animation: moonGlow 6s ease-in-out infinite alternate;
+}
+.moon::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 30% 60%, rgba(160,150,120,.35) 0 8%, transparent 9%), radial-gradient(circle at 62% 35%, rgba(160,150,120,.3) 0 6%, transparent 7%), radial-gradient(circle at 58% 70%, rgba(160,150,120,.25) 0 10%, transparent 11%); }
+@keyframes moonGlow { to { box-shadow: 0 0 60px 16px rgba(255,248,220,.55), 0 0 160px 60px rgba(231,182,240,.3); } }
+.cloud { position: absolute; height: 46px; border-radius: 50px; background: rgba(40,30,70,.75); filter: blur(10px); animation: drift linear infinite; }
+.cloud.c1 { top: 11%; width: 260px; animation-duration: 60s; }
+.cloud.c2 { top: 19%; width: 180px; animation-duration: 45s; animation-delay: -20s; opacity: .8; }
+.cloud.c3 { top: 6%; width: 320px; animation-duration: 80s; animation-delay: -50s; opacity: .6; }
+@keyframes drift { from { transform: translateX(110vw); } to { transform: translateX(-400px); } }
+#rain { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.shoji { opacity: .38; }
+#gate .gate-inner { z-index: 2; text-shadow: 0 2px 18px rgba(0,0,0,.6); }
+#gate .hint { opacity: .85; }
+
+/* ================= envelope (SVG) ================= */
+.envelope { width: min(86vw, 400px); aspect-ratio: auto; }
+.envelope > svg { width: 100%; display: block; overflow: visible; filter: drop-shadow(0 24px 40px rgba(0,0,0,.5)); }
+.envelope .seal { top: 76%; }
+.envelope .env-hint { bottom: -36px; }
+.flap-closed, .flap-open, .paper { transform-box: fill-box; }
+.flap-closed { transform-origin: center top; transition: transform .35s ease-in; }
+.flap-open { transform-origin: center bottom; transform: scaleY(0); transition: transform .35s .35s ease-out; }
+.paper { transition: transform .9s .75s cubic-bezier(.3,1.2,.5,1); }
+.envelope.opening .flap-closed { transform: scaleY(0); }
+.envelope.opening .flap-open { transform: scaleY(1); }
+.envelope.opening .paper { transform: translateY(-112px); }
+.envelope.gone { transition: transform .45s ease-in, opacity .45s; transform: translateY(30px) scale(.9); opacity: 0; }
+
+/* the letter opens at full size, text types inside */
+.letter { min-height: min(78vh, 640px); }

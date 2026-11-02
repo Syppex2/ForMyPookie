@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20261102c" />
 </head>
 <body>
   <!-- floating butterflies, petals, sparkles -->
@@ -17,15 +17,20 @@
 
   <!-- ENTRANCE: shoji doors that slide open -->
   <section id="gate">
+    <div class="night" aria-hidden="true">
+      <div class="moon"></div>
+      <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+    </div>
+    <canvas id="rain" aria-hidden="true"></canvas>
     <div class="shoji left" aria-hidden="true"></div>
     <div class="shoji right" aria-hidden="true"></div>
     <div class="gate-inner">
       <svg id="gate-bfly" class="butterfly big" viewBox="0 0 100 80" aria-hidden="true"><use href="#bfly" /></svg>
-      <p class="kicker">蝶屋敷 · the butterfly mansion</p>
+      <p class="kicker">蝶屋敷 · that night on the roof</p>
       <h1 id="gate-title"></h1>
       <p id="welcome" class="sub typed"></p>
       <button id="enter" class="btn"><span>Come in</span></button>
-      <p class="hint">turn your sound on</p>
+      <p id="gate-hint" class="hint">turn your sound on and tap anywhere</p>
     </div>
   </section>
 
@@ -149,10 +154,22 @@
 
   <div id="letter-stage" class="stage" hidden>
     <div id="envelope" class="envelope" role="button" tabindex="0" aria-label="Open the envelope">
-      <div class="env-back"></div>
-      <div class="paper-peek"></div>
-      <div class="env-front"></div>
-      <div class="env-flap"></div>
+      <svg viewBox="0 -140 300 340" aria-hidden="true">
+        <defs>
+          <linearGradient id="envBack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b98ad6"/><stop offset="1" stop-color="#9d6cc4"/></linearGradient>
+          <linearGradient id="envFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ead0f7"/><stop offset="1" stop-color="#d6b0ee"/></linearGradient>
+          <linearGradient id="envFlap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfa3e8"/><stop offset="1" stop-color="#b98ad6"/></linearGradient>
+        </defs>
+        <rect x="0" y="0" width="300" height="200" rx="10" fill="url(#envBack)"/>
+        <path class="flap-open" d="M0 2 L150 -118 L300 2 Z" fill="url(#envFlap)"/>
+        <g class="paper">
+          <rect x="18" y="14" width="264" height="176" rx="5" fill="#fffaf3"/>
+          <path d="M44 52 H256 M44 76 H256 M44 100 H230 M44 124 H250" stroke="#d9c4e6" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <path d="M0 8 L136 116 Q150 126 164 116 L300 8 V190 Q300 200 290 200 H10 Q0 200 0 190 Z" fill="url(#envFront)"/>
+        <path d="M0 200 L124 124 M300 200 L176 124" stroke="#c59ce0" stroke-width="2" opacity=".6"/>
+        <path class="flap-closed" d="M0 6 Q0 0 8 0 H292 Q300 0 300 6 L162 118 Q150 128 138 118 Z" fill="url(#envFlap)"/>
+      </svg>
       <div class="seal"><svg viewBox="0 0 100 80"><use href="#bfly" /></svg></div>
       <p class="env-hint">tap the butterfly seal</p>
     </div>
@@ -206,9 +223,9 @@
     </defs>
   </svg>
 
-  <script src="config.js"></script>
-  <script src="sfx.js"></script>
-  <script src="script.js"></script>
-  <script src="surprise.js"></script>
+  <script src="config.js?v=20261102c"></script>
+  <script src="sfx.js?v=20261102c"></script>
+  <script src="script.js?v=20261102c"></script>
+  <script src="surprise.js?v=20261102c"></script>
 </body>
 </html>

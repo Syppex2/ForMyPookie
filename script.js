@@ -18,6 +18,7 @@
     if (wi) title.appendChild(document.createTextNode(" "));
     const word = document.createElement("span");
     word.className = "word";
+    word.style.display = "inline-block"; word.style.whiteSpace = "nowrap"; // never split a word, even with an old stylesheet
     [...w].forEach((ch) => {
       const s = document.createElement("span");
       s.className = special ? "drop name-letter" : "drop";
@@ -480,7 +481,40 @@
   for (let i = 0; i < (small ? 7 : 14); i++) flyer();
   for (let i = 0; i < (small ? 12 : 26); i++) petal();
 
-  /* ================= gate ================= */
+  /* ================= gate: rainy night on the roof ================= */
+  const rainCv = $("#rain"), rctx = rainCv.getContext("2d");
+  let drops = [], rainOn = true;
+  function sizeRain() {
+    rainCv.width = innerWidth * devicePixelRatio; rainCv.height = innerHeight * devicePixelRatio;
+    const n = Math.round((innerWidth * innerHeight) / 7000);
+    drops = Array.from({ length: n }, () => ({ x: Math.random() * innerWidth, y: Math.random() * innerHeight, l: 10 + Math.random() * 18, v: 9 + Math.random() * 9, a: 0.15 + Math.random() * 0.35 }));
+  }
+  function drawRain() {
+    if (!rainOn) return;
+    const d = devicePixelRatio;
+    rctx.setTransform(d, 0, 0, d, 0, 0);
+    rctx.clearRect(0, 0, innerWidth, innerHeight);
+    rctx.lineCap = "round";
+    for (const p of drops) {
+      rctx.strokeStyle = `rgba(214,200,255,${p.a})`; rctx.lineWidth = 1;
+      rctx.beginPath(); rctx.moveTo(p.x, p.y); rctx.lineTo(p.x - p.l * 0.18, p.y + p.l); rctx.stroke();
+      p.y += p.v; p.x -= p.v * 0.18;
+      if (p.y > innerHeight) { p.y = -p.l; p.x = Math.random() * (innerWidth + 100); }
+    }
+    requestAnimationFrame(drawRain);
+  }
+  if (!reduced) { sizeRain(); addEventListener("resize", sizeRain); drawRain(); }
+  // sound needs one tap first (browsers block audio until then)
+  let rainSound = false;
+  function startRainSound() {
+    if (rainSound || !$("#gate")) return;
+    rainSound = true;
+    SFX.init(); SFX.rainStart();
+    const h = $("#gate-hint"); if (h) h.textContent = "listen to the rain";
+  }
+  $("#gate").addEventListener("pointerdown", startRainSound);
+  addEventListener("keydown", startRainSound, { once: true });
+
   let gateClicks = 0;
   $("#gate-bfly").addEventListener("click", () => {
     SFX.init(); SFX.pop();
@@ -488,7 +522,9 @@
   });
   $("#enter").addEventListener("click", () => {
     SFX.init();
+    startRainSound();
     SFX.enter();
+    SFX.rainStop(4);
     setTimeout(() => SFX.music(), 2500);
     const gate = $("#gate");
     gate.classList.add("opening");
@@ -500,7 +536,7 @@
       restartGoddess();
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
     }, 500);
-    setTimeout(() => gate.remove(), 1700);
+    setTimeout(() => { gate.remove(); rainOn = false; removeEventListener("resize", sizeRain); }, 1700);
   });
   $("#sound").addEventListener("click", (e) => {
     e.stopPropagation();

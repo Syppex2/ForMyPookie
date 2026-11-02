@@ -1,6 +1,6 @@
 /* Sound effects, all synthesized live with the Web Audio API (no audio files needed). */
 const SFX = (() => {
-  let ctx, master, musicGain, on = true, musicTimer = null;
+  let ctx, master, musicGain, on = true, musicTimer = null, rain = null;
   const PENTA = [0, 2, 4, 7, 9]; // major pentatonic: soft, music-box feel
 
   function init() {
@@ -49,7 +49,7 @@ const SFX = (() => {
   return {
     init,
     get on() { return on; },
-    toggle() { on = !on; if (on) this.music(); else this.stopMusic(); return on; },
+    toggle() { on = !on; if (on) this.music(); else { this.stopMusic(); this.rainStop(0.3); } return on; },
 
     /* Entrance: temple gong + rising chime arpeggio + whoosh of the doors */
     enter() {
@@ -139,6 +139,31 @@ const SFX = (() => {
       f.frequency.setValueAtTime(900, s0); f.frequency.linearRampToValueAtTime(1800, s0 + 0.2); f.frequency.linearRampToValueAtTime(800, s0 + 0.55);
       g.gain.setValueAtTime(0, s0); g.gain.linearRampToValueAtTime(0.25, s0 + 0.06); g.gain.exponentialRampToValueAtTime(0.001, s0 + 0.6);
       o.connect(f); f.connect(g); g.connect(master); o.start(s0); o.stop(s0 + 0.65);
+    },
+    /* soft night rain for the entrance */
+    rainStart() {
+      if (!ctx || !on || rain) return;
+      const len = ctx.sampleRate * 3, buf = ctx.createBuffer(2, len, ctx.sampleRate);
+      for (let c = 0; c < 2; c++) { const d = buf.getChannelData(c); let last = 0;
+        for (let i = 0; i < len; i++) { const w = Math.random() * 2 - 1; last = (last + 0.06 * w) / 1.06; d[i] = w * 0.55 + last * 2.5; } }
+      const src = ctx.createBufferSource(); src.buffer = buf; src.loop = true;
+      const hp = ctx.createBiquadFilter(); hp.type = "highpass"; hp.frequency.value = 400;
+      const lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 5200;
+      const g = ctx.createGain(); g.gain.value = 0;
+      src.connect(hp); hp.connect(lp); lp.connect(g); g.connect(ctx.destination);
+      src.start(); g.gain.linearRampToValueAtTime(0.16, ctx.currentTime + 2.5);
+      // little drops hitting the roof tiles
+      const drops = setInterval(() => {
+        if (!on) return;
+        for (let i = 0; i < 3; i++) if (Math.random() < 0.6) noise({ t: Math.random() * 0.2, dur: 0.03, vol: 0.03 + Math.random() * 0.04, from: 2500 + Math.random() * 3000, to: 1800, q: 6 });
+      }, 220);
+      rain = { src, g, drops };
+    },
+    rainStop(fade = 3) {
+      if (!rain) return;
+      const r = rain; rain = null; clearInterval(r.drops);
+      r.g.gain.setTargetAtTime(0, ctx.currentTime, fade / 3);
+      setTimeout(() => { try { r.src.stop(); } catch (e) {} }, fade * 1000 + 500);
     },
     pop() { tone(500, { dur: 0.12, vol: 0.12, glide: 1200 }); },
 

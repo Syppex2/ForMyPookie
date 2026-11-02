@@ -69,8 +69,10 @@
     SFX.crack();
     const r = env.getBoundingClientRect();
     FX.burst(r.left + r.width / 2, r.top + r.height / 2, 6, true);
-    await wait(500); SFX.rustle();
-    await wait(1100);
+    await wait(450); SFX.rustle();
+    await wait(1500);
+    env.classList.add("gone");
+    await wait(450);
     env.hidden = true;
     showLetter(true);
   }

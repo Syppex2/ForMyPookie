@@ -27,7 +27,7 @@ const ALTAR = {
   // Random messages that appear when she lights a candle
   candleMessages: [
     "WAKEUP. I miss you too",
-    "Official ranking: you, then Denji, then Akaza",
+    "Official ranking: you, then Shinobu, then Giyu",
     "Shinobu approves of this relationship",
     "Not even Maomao could figure out how you're this cute",
     "Doggy says hi. He still wants to catch you",
