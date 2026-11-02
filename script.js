@@ -132,6 +132,111 @@
   ALTAR.favorites.forEach((c, i) => $("#favorites").appendChild(card(c, true, i)));
   ALTAR.characters.forEach((c, i) => $("#offerings").appendChild(card(c, false, i)));
 
+
+  /* ================= the goddess: Shinobu slideshow ================= */
+  const G = ALTAR.shinobu || { images: [], quotes: [] };
+  const slides = $("#goddess-slides"), dots = $("#goddess-dots"), quote = $("#goddess-quote");
+  let gi = 0, gTimer = null;
+  G.images.forEach((f, i) => {
+    const im = document.createElement("img");
+    im.src = "images/shinobu/" + f; im.alt = "Shinobu Kocho";
+    im.loading = i < 2 ? "eager" : "lazy";
+    if (i === 0) im.className = "on";
+    slides.appendChild(im);
+    const d = document.createElement("button");
+    d.setAttribute("aria-label", "Picture " + (i + 1));
+    if (i === 0) d.className = "on";
+    d.addEventListener("click", (e) => { e.stopPropagation(); showSlide(i, true); });
+    dots.appendChild(d);
+  });
+  function setQuote(i) {
+    if (!G.quotes.length) return;
+    quote.classList.remove("pop"); void quote.offsetWidth; quote.classList.add("pop");
+    quote.textContent = G.quotes[i % G.quotes.length];
+  }
+  setQuote(0);
+  function showSlide(i, byHand) {
+    const imgs = slides.children; if (!imgs.length) return;
+    imgs[gi].classList.remove("on"); dots.children[gi].classList.remove("on");
+    gi = (i + imgs.length) % imgs.length;
+    imgs[gi].classList.add("on"); dots.children[gi].classList.add("on");
+    setQuote(gi);
+    if (byHand) {
+      SFX.chime();
+      const r = $("#goddess-frame").getBoundingClientRect();
+      burst(r.left + r.width / 2, r.top + r.height / 2, 5, true);
+      restartGoddess();
+    }
+  }
+  function restartGoddess() { clearInterval(gTimer); gTimer = setInterval(() => showSlide(gi + 1), 5500); }
+  const gf = $("#goddess-frame");
+  gf.addEventListener("click", (e) => { e.stopPropagation(); showSlide(gi + 1, true); });
+  gf.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); showSlide(gi + 1, true); } });
+
+  /* ================= matching souls (couples) ================= */
+  if (ALTAR.couplesBanner) {
+    const b = $("#couples-banner");
+    b.innerHTML = `<img src="images/${esc(ALTAR.couplesBanner.img)}" alt="Giyu and Shinobu" loading="lazy" /><figcaption>${esc(ALTAR.couplesBanner.caption)}</figcaption>`;
+    b.addEventListener("click", (e) => { e.stopPropagation(); SFX.heart(); heartsAt(e.clientX, e.clientY, 10); openLightbox(b.querySelector("img").src, ALTAR.couplesBanner.caption); });
+  }
+  (ALTAR.couples || []).forEach((c, i) => {
+    const el = document.createElement("article");
+    el.className = "couple reveal";
+    el.style.setProperty("--d", (i % 4) * 0.08 + "s");
+    el.innerHTML = `
+      <div class="pair">
+        <figure class="half left"><img src="images/${esc(c.a.img)}" alt="${esc(c.a.name)}" loading="lazy" /></figure>
+        <figure class="half right"><img src="images/${esc(c.b.img)}" alt="${esc(c.b.name)}" loading="lazy" /></figure>
+        <span class="mid-heart" aria-hidden="true">💗</span>
+      </div>
+      <div class="couple-label"><b>${esc(c.a.name)} <i>×</i> ${esc(c.b.name)}</b><small>${esc(c.from)}</small>${c.note ? `<span class="note">${esc(c.note)}</span>` : ""}</div>`;
+    el.querySelectorAll("img").forEach((im) => im.addEventListener("error", () => { im.replaceWith(Object.assign(document.createElement("div"), { className: "ph", textContent: "🦋" })); }));
+    el.addEventListener("pointerenter", () => SFX.hover());
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      SFX.heart();
+      el.classList.remove("kiss"); void el.offsetWidth; el.classList.add("kiss");
+      const r = el.querySelector(".mid-heart").getBoundingClientRect();
+      heartsAt(r.left + r.width / 2, r.top + r.height / 2, 8);
+    });
+    $("#couples").appendChild(el);
+  });
+  function heartsAt(x, y, n) {
+    if (reduced) return;
+    for (let i = 0; i < n; i++) {
+      const h = document.createElement("span");
+      h.className = "pop-heart";
+      h.textContent = ["💗", "💜", "🦋", "✨"][i % 4];
+      h.style.left = x + "px"; h.style.top = y + "px";
+      const a = Math.random() * Math.PI * 2, d = 50 + Math.random() * 80;
+      h.style.setProperty("--tx", Math.cos(a) * d + "px");
+      h.style.setProperty("--ty", Math.sin(a) * d - 40 + "px");
+      fx.appendChild(h);
+      setTimeout(() => h.remove(), 1100);
+    }
+  }
+
+  /* ================= wisteria garland ================= */
+  const wis = $("#wisteria");
+  const strands = innerWidth < 600 ? 14 : 30;
+  for (let i = 0; i < strands; i++) {
+    const st = document.createElement("div");
+    st.className = "strand";
+    st.style.left = (i / strands) * 100 + Math.random() * 2 + "%";
+    st.style.animationDelay = -Math.random() * 4 + "s";
+    st.style.animationDuration = 3.5 + Math.random() * 2 + "s";
+    const len = 5 + Math.floor(Math.random() * (i % 3 === 0 ? 10 : 6));
+    for (let j = 0; j < len; j++) {
+      const f = document.createElement("i");
+      const t = j / len;
+      f.style.width = f.style.height = 14 - t * 8 + "px";
+      f.style.marginLeft = (j % 2 ? 3 : -3) * (1 - t) + "px";
+      f.style.background = `hsl(${282 - t * 20}, ${60 + t * 20}%, ${62 + t * 18}%)`;
+      st.appendChild(f);
+    }
+    wis.appendChild(st);
+  }
+
   /* ================= hall of shame ================= */
   ALTAR.chats.forEach((c, i) => {
     const el = document.createElement("figure");
@@ -294,6 +399,7 @@
     setTimeout(() => {
       $("#altar").hidden = false;
       $("#sound").hidden = false;
+      restartGoddess();
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
     }, 500);
     setTimeout(() => gate.remove(), 1700);

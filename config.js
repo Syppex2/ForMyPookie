@@ -33,6 +33,9 @@ const ALTAR = {
     "Pookie detected. Heart rate: illegal.",
     "Doggy says hi (he still wants to catch you)",
     "You are my favorite episode",
+    "Shinobu smiled at you. That means you're either loved or poisoned.",
+    "We are the GiyuShino of real life (I'm Giyu, sorry)",
+    "Matching pfp #1000 loading...",
   ],
 
   // ---------- THE GODS OF THE ALTAR (the main favorites) ----------
@@ -44,9 +47,43 @@ const ALTAR = {
     { name: "Akaza",  from: "Kimetsu no Yaiba",    img: "akaza.png",  emoji: "👊", note: "Has never once said 'I'm not strong'", ani: "Kimetsu no Yaiba: Mugen Ressha-hen", match: "Akaza" },
   ],
 
+  // ---------- THE GODDESS: SHINOBU (center of the shrine) ----------
+  // Pictures in images/shinobu/ — they slide one after another. Add or remove freely.
+  shinobu: {
+    images: [
+      "shinobu-1.webp", "shinobu-2.webp", "shinobu-3.webp", "shinobu-4.webp", "shinobu-5.webp",
+      "shinobu-6.webp", "shinobu-7.webp", "shinobu-8.webp", "shinobu-9.webp",
+    ],
+    // Little lines that change with each picture
+    quotes: [
+      "Ara ara~ wouldn't it be nice if we could all get along?",
+      "Insect Hashira · Kocho Shinobu · 蟲柱 胡蝶しのぶ",
+      "Smiling politely while being the most dangerous person in the room. Just like you.",
+      "Too small to cut a demon's head? Then poison. Very her. Very you.",
+      "The butterfly that rules this altar 🦋",
+    ],
+  },
+
+  // ---------- MATCHING SOULS (couples, like our matching pfps) ----------
+  // Pictures in images/couples/ (or ../characters/ to reuse one from there)
+  couplesBanner: { img: "couples/giyu-shinobu-official.webp", caption: "GiyuShino: official art, official canon (in our hearts)" },
+  couples: [
+    { a: { name: "Giyu",    img: "couples/giyu.png" },    b: { name: "Shinobu", img: "characters/shinobu.png" }, from: "Kimetsu no Yaiba", note: "He's not hated. She just bullies him. Relatable." },
+    { a: { name: "Obanai",  img: "couples/obanai.jpg" },  b: { name: "Mitsuri", img: "couples/mitsuri.png" },    from: "Kimetsu no Yaiba", note: "Wrote her letters. Peak romance." },
+    { a: { name: "Sanemi",  img: "couples/sanemi.png" },  b: { name: "Kanae",   img: "couples/kanae.png" },      from: "Kimetsu no Yaiba", note: "Grumpy x sunshine" },
+    { a: { name: "Tanjiro", img: "couples/tanjiro.png" }, b: { name: "Kanao",   img: "couples/kanao.png" },      from: "Kimetsu no Yaiba", note: "Decided by a coin flip. Fate." },
+    { a: { name: "Zenitsu", img: "couples/zenitsu.png" }, b: { name: "Nezuko",  img: "couples/nezuko.png" },     from: "Kimetsu no Yaiba", note: "He finally won" },
+    { a: { name: "Akaza",   img: "characters/akaza.png" },b: { name: "Koyuki",  img: "couples/koyuki.png" },     from: "Kimetsu no Yaiba", note: "Don't talk to me about this one 😭" },
+    { a: { name: "L",       img: "characters/l.png" },    b: { name: "Misa",    img: "couples/misa.png" },       from: "Death Note", note: "Sweets & chaos" },
+    { a: { name: "Okarun",  img: "characters/okarun.png" },b:{ name: "Momo",    img: "couples/momo.png" },       from: "Dandadan", note: "Ken Takakura (the real one)" },
+    { a: { name: "Yuta",    img: "couples/yuta.jpg" },    b: { name: "Maki",    img: "couples/maki.png" },       from: "Jujutsu Kaisen", note: "Strongest duo" },
+    { a: { name: "Gojo",    img: "characters/gojo.png" }, b: { name: "Geto",    img: "couples/geto.png" },       from: "Jujutsu Kaisen", note: "The strongest... and his best friend" },
+    { a: { name: "Denji",   img: "characters/denji.png" },b: { name: "Reze",    img: "couples/reze.png" },       from: "Chainsaw Man", note: "Should've gone to the café" },
+    { a: { name: "David",   img: "couples/david.png" },   b: { name: "Lucy",    img: "characters/lucy.jpg" },    from: "Cyberpunk: Edgerunners", note: "Take me to the moon 🌕" },
+  ],
+
   // ---------- THE OFFERINGS (one card per show she watched) ----------
   characters: [
-    { name: "Shinobu Kocho", from: "Kimetsu no Yaiba",          img: "shinobu.png",  emoji: "🦋", ani: "Kimetsu no Yaiba", match: "Shinobu" },
     { name: "Satoru Gojo",   from: "Jujutsu Kaisen",            img: "gojo.png",     emoji: "🕶️", ani: "Jujutsu Kaisen", match: "Satoru" },
     { name: "L",             from: "Death Note",                img: "l.png",        emoji: "🍰", ani: "Death Note", match: "L" },
     { name: "Pikachu",       from: "Pokémon",                   img: "pikachu.jpg",  emoji: "⚡", ani: "Pokemon", match: "Pikachu" },

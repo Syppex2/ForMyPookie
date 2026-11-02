@@ -9,6 +9,8 @@ A Shinobu-themed (Kimetsu no Yaiba) altar website for my favorite person.
 | `config.js`           | **Edit this one.** Her name, characters, captions, candle messages |
 | `images/characters/`  | Character pictures (`denji.png`, `akaza.png`, ...)            |
 | `images/chat/`        | Chat screenshots for the "Hall of Shame"                      |
+| `images/shinobu/`     | The Shinobu slideshow in the middle of the shrine             |
+| `images/couples/`     | Pictures for the "Matching Souls" couples section             |
 | `index.html`, `style.css`, `script.js` | The site itself                              |
 | `sfx.js`              | Sound effects + music box (made in code, no audio files)      |
 
@@ -24,6 +26,8 @@ A Shinobu-themed (Kimetsu no Yaiba) altar website for my favorite person.
 - Click the big butterfly on the entrance 5 times.
 - Light all three candles.
 - Click any empty spot → butterflies.
+- Click Shinobu's portrait → next picture + chime.
+- Click a couple → heartbeat bells and hearts.
 
 ## Preview on your computer
 

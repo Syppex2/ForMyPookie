@@ -276,3 +276,70 @@ footer .butterfly { animation: hover 3s ease-in-out infinite; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .drop { opacity: 1; }
 }
+
+/* ================= wisteria garland ================= */
+.wisteria { position: absolute; top: 0; left: 0; right: 0; height: 0; z-index: 2; pointer-events: none; }
+.wisteria::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 10px; background: linear-gradient(90deg, #3d2a1f, #5a3f2c, #3d2a1f); border-radius: 0 0 6px 6px; opacity: .8; }
+.strand { position: absolute; top: 4px; display: flex; flex-direction: column; align-items: center; transform-origin: top center; animation: sway2 4s ease-in-out infinite alternate; }
+.strand i { display: block; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; margin-top: -3px; box-shadow: 0 0 6px rgba(231,182,240,.5); }
+@keyframes sway2 { from { transform: rotate(-4deg); } to { transform: rotate(4deg); } }
+main { padding-top: 120px; }
+
+/* ================= the goddess ================= */
+.goddess { margin: 6px auto 0; max-width: 520px; }
+.goddess-frame {
+  position: relative; width: min(78vw, 340px); aspect-ratio: 3 / 4; margin: 14px auto 0; cursor: pointer;
+  border-radius: 50% 50% 18px 18px / 36% 36% 18px 18px;
+  padding: 6px; background: linear-gradient(160deg, var(--cream), var(--lilac), var(--purple), var(--teal));
+  box-shadow: 0 0 0 3px rgba(255,213,138,.6), 0 0 50px rgba(231,182,240,.55), 0 30px 60px rgba(0,0,0,.45);
+  animation: floaty 5s ease-in-out infinite;
+}
+.goddess-frame:focus-visible { outline: 3px solid var(--gold); outline-offset: 6px; }
+.goddess-slides { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: inherit; background: var(--night-2); }
+.goddess-slides img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+  opacity: 0; transform: scale(1.12); transition: opacity 1.2s ease, transform 6s ease-out;
+}
+.goddess-slides img.on { opacity: 1; transform: scale(1); }
+.halo { position: absolute; inset: -30px; z-index: -1; border-radius: 50%; background: conic-gradient(from var(--a, 0deg), transparent, rgba(255,213,138,.6), transparent 30%, rgba(246,166,203,.6), transparent 60%, rgba(79,182,163,.5), transparent); filter: blur(18px); animation: spin 10s linear infinite; }
+.wing { position: absolute; top: 34%; width: 130px; z-index: 2; filter: drop-shadow(0 0 14px rgba(231,182,240,.8)); pointer-events: none; }
+.wing svg { width: 100%; display: block; animation: flap 1.4s ease-in-out infinite alternate; }
+.w-left { left: -96px; transform: rotate(-22deg); }
+.w-right { right: -96px; transform: rotate(22deg) scaleX(-1); }
+.w-right svg { animation-delay: -.7s; }
+.goddess-name { font-family: var(--serif); font-size: clamp(1.7rem, 5vw, 2.4rem); margin: 22px 0 4px;
+  background: linear-gradient(90deg, var(--lilac), var(--cream), var(--pink), var(--lilac)) 0 0 / 300% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 7s linear infinite; }
+.goddess-quote { min-height: 3em; margin: 0 auto; max-width: 420px; color: var(--lilac); font-style: italic; }
+.goddess-quote.pop { animation: msgPop .7s cubic-bezier(.3,1.6,.5,1); }
+.dots { display: flex; justify-content: center; gap: 8px; margin-top: 6px; }
+.dots button { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: rgba(231,182,240,.35); cursor: pointer; transition: all .3s; }
+.dots button.on { width: 24px; border-radius: 6px; background: var(--pink); box-shadow: 0 0 10px var(--pink); }
+@media (max-width: 520px) { .wing { width: 64px; } .w-left { left: -34px; } .w-right { right: -34px; } }
+html, body { overflow-x: clip; }
+
+/* ================= matching souls ================= */
+.couples-banner { position: relative; margin: 0 0 28px; border-radius: 22px; overflow: hidden; cursor: zoom-in; border: 2px solid rgba(231,182,240,.4); box-shadow: 0 20px 50px rgba(0,0,0,.4), 0 0 40px rgba(176,127,217,.25); }
+.couples-banner img { display: block; width: 100%; max-height: 420px; object-fit: cover; object-position: center 30%; transition: transform 6s ease-out; }
+.couples-banner:hover img { transform: scale(1.06); }
+.couples-banner figcaption { position: absolute; inset: auto 0 0 0; padding: 40px 18px 14px; font-family: var(--serif); font-size: 1.15rem; background: linear-gradient(transparent, rgba(26,15,34,.92)); }
+.couples { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 22px; }
+.couple { cursor: pointer; }
+.pair { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 20px; overflow: hidden; border: 2px solid rgba(231,182,240,.35); background: var(--night-2); transition: border-color .3s, box-shadow .3s; }
+.couple:hover .pair { border-color: var(--pink); box-shadow: 0 16px 40px rgba(246,166,203,.35); }
+.half { margin: 0; overflow: hidden; aspect-ratio: 3 / 4; }
+.half img, .half .ph { width: 100%; height: 100%; object-fit: cover; display: grid; place-items: center; font-size: 2rem; transition: transform .5s cubic-bezier(.3,1.4,.5,1); }
+.couple:hover .left img { transform: scale(1.08) translateX(6px) rotate(2deg); }
+.couple:hover .right img { transform: scale(1.08) translateX(-6px) rotate(-2deg); }
+.pair::after { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; margin-left: -1.5px; background: linear-gradient(var(--pink), var(--lilac), var(--teal)); }
+.mid-heart { position: absolute; left: 50%; top: 50%; z-index: 2; font-size: 2rem; transform: translate(-50%, -50%) scale(.8); filter: drop-shadow(0 0 10px var(--hot-pink)); transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
+.couple:hover .mid-heart { transform: translate(-50%, -50%) scale(1.15); animation: beat 1s ease-in-out infinite; }
+.couple.kiss .mid-heart { animation: kiss .7s ease-out; }
+@keyframes kiss { 0% { transform: translate(-50%, -50%) scale(1); } 40% { transform: translate(-50%, -50%) scale(2.2) rotate(-10deg); } 100% { transform: translate(-50%, -50%) scale(1); } }
+.couple-label { padding: 10px 4px 0; }
+.couple-label b { display: block; font-family: var(--serif); font-size: 1.1rem; }
+.couple-label b i { color: var(--pink); font-style: normal; }
+.couple-label small { color: var(--lilac); font-size: .8rem; }
+.couple-label .note { display: block; color: var(--pink); font-style: italic; font-size: .82rem; margin-top: 2px; }
+.pop-heart { position: fixed; transform: translate(-50%, -50%); font-size: 20px; animation: popHeart 1.1s ease-out forwards; }
+@keyframes popHeart { to { opacity: 0; transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.4) rotate(20deg); } }

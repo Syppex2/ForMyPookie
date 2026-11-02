@@ -33,6 +33,7 @@
 
   <!-- ALTAR -->
   <main id="altar" hidden>
+    <div id="wisteria" class="wisteria" aria-hidden="true"></div>
     <header class="hero">
       <p class="kicker">✦ shrine of the most important person ✦</p>
       <h2>Everything <span class="her-name"></span> loves</h2>
@@ -42,6 +43,21 @@
     <section class="shrine reveal">
       <div class="torii" aria-hidden="true"><span></span><span></span></div>
       <div class="lanterns" aria-hidden="true"><i></i><i></i></div>
+
+      <div class="goddess">
+        <p class="kicker">蟲柱 · the goddess of this altar</p>
+        <div id="goddess-frame" class="goddess-frame" role="button" tabindex="0" aria-label="Next Shinobu picture">
+          <div class="wing w-left" aria-hidden="true"><svg viewBox="0 0 100 80"><use href="#bfly" /></svg></div>
+          <div class="wing w-right" aria-hidden="true"><svg viewBox="0 0 100 80"><use href="#bfly" /></svg></div>
+          <div id="goddess-slides" class="goddess-slides"></div>
+          <div class="halo" aria-hidden="true"></div>
+        </div>
+        <h3 class="goddess-name">Kocho Shinobu</h3>
+        <p id="goddess-quote" class="goddess-quote"></p>
+        <div id="goddess-dots" class="dots"></div>
+      </div>
+
+      <p class="kicker" style="margin-top:46px">✦ the chosen ones ✦</p>
       <div id="favorites" class="favorites"></div>
       <div class="candles">
         <button class="candle" aria-label="Light a candle"><i></i></button>
@@ -50,6 +66,12 @@
       </div>
       <p class="hint">tap the candles 🕯️ (all three for a surprise)</p>
       <p id="candle-msg" class="candle-msg" aria-live="polite"></p>
+    </section>
+
+    <section>
+      <h3 class="section-title reveal"><span>Matching Souls</span><small>every couple we've been in our matching pfps</small></h3>
+      <figure id="couples-banner" class="couples-banner reveal"></figure>
+      <div id="couples" class="couples"></div>
     </section>
 
     <section>

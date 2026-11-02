@@ -80,6 +80,11 @@ const SFX = (() => {
       tone(hz(48), { dur: 3, vol: 0.25, attack: 0.3 });
       tone(hz(55), { dur: 3, vol: 0.15, attack: 0.3 });
     },
+    /* two bells answering each other, like a heartbeat */
+    heart() {
+      bell(hz(79), 0, 0.14, 1.2); bell(hz(84), 0.14, 0.14, 1.4);
+      tone(hz(55), { dur: 0.18, vol: 0.25 }); tone(hz(55), { t: 0.22, dur: 0.18, vol: 0.2 });
+    },
     pop() { tone(500, { dur: 0.12, vol: 0.12, glide: 1200 }); },
 
     /* soft generative music box loop */
