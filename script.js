@@ -125,7 +125,7 @@
       SFX.chime();
       burst(e.clientX, e.clientY, 4);
       const real = el.querySelector("img.pic");
-      if (real && real.complete && real.naturalWidth) openLightbox(real.src, `${c.name} — ${c.from}`);
+      if (real && real.complete && real.naturalWidth) openLightbox(real.src, `${c.name}, ${c.from}`);
     });
     return el;
   }
@@ -295,7 +295,22 @@
 
   if (ALTAR.togetherSince) {
     const days = Math.floor((Date.now() - new Date(ALTAR.togetherSince + "T00:00:00")) / 864e5);
-    if (days >= 0) { $("#days").hidden = false; $("#days").textContent = `${days} days of being matching souls 🦋`; }
+    if (days >= 0) { $("#days").hidden = false; $("#days").textContent = `${days} days together`; }
+  }
+
+
+  /* ================= her shelf (MyFigureCollection) ================= */
+  if (ALTAR.shelf) {
+    const sh = ALTAR.shelf, el = $("#shelf");
+    el.innerHTML = `
+      <div class="shelf-head">
+        <img class="shelf-avatar" src="images/characters/shinobu.png" alt="" />
+        <div><p class="shelf-bio">"${esc(sh.bio)}"</p><a href="${esc(sh.link)}" target="_blank" rel="noopener">her profile on MyFigureCollection</a></div>
+      </div>
+      <figure class="cabinet"><img src="images/${esc(sh.figures)}" alt="Her figure collection" loading="lazy" /><div class="glass"></div></figure>
+      ${sh.goods ? `<figure class="cabinet small"><img src="images/${esc(sh.goods)}" alt="Her goods" loading="lazy" /><div class="glass"></div></figure>` : ""}
+      <p class="shelf-caption">${esc(sh.caption)}</p>`;
+    el.querySelectorAll(".cabinet").forEach((c) => c.addEventListener("click", (e) => { e.stopPropagation(); SFX.chime(); openLightbox(c.querySelector("img").src, sh.caption); }));
   }
 
   /* ================= hall of shame ================= */
@@ -447,7 +462,7 @@
   let gateClicks = 0;
   $("#gate-bfly").addEventListener("click", () => {
     SFX.init(); SFX.pop();
-    if (++gateClicks === 5) document.querySelector("#gate .kicker").textContent = "ara ara~ you found me 🦋 — Shinobu";
+    if (++gateClicks === 5) document.querySelector("#gate .kicker").textContent = "ara ara, you found me. Shinobu";
   });
   $("#enter").addEventListener("click", () => {
     SFX.init();

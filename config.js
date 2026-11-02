@@ -1,13 +1,13 @@
 /* =========================================================
-   ✿  EDIT THIS FILE TO CUSTOMIZE THE ALTAR  ✿
-   - Put character pictures in  images/characters/
-   - Put chat screenshots in    images/chat/
-   - Then write the file name below (exactly the same, with .png / .jpg)
+   EDIT THIS FILE TO CHANGE THE TEXT AND PICTURES OF THE ALTAR
+   - Character pictures go in  images/characters/
+   - Chat screenshots go in    images/chat/
+   - Then write the file name below exactly as it is (with .png / .jpg)
    Pictures are chosen in this order:
-     1) your own file in images/characters/   (always wins)
-     2) official art fetched automatically from AniList (using ani + match)
-     3) a cute emoji placeholder
-   ani   = the show's name to search on anilist.co
+     1) your own file in images/characters/ (always wins)
+     2) official art fetched from AniList (using ani + match)
+     3) an emoji placeholder
+   ani   = the show's name on anilist.co
    match = part of the character's name as AniList writes it
    ========================================================= */
 
@@ -16,80 +16,90 @@ const ALTAR = {
   herName: "Pookie",
 
   // Shown on the entrance screen
-  welcome: "A sacred altar, made only for you",
+  welcome: "I made you a little altar",
 
   // Signature at the bottom
-  from: "From the one who always wakes up for you ♡",
+  from: "From the one who always wakes up when you say WAKEUP",
 
-  // Shown when ALL three candles are lit at the same time
-  allCandlesMessage: "Three candles lit... the altar grants your wish: me. Forever. 🦋💗",
+  // Shown when all three candles are lit
+  allCandlesMessage: "You lit all three. Your wish is granted: you get me, forever. No refunds.",
 
-  // Random little messages that appear when she lights a candle
+  // Random messages that appear when she lights a candle
   candleMessages: [
-    "WAKEUP. I miss you too 🦋",
-    "Official ranking: you > Denji > Akaza",
+    "WAKEUP. I miss you too",
+    "Official ranking: you, then Denji, then Akaza",
     "Shinobu approves of this relationship",
-    "Even Maomao couldn't solve how cute you are",
-    "Pookie detected. Heart rate: illegal.",
-    "Doggy says hi (he still wants to catch you)",
-    "You are my favorite episode",
-    "Shinobu smiled at you. That means you're either loved or poisoned.",
-    "We are the GiyuShino of real life (I'm Giyu, sorry)",
-    "Matching pfp #1000 loading...",
+    "Not even Maomao could figure out how you're this cute",
+    "Doggy says hi. He still wants to catch you",
+    "You're my favorite episode",
+    "Shinobu smiled at you. Either she likes you or you've been poisoned",
+    "We're GiyuShino in real life. I'm Giyu, sorry",
+    "Loading matching pfp number 1000...",
+    "Eepy and in love with Shinobu. I read your bio, I know everything",
   ],
 
-  // ---------- THE GODS OF THE ALTAR (the main favorites) ----------
-  // These show bigger, in the center of the altar.
+  // ---------- THE CHOSEN ONES (shown big, under Shinobu) ----------
   favorites: [
-    { name: "Denji",  from: "Chainsaw Man",        img: "denji.png",  emoji: "🪚", note: "Woof woof, chainsaw boy", ani: "Chainsaw Man", match: "Denji" },
-    { name: "Doggy",  from: "Piggy (Roblox)",      img: "doggy.webp",  emoji: "🐶", note: "Scary but make it cute" },
-    { name: "Maomao", from: "The Apothecary Diaries", img: "maomao.png", emoji: "🧪", note: "Will taste-test your poison", ani: "Kusuriya no Hitorigoto", match: "Maomao" },
-    { name: "Akaza",  from: "Kimetsu no Yaiba",    img: "akaza.png",  emoji: "👊", note: "Has never once said 'I'm not strong'", ani: "Kimetsu no Yaiba: Mugen Ressha-hen", match: "Akaza" },
+    { name: "Giyu Tomioka", from: "Kimetsu no Yaiba", img: "../couples/giyu.png", emoji: "🌊", note: "He's not disliked (he is a little)" },
+    { name: "Rei Ayanami",  from: "Neon Genesis Evangelion", img: "rei.jpg", emoji: "🤖", note: "On her favorites list since forever", ani: "Neon Genesis Evangelion", match: "Rei" },
+    { name: "Denji",  from: "Chainsaw Man",        img: "denji.png",  emoji: "🪚", note: "Woof woof", ani: "Chainsaw Man", match: "Denji" },
+    { name: "Doggy",  from: "Piggy (Roblox)",      img: "doggy.webp",  emoji: "🐶", note: "Scary but cute somehow" },
+    { name: "Maomao", from: "The Apothecary Diaries", img: "maomao.png", emoji: "🧪", note: "Would drink your poison just to rate it", ani: "Kusuriya no Hitorigoto", match: "Maomao" },
+    { name: "Akaza",  from: "Kimetsu no Yaiba",    img: "akaza.png",  emoji: "👊", note: "Still mad about Rengoku. Still on the list", ani: "Kimetsu no Yaiba: Mugen Ressha-hen", match: "Akaza" },
   ],
 
-  // ---------- THE GODDESS: SHINOBU (center of the shrine) ----------
-  // Pictures in images/shinobu/ — they slide one after another. Add or remove freely.
+  // ---------- SHINOBU (center of the altar) ----------
+  // Pictures in images/shinobu/, they change one after another.
   shinobu: {
     images: [
       "shinobu-1.webp", "shinobu-2.webp", "shinobu-3.webp", "shinobu-4.webp", "shinobu-5.webp",
       "shinobu-6.webp", "shinobu-7.webp", "shinobu-8.webp", "shinobu-9.webp",
     ],
-    // Little lines that change with each picture
+    // Lines that change with each picture
     quotes: [
-      "Ara ara~ wouldn't it be nice if we could all get along?",
-      "Insect Hashira · Kocho Shinobu · 蟲柱 胡蝶しのぶ",
-      "Smiling politely while being the most dangerous person in the room. Just like you.",
-      "Too small to cut a demon's head? Then poison. Very her. Very you.",
-      "The butterfly that rules this altar 🦋",
+      "Ara ara, wouldn't it be nice if we could all get along?",
+      "Insect Hashira, Kocho Shinobu. 蟲柱 胡蝶しのぶ",
+      "Smiles at you, then poisons you. You do the same thing to me",
+      "Too small to cut off a demon's head, so she invented a poison. Legend",
+      "The owner of this altar. You're just visiting",
     ],
   },
 
+  // ---------- HER SHELF (from her MyFigureCollection) ----------
+  shelf: {
+    bio: "i'm eepy and in love with shinobu",
+    link: "https://myfigurecollection.net/profile/mew_owo",
+    figures: "shelf/figures.webp",
+    goods: "shelf/goods.webp",
+    caption: "43 figures and counting. I counted 5 Shinobus, 5 Mikus and too many Giyus",
+  },
+
   // ---------- MATCHING SOULS (couples, like our matching pfps) ----------
-  // Pictures in images/couples/ (or ../characters/ to reuse one from there)
-  couplesBanner: { img: "couples/giyu-shinobu-official.webp", caption: "GiyuShino: official art, official canon (in our hearts)" },
+  couplesBanner: { img: "couples/giyu-shinobu-official.webp", caption: "GiyuShino. Official art, so it's basically canon" },
   couples: [
-    { a: { name: "Giyu",    img: "couples/giyu.png" },    b: { name: "Shinobu", img: "characters/shinobu.png" }, from: "Kimetsu no Yaiba", note: "He's not hated. She just bullies him. Relatable." },
-    { a: { name: "Obanai",  img: "couples/obanai.jpg" },  b: { name: "Mitsuri", img: "couples/mitsuri.png" },    from: "Kimetsu no Yaiba", note: "Wrote her letters. Peak romance." },
-    { a: { name: "Sanemi",  img: "couples/sanemi.png" },  b: { name: "Kanae",   img: "couples/kanae.png" },      from: "Kimetsu no Yaiba", note: "Grumpy x sunshine" },
-    { a: { name: "Tanjiro", img: "couples/tanjiro.png" }, b: { name: "Kanao",   img: "couples/kanao.png" },      from: "Kimetsu no Yaiba", note: "Decided by a coin flip. Fate." },
-    { a: { name: "Zenitsu", img: "couples/zenitsu.png" }, b: { name: "Nezuko",  img: "couples/nezuko.png" },     from: "Kimetsu no Yaiba", note: "He finally won" },
-    { a: { name: "Akaza",   img: "characters/akaza.png" },b: { name: "Koyuki",  img: "couples/koyuki.png" },     from: "Kimetsu no Yaiba", note: "Don't talk to me about this one 😭" },
-    { a: { name: "L",       img: "characters/l.png" },    b: { name: "Misa",    img: "couples/misa.png" },       from: "Death Note", note: "Sweets & chaos" },
-    { a: { name: "Okarun",  img: "characters/okarun.png" },b:{ name: "Momo",    img: "couples/momo.png" },       from: "Dandadan", note: "Ken Takakura (the real one)" },
-    { a: { name: "Yuta",    img: "couples/yuta.jpg" },    b: { name: "Maki",    img: "couples/maki.png" },       from: "Jujutsu Kaisen", note: "Strongest duo" },
-    { a: { name: "Gojo",    img: "characters/gojo.png" }, b: { name: "Geto",    img: "couples/geto.png" },       from: "Jujutsu Kaisen", note: "The strongest... and his best friend" },
-    { a: { name: "Denji",   img: "characters/denji.png" },b: { name: "Reze",    img: "couples/reze.png" },       from: "Chainsaw Man", note: "Should've gone to the café" },
-    { a: { name: "David",   img: "couples/david.png" },   b: { name: "Lucy",    img: "characters/lucy.jpg" },    from: "Cyberpunk: Edgerunners", note: "Take me to the moon 🌕" },
+    { a: { name: "Giyu",    img: "couples/giyu.png" },    b: { name: "Shinobu", img: "characters/shinobu.png" }, from: "Kimetsu no Yaiba", note: "She bullies him and he lets her. Sounds familiar" },
+    { a: { name: "Obanai",  img: "couples/obanai.jpg" },  b: { name: "Mitsuri", img: "couples/mitsuri.png" },    from: "Kimetsu no Yaiba", note: "He wrote her letters. I made you a website" },
+    { a: { name: "Sanemi",  img: "couples/sanemi.png" },  b: { name: "Kanae",   img: "couples/kanae.png" },      from: "Kimetsu no Yaiba", note: "Grumpy guy, sweet girl" },
+    { a: { name: "Tanjiro", img: "couples/tanjiro.png" }, b: { name: "Kanao",   img: "couples/kanao.png" },      from: "Kimetsu no Yaiba", note: "A coin flip decided it" },
+    { a: { name: "Zenitsu", img: "couples/zenitsu.png" }, b: { name: "Nezuko",  img: "couples/nezuko.png" },     from: "Kimetsu no Yaiba", note: "He actually won in the end" },
+    { a: { name: "Akaza",   img: "characters/akaza.png" },b: { name: "Koyuki",  img: "couples/koyuki.png" },     from: "Kimetsu no Yaiba", note: "We don't talk about this one" },
+    { a: { name: "L",       img: "characters/l.png" },    b: { name: "Misa",    img: "couples/misa.png" },       from: "Death Note", note: "Cake and chaos" },
+    { a: { name: "Okarun",  img: "characters/okarun.png" },b:{ name: "Momo",    img: "couples/momo.png" },       from: "Dandadan", note: "She likes Ken Takakura. The real one" },
+    { a: { name: "Yuta",    img: "couples/yuta.jpg" },    b: { name: "Maki",    img: "couples/maki.png" },       from: "Jujutsu Kaisen", note: "Both of them could beat me up" },
+    { a: { name: "Gojo",    img: "characters/gojo.png" }, b: { name: "Geto",    img: "couples/geto.png" },       from: "Jujutsu Kaisen", note: "Best friends. Sure" },
+    { a: { name: "Denji",   img: "characters/denji.png" },b: { name: "Reze",    img: "couples/reze.png" },       from: "Chainsaw Man", note: "He should have gone to the café" },
+    { a: { name: "David",   img: "couples/david.png" },   b: { name: "Lucy",    img: "characters/lucy.jpg" },    from: "Cyberpunk: Edgerunners", note: "I'd take you to the moon too" },
   ],
 
-  // ---------- THE OFFERINGS (one card per show she watched) ----------
+  // ---------- OFFERINGS (one card per show she watched) ----------
   characters: [
     { name: "Satoru Gojo",   from: "Jujutsu Kaisen",            img: "gojo.png",     emoji: "🕶️", ani: "Jujutsu Kaisen", match: "Satoru" },
     { name: "L",             from: "Death Note",                img: "l.png",        emoji: "🍰", ani: "Death Note", match: "L" },
-    { name: "Pikachu",       from: "Pokémon",                   img: "pikachu.jpg",  emoji: "⚡", ani: "Pokemon", match: "Pikachu" },
-    { name: "Rei Ayanami",   from: "Neon Genesis Evangelion",   img: "rei.jpg",      emoji: "🤖", ani: "Neon Genesis Evangelion", match: "Rei" },
+    { name: "Greninja",      from: "Pokémon XY",                img: "greninja.jpg", emoji: "🐸" },
+    { name: "Hatsune Miku",  from: "Vocaloid",                  img: "miku.jpg",     emoji: "🎤" },
+    { name: "Rem",           from: "Re:Zero",                   img: "rem.png",      emoji: "💙" },
     { name: "Miyo / Muge",   from: "A Whisker Away",            img: "muge.jpg",     emoji: "🐱", ani: "Nakitai Watashi wa Neko wo Kaburu", match: "Miyo" },
-    { name: "Okarun", from: "Dandadan",                  img: "okarun.png",   emoji: "👽", ani: "Dandadan", match: "Ken" },
+    { name: "Okarun",        from: "Dandadan",                  img: "okarun.png",   emoji: "👽", ani: "Dandadan", match: "Ken" },
     { name: "Anya Forger",   from: "Spy x Family",              img: "anya.png",     emoji: "🥜", ani: "Spy x Family", match: "Anya" },
     { name: "Legoshi",       from: "Beastars",                  img: "legoshi.png",  emoji: "🐺", ani: "Beastars", match: "Legoshi" },
     { name: "Power",         from: "Chainsaw Man",              img: "power.png",    emoji: "🩸", ani: "Chainsaw Man", match: "Power" },
@@ -112,64 +122,67 @@ const ALTAR = {
     { name: "Levi",          from: "Attack on Titan",           img: "levi.png",     emoji: "🗡️", ani: "Shingeki no Kyojin", match: "Levi" },
   ],
 
-  // ---------- HALL OF SHAME (with love) — her chat screenshots ----------
+  // ---------- HALL OF SHAME (her chat screenshots) ----------
   chats: [
-    { img: "pookie-wakeup.png", caption: "Exhibit A: 'WAKEUP' 'I MISS U' — 4 messages in 0 seconds. Then asked ChatGPT to draw what talking to her is like. It was accurate." },
-    { img: "u-gigantic-angry-wife.png", caption: "Exhibit B: She sent this and only wrote 'U'. Yes, I'm the small one gazing lovingly. She's the gigantic angry wife. No notes." },
-    { img: "panda-dance.webp", caption: "Exhibit C: Her doing the victory dance after winning an argument (that she started)." },
-    { img: "videocall-cat.webp", caption: "Exhibit D: Me: 'let me see you' 🥺 — Her: shows me the cat. Every. Single. Call." },
-    { img: "gato-no-da-mas.png", caption: "Exhibit E: Her after studying for 10 minutes. 'gato culiao que no da más' 😭" },
+    { img: "pookie-wakeup.png", caption: "Exhibit A: WAKEUP, I MISS U, POOKIE. Four messages in the same minute. Then she asked ChatGPT to draw what talking to her is like, and it was right" },
+    { img: "u-gigantic-angry-wife.png", caption: "Exhibit B: She sent this with just \"U\". I'm the little one, she's the gigantic angry wife. Correct" },
+    { img: "panda-dance.webp", caption: "Exhibit C: Her after winning an argument she started" },
+    { img: "videocall-cat.webp", caption: "Exhibit D: I ask to see her on call and she shows me the cat. Every single time" },
+    { img: "gato-no-da-mas.png", caption: "Exhibit E: Her after studying for ten minutes. Gato culiao que no da más" },
   ],
 
-  // ---------- BUTTERFLY CINEMA (looping animations, in images/gifs/) ----------
-  // Each one is a small .mp4 that loops like a GIF (much lighter than a real GIF).
+  // ---------- BUTTERFLY CINEMA (looping clips in images/gifs/) ----------
   cinema: [
     { video: "shinobu-victory-2", caption: "\"Oh, did I use too much poison? Silly me.\"" },
-    { video: "shinobu-dragonfly", caption: "Insect Breathing · Dance of the Dragonfly: Compound Eye Hexagon" },
-    { video: "shinobu-academy",   caption: "Kimetsu Academy Shinobu (school uniform era)" },
-    { video: "shinobu-horsefly",  caption: "Insect Breathing · Dance of the Horsefly" },
-    { video: "shinobu-victory",   caption: "Leaving the battlefield like a lady" },
-    { video: "shinobu-centipede", caption: "Insect Breathing · Dance of the Centipede: Hundred-Legged Zigzag" },
+    { video: "shinobu-dragonfly", caption: "Insect Breathing, Dance of the Dragonfly: Compound Eye Hexagon" },
+    { video: "shinobu-academy",   caption: "Kimetsu Gakuen Shinobu" },
+    { video: "shinobu-horsefly",  caption: "Insect Breathing, Dance of the Horsefly" },
+    { video: "shinobu-victory",   caption: "Walking away like nothing happened" },
+    { video: "shinobu-centipede", caption: "Insect Breathing, Dance of the Centipede: Hundred-Legged Zigzag" },
   ],
 
-  // ---------- GIYUSHINO ARCHIVE (canon moments, timeline) ----------
+  // ---------- GIYUSHINO ARCHIVE (canon moments) ----------
   giyushino: [
-    { video: "giyushino-mission",   title: "Always sent on missions together", text: "The Master sends both of them to Mount Natagumo. The Hashira were usually paired up like this. Fate? Fate." },
-    { video: "giyushino-victory",   title: "\"If only humans and demons could get along…\"", text: "She says it with a smile. He stands next to her saying nothing, as always. Iconic duo energy." },
-    { img: "couples/giyu-shinobu-official.webp", title: "\"That's why everyone dislikes you\"", text: "Giyu blocks her attack to protect Nezuko, and she roasts him: people dislike him because of how he acts. His answer: \"I'm not disliked.\" (He is a little bit.)" },
-    { video: "giyushino-victory-2", title: "She wishes he would talk more", text: "She teases him constantly, but she actually wants him to open up. He compliments her hard work and quietly worries about her. Gyomei even noticed the two of them enjoy talking to each other." },
-    { img: "shinobu/shinobu-2.webp", title: "He remembers her smile", text: "When the news reaches Giyu, the first thing he remembers is her smiling face. 🦋 (Pass the tissues.)" },
+    { video: "giyushino-mission",   title: "Always sent on missions together", text: "Oyakata-sama sends both of them to Mount Natagumo. They got paired up a lot." },
+    { video: "giyushino-victory",   title: "\"If only humans and demons could get along\"", text: "She says it smiling. He stands next to her and says nothing, like always." },
+    { img: "couples/giyu-shinobu-official.webp", title: "\"That's why everyone dislikes you\"", text: "Giyu blocks her attack to protect Nezuko, so she tells him that's why people don't like him. His answer: \"I'm not disliked.\" He is, a little." },
+    { video: "giyushino-victory-2", title: "She wants him to talk more", text: "She teases him all the time, but she really wants him to open up. He tells her she works hard and worries about her without saying it. Even Gyomei noticed they like talking to each other." },
+    { img: "shinobu/shinobu-2.webp", title: "He remembers her smile", text: "When Giyu hears the news, the first thing he thinks of is her smiling. Okay I'm not crying." },
   ],
 
-  // Optional: your favorite GiyuShino doujinshi / fan comics.
+  // Optional: your favorite GiyuShino doujinshi.
   // The section only shows up when this list has something in it.
-  // { title: "Name of the doujin", by: "artist or circle", link: "https://...", note: "why we love it" },
+  // { title: "Name of the doujin", by: "artist or circle", link: "https://...", note: "why we like it" },
   doujinshi: [
   ],
 
-  // ---------- THE BIG SURPRISE (crow → love letter → Hashira ceremony) ----------
+  // ---------- THE BIG SURPRISE (Maxwell, love letter, Hashira scroll) ----------
   // The date you started dating (YYYY-MM-DD). Leave "" to hide the day counter.
   togetherSince: "",
 
-  // ✍️ WRITE THIS IN YOUR OWN WORDS — it's the most important part of the whole site.
+  // Maxwell's song. Put the mp3 at audio/maxwell.mp3 (see README).
+  // If the file isn't there, a little synth tune plays instead.
+  maxwellSong: "audio/maxwell.mp3",
+
+  // WRITE THIS IN YOUR OWN WORDS. It's the most important part of the site.
   letter: {
-    greeting: "To my favorite butterfly,",
+    greeting: "Hi pookie,",
     paragraphs: [
-      "I made you an altar because you deserve one. Every character you love, every matching pfp we've worn, every chaotic message you send me at once — it's all here, because all of it is you.",
-      "You are loud, dramatic, a little bit poisonous (in the Shinobu way) and the softest person I know. You wake me up with ten 'WAKEUP's and somehow it's my favorite alarm.",
-      "Thank you for choosing me, for watching all these shows with me, and for being my gigantic angry wife. I'd stand next to you in silence like Giyu, but I'd never let you fight alone.",
+      "I made you an altar because you deserve one. Everything you like is here, the characters, our matching pfps, and the screenshots of you being dramatic in my DMs.",
+      "You're loud and dramatic and a little poisonous like Shinobu, and you're also the softest person I know. You wake me up with ten WAKEUPs and it's still my favorite alarm.",
+      "Thank you for picking me, for watching all of this with me, and for being my gigantic angry wife. I'll be your Giyu, quiet and always next to you.",
     ],
-    signature: "Yours, always — your Giyu ♡",
+    signature: "Yours, your Giyu",
   },
   certificate: {
     rank: "Butterfly Hashira of My Heart",
     kanji: "蝶柱",
     breathing: [
-      "First Form: Four 'WAKEUP' messages in zero seconds",
+      "First Form: Four WAKEUPs in the same minute",
       "Second Form: Gigantic Angry Wife",
       "Third Form: Showing me the cat instead of her face",
-      "Final Form: Making me fall for her again, every day",
+      "Final Form: Making me fall for her again every day",
     ],
-    finale: "Ara ara~ it's official. You're stuck with me now. 🦋",
+    finale: "Ara ara. It's official, you're stuck with me now",
   },
 };

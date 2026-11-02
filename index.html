@@ -24,8 +24,8 @@
       <p class="kicker">蝶屋敷 · the butterfly mansion</p>
       <h1 id="gate-title"></h1>
       <p id="welcome" class="sub typed"></p>
-      <button id="enter" class="btn"><span>Enter the altar ✿</span></button>
-      <p class="hint">🔊 turn your sound on</p>
+      <button id="enter" class="btn"><span>Come in</span></button>
+      <p class="hint">turn your sound on</p>
     </div>
   </section>
 
@@ -35,9 +35,9 @@
   <main id="altar" hidden>
     <div id="wisteria" class="wisteria" aria-hidden="true"></div>
     <header class="hero">
-      <p class="kicker">✦ shrine of the most important person ✦</p>
+      <p class="kicker">for my favorite person</p>
       <h2>Everything <span class="her-name"></span> loves</h2>
-      <p class="sub">Lovingly assembled. Bow before entering. Shoes off.</p>
+      <p class="sub">Shoes off please, this is a sacred place</p>
     </header>
 
     <section class="shrine reveal">
@@ -45,7 +45,7 @@
       <div class="lanterns" aria-hidden="true"><i></i><i></i></div>
 
       <div class="goddess">
-        <p class="kicker">蟲柱 · the goddess of this altar</p>
+        <p class="kicker">蟲柱 · the owner of this altar</p>
         <div id="goddess-frame" class="goddess-frame" role="button" tabindex="0" aria-label="Next Shinobu picture">
           <div class="wing w-left" aria-hidden="true"><svg viewBox="0 0 100 80"><use href="#bfly" /></svg></div>
           <div class="wing w-right" aria-hidden="true"><svg viewBox="0 0 100 80"><use href="#bfly" /></svg></div>
@@ -57,15 +57,20 @@
         <div id="goddess-dots" class="dots"></div>
       </div>
 
-      <p class="kicker" style="margin-top:46px">✦ the chosen ones ✦</p>
+      <p class="kicker" style="margin-top:46px">the chosen ones</p>
       <div id="favorites" class="favorites"></div>
       <div class="candles">
         <button class="candle" aria-label="Light a candle"><i></i></button>
         <button class="candle" aria-label="Light a candle"><i></i></button>
         <button class="candle" aria-label="Light a candle"><i></i></button>
       </div>
-      <p class="hint">tap the candles 🕯️ (all three for a surprise)</p>
+      <p class="hint">tap the candles (light all three)</p>
       <p id="candle-msg" class="candle-msg" aria-live="polite"></p>
+    </section>
+
+    <section>
+      <h3 class="section-title reveal"><span>Her Shelf</span><small>straight from her MyFigureCollection</small></h3>
+      <div id="shelf" class="shelf reveal"></div>
     </section>
 
     <section>
@@ -75,26 +80,26 @@
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>GiyuShino Archive</span><small>canon moments (he's not hated, he's just quiet)</small></h3>
+      <h3 class="section-title reveal"><span>GiyuShino Archive</span><small>canon moments, for the record</small></h3>
       <ol id="archive" class="archive"></ol>
       <div id="doujin-wrap" class="doujin-wrap reveal" hidden>
-        <h4>📚 Our GiyuShino doujinshi shelf</h4>
+        <h4>Our GiyuShino doujinshi shelf</h4>
         <ul id="doujin" class="doujin"></ul>
       </div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Butterfly Cinema</span><small>now playing: her favorite Hashira, on loop</small></h3>
+      <h3 class="section-title reveal"><span>Butterfly Cinema</span><small>Shinobu on loop</small></h3>
       <div id="cinema" class="cinema"></div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Offerings</span><small>every show she has blessed with her eyes</small></h3>
+      <h3 class="section-title reveal"><span>Offerings</span><small>one for every show you watched</small></h3>
       <div id="offerings" class="grid"></div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Hall of Shame</span><small>(with love) — evidence collected from the chat</small></h3>
+      <h3 class="section-title reveal"><span>Hall of Shame</span><small>evidence from our chats, with love</small></h3>
       <div id="chats" class="chats"></div>
     </section>
 
@@ -102,7 +107,7 @@
       <svg class="butterfly" viewBox="0 0 100 80" aria-hidden="true"><use href="#bfly" /></svg>
       <p id="from"></p>
       <p id="days" class="days" hidden></p>
-      <button id="call-crow" class="btn ghost">🐦‍⬛ The crow has a message for you</button>
+      <button id="call-crow" class="btn ghost">Maxwell has something for you</button>
     </footer>
   </main>
 
@@ -110,23 +115,31 @@
   <div id="wish" hidden><div class="wish-card"><div class="big-heart">💗</div><p></p><small>tap to close</small></div></div>
 
   <!-- ===== THE BIG SURPRISE ===== -->
-  <div id="crow" class="crow" hidden aria-hidden="true">
-    <svg viewBox="0 0 160 120">
-      <g class="crow-wing back"><path d="M70 55 C50 20, 20 10, 5 18 C25 30, 35 45, 60 62 Z" fill="#14101a"/></g>
-      <ellipse cx="80" cy="68" rx="34" ry="22" fill="#1d1724"/>
-      <path d="M48 70 L18 88 L30 72 L14 74 Z" fill="#14101a"/>
-      <circle cx="112" cy="54" r="15" fill="#1d1724"/>
-      <path d="M124 52 L146 57 L124 60 Z" fill="#e8a33d"/>
-      <circle cx="116" cy="51" r="3" fill="#fff"/><circle cx="117" cy="51" r="1.6" fill="#000"/>
-      <rect x="96" y="70" width="18" height="12" rx="2" fill="#f3e2f2" stroke="#b07fd9" stroke-width="1.5" transform="rotate(-10 105 76)"/>
-      <circle cx="105" cy="76" r="3" fill="#ff6fae"/>
-      <path d="M78 88 L74 104 M90 88 L92 104" stroke="#e8a33d" stroke-width="3" stroke-linecap="round"/>
-      <g class="crow-wing front"><path d="M88 58 C78 18, 50 0, 30 4 C48 20, 58 40, 70 66 Z" fill="#2a2233"/></g>
-    </svg>
+  <div id="crow" class="crow maxwell" hidden aria-hidden="true">
+    <div class="spin">
+      <svg viewBox="0 0 220 150">
+        <ellipse cx="110" cy="138" rx="80" ry="8" fill="rgba(0,0,0,.35)"/>
+        <path d="M22 92 C8 86, 4 66, 14 58 C18 70, 26 78, 36 82 Z" fill="#141016"/>
+        <path d="M30 70 C30 46, 70 40, 110 42 C150 44, 176 54, 178 82 C180 112, 150 124, 110 124 C66 124, 30 112, 30 70 Z" fill="#1b161d"/>
+        <path d="M120 100 C122 84, 142 80, 160 86 C170 96, 168 116, 150 122 C136 124, 120 116, 120 100 Z" fill="#f4f1ec"/>
+        <rect x="46" y="112" width="20" height="22" rx="8" fill="#1b161d"/><rect x="48" y="126" width="18" height="10" rx="5" fill="#f4f1ec"/>
+        <rect x="140" y="112" width="20" height="22" rx="8" fill="#1b161d"/><rect x="142" y="126" width="18" height="10" rx="5" fill="#f4f1ec"/>
+        <path d="M138 40 L146 10 L162 34 Z M176 38 L190 12 L196 44 Z" fill="#1b161d"/>
+        <path d="M144 34 L148 18 L156 32 Z M180 36 L188 20 L191 40 Z" fill="#c98a98"/>
+        <ellipse cx="170" cy="62" rx="36" ry="30" fill="#1b161d"/>
+        <path d="M150 74 C152 62, 188 60, 192 74 C194 88, 176 96, 170 96 C160 96, 148 88, 150 74 Z" fill="#f4f1ec"/>
+        <ellipse cx="160" cy="58" rx="5" ry="6" fill="#a8b43c"/><ellipse cx="183" cy="58" rx="5" ry="6" fill="#a8b43c"/>
+        <ellipse cx="160" cy="59" rx="2" ry="4" fill="#000"/><ellipse cx="183" cy="59" rx="2" ry="4" fill="#000"/>
+        <path d="M168 70 L175 70 L171.5 74 Z" fill="#e79aa8"/>
+        <path d="M150 74 L132 70 M150 78 L132 80 M192 74 L208 70 M192 78 L208 80" stroke="#ddd" stroke-width="1.2"/>
+        <g transform="rotate(-8 172 92)"><rect x="152" y="84" width="40" height="26" rx="3" fill="#f6e6f7" stroke="#b07fd9" stroke-width="2"/><path d="M152 86 L172 99 L192 86" fill="none" stroke="#b07fd9" stroke-width="2"/><circle cx="172" cy="99" r="4.5" fill="#ff6fae"/></g>
+      </svg>
+    </div>
+    <p class="maxwell-name">maxwell</p>
   </div>
   <div id="crow-bubble" class="crow-bubble" hidden>
-    <p><b>CAW! CAW!</b> <span id="crow-text"></span></p>
-    <button id="take-letter" class="btn">Take the letter 💌</button>
+    <p><b>Maxwell</b> <span id="crow-text"></span></p>
+    <button id="take-letter" class="btn">Take the letter</button>
   </div>
 
   <div id="letter-stage" class="stage" hidden>
@@ -140,7 +153,7 @@
     </div>
     <article id="letter" class="letter" hidden>
       <div id="letter-body"></div>
-      <button id="accept" class="btn" hidden>Receive your new rank ⚔️</button>
+      <button id="accept" class="btn" hidden>Get your new rank</button>
     </article>
   </div>
 
@@ -163,8 +176,8 @@
     </div>
     <p id="finale" class="finale"></p>
     <div class="finale-btns" id="finale-btns" hidden>
-      <button id="again" class="btn ghost">Read the letter again 💌</button>
-      <button id="close-ceremony" class="btn">Back to the altar 🦋</button>
+      <button id="again" class="btn ghost">Read the letter again</button>
+      <button id="close-ceremony" class="btn">Back to the altar</button>
     </div>
   </div>
 

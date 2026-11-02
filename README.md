@@ -12,7 +12,11 @@ A Shinobu-themed (Kimetsu no Yaiba) altar website for my favorite person.
 | `images/shinobu/`     | The Shinobu slideshow in the middle of the shrine             |
 | `images/couples/`     | Pictures for the "Matching Souls" couples section             |
 | `index.html`, `style.css`, `script.js` | The site itself                              |
-| `sfx.js`              | Sound effects + music box (made in code, no audio files)      |
+| `sfx.js`              | Sound effects and music box (made in code, no audio files)    |
+| `surprise.js`         | The ending: Maxwell, the love letter and the Hashira scroll   |
+| `audio/maxwell.mp3`   | Maxwell's song. Not included, see `audio/README.txt`          |
+| `images/gifs/`        | Looping Shinobu clips (small mp4s that act like GIFs)         |
+| `images/shelf/`       | Her figure shelf from MyFigureCollection                      |
 
 ## Add a picture
 
@@ -28,6 +32,12 @@ A Shinobu-themed (Kimetsu no Yaiba) altar website for my favorite person.
 - Click any empty spot → butterflies.
 - Click Shinobu's portrait → next picture + chime.
 - Click a couple → heartbeat bells and hearts.
+- Scroll to the very bottom → Maxwell spins in with a letter.
+
+## Before you give it to her
+1. Rewrite `letter` in `config.js` in your own words.
+2. Set `togetherSince` to your anniversary (YYYY-MM-DD).
+3. Add `audio/maxwell.mp3`.
 
 ## Preview on your computer
 

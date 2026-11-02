@@ -1,37 +1,50 @@
-/* THE BIG SURPRISE: a Kasugai crow delivers a love letter → Hashira promotion ceremony */
+/* THE BIG SURPRISE: Maxwell the cat brings a love letter, then the Hashira scroll */
 (function () {
   const $ = (s) => document.querySelector(s);
   const wait = (ms) => new Promise((r) => setTimeout(r, FX.reduced ? Math.min(ms, 50) : ms));
   const L = ALTAR.letter, C = ALTAR.certificate;
   let crowCame = false, busy = false;
 
-  /* ---------- 1. the crow ---------- */
+  /* ---------- 1. Maxwell ---------- */
+  let song = null, synthTimer = null;
+  function startSong() {
+    stopSong();
+    SFX.duck(true);
+    song = new Audio(ALTAR.maxwellSong || "audio/maxwell.mp3");
+    song.loop = true; song.volume = 0.8;
+    song.play().catch(() => { song = null; synthTimer = SFX.maxwellLoop(); });
+    song.addEventListener("error", () => { if (song) { song = null; synthTimer = SFX.maxwellLoop(); } });
+  }
+  function stopSong() {
+    if (song) { const s = song; song = null; let v = s.volume; const f = setInterval(() => { v -= 0.08; if (v <= 0) { s.pause(); clearInterval(f); } else s.volume = v; }, 60); }
+    if (synthTimer) { clearInterval(synthTimer); synthTimer = null; }
+  }
   async function callCrow() {
     if (busy) return;
     busy = true; crowCame = true;
-    const crow = $("#crow"), bubble = $("#crow-bubble");
-    crow.hidden = false; crow.className = "crow";
-    void crow.offsetWidth;
-    crow.classList.add("fly-in");
-    SFX.wingbeat(); setTimeout(() => SFX.wingbeat(), 700); setTimeout(() => SFX.wingbeat(), 1400);
+    const cat = $("#crow"), bubble = $("#crow-bubble");
+    cat.hidden = false; cat.className = "crow maxwell";
+    void cat.offsetWidth;
+    cat.classList.add("fly-in");
+    startSong();
     await wait(2100);
-    crow.classList.add("landed");
-    SFX.caw();
+    cat.classList.add("landed");
+    SFX.pop();
     FX.burst(innerWidth / 2, innerHeight * 0.55, 4);
     bubble.hidden = false;
     const t = $("#crow-text");
     t.textContent = "";
-    const msg = `URGENT MISSION FOR ${ALTAR.herName.toUpperCase()}! A sealed letter from your boyfriend! Deliver immediately! CAW!`;
+    const msg = `has a letter for ${ALTAR.herName}. He won't stop spinning until you take it.`;
     for (const ch of msg) { t.textContent += ch; await wait(28); }
   }
 
   $("#take-letter").addEventListener("click", async (e) => {
     e.stopPropagation();
     $("#crow-bubble").hidden = true;
-    const crow = $("#crow");
-    crow.classList.add("fly-out");
-    SFX.caw(); SFX.wingbeat();
-    setTimeout(() => { crow.hidden = true; }, 1600);
+    const cat = $("#crow");
+    cat.classList.add("fly-out");
+    SFX.pop();
+    setTimeout(() => { cat.hidden = true; stopSong(); }, 1400);
     showEnvelope();
   });
 
@@ -133,6 +146,7 @@
   $("#again").addEventListener("click", (e) => { e.stopPropagation(); $("#ceremony").hidden = true; $("#letter-stage").hidden = false; $("#envelope").hidden = true; showLetter(false); });
   $("#close-ceremony").addEventListener("click", (e) => { e.stopPropagation(); closeAll(); });
   function closeAll() {
+    stopSong();
     ["#ceremony", "#letter-stage", "#crow-bubble"].forEach((s) => ($(s).hidden = true));
     $("#crow").hidden = true;
     SFX.duck(false);

@@ -110,6 +110,21 @@ const SFX = (() => {
       [67, 71, 74, 79].forEach((n) => tone(hz(n), { t: 2.2, dur: 3.5, vol: 0.08, type: "triangle", attack: 0.1 }));
       [72, 76, 79, 84].forEach((n) => tone(hz(n), { t: 3.2, dur: 4.5, vol: 0.1, type: "triangle", attack: 0.1 }));
     },
+    /* backup tune for Maxwell if there's no mp3: a bouncy original loop */
+    maxwellLoop() {
+      if (!ctx || !on) return null;
+      const bass = [45, 52, 45, 52, 43, 50, 43, 50], mel = [76, 79, 81, 79, 76, 74, 72, 74, 76, 79, 84, 83, 81, 79, 76, 79];
+      let i = 0;
+      const step = () => {
+        const b = bass[(i >> 1) % bass.length];
+        if (i % 2 === 0) tone(hz(b), { dur: 0.2, vol: 0.22, type: "triangle" });
+        else tone(hz(b + 12), { dur: 0.12, vol: 0.08, type: "square" });
+        tone(hz(mel[i % mel.length]), { dur: 0.16, vol: 0.06, type: "square" });
+        i++;
+      };
+      step();
+      return setInterval(step, 190);
+    },
     pop() { tone(500, { dur: 0.12, vol: 0.12, glide: 1200 }); },
 
     /* soft generative music box loop */
