@@ -544,3 +544,5 @@ body.shake { animation: shake .45s; }
 .kid figcaption span { display: block; color: var(--lilac); font-size: .9rem; line-height: 1.45; }
 .kid.reveal.in { transform: none; }
 .kid-frame { transform: rotate(var(--tilt)); }
+.word { display: inline-block; white-space: nowrap; }
+.gate-inner { max-width: min(94vw, 960px); }

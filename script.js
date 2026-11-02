@@ -11,18 +11,21 @@
 
   // title letters drop in one by one
   const title = $("#gate-title");
-  const words = [["The Altar of ", false], [ALTAR.herName, true]];
+  // letters drop in one by one, grouped into words so a word never breaks across lines
+  const words = [..."The Altar of".split(" ").map((w) => [w, false]), ...ALTAR.herName.split(" ").map((w) => [w, true])];
   let k = 0;
-  words.forEach(([w, special]) => {
-    const wrap = document.createElement("span");
+  words.forEach(([w, special], wi) => {
+    if (wi) title.appendChild(document.createTextNode(" "));
+    const word = document.createElement("span");
+    word.className = "word";
     [...w].forEach((ch) => {
       const s = document.createElement("span");
       s.className = special ? "drop name-letter" : "drop";
-      s.textContent = ch === " " ? " " : ch;
+      s.textContent = ch;
       s.style.animationDelay = 0.3 + k++ * 0.06 + "s";
-      wrap.appendChild(s);
+      word.appendChild(s);
     });
-    title.appendChild(wrap);
+    title.appendChild(word);
   });
   // welcome text types itself
   const welcome = $("#welcome");
