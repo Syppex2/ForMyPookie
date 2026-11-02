@@ -125,6 +125,21 @@ const SFX = (() => {
       step();
       return setInterval(step, 190);
     },
+    /* a little meow: each kid gets a different pitch */
+    meow(n = 0) {
+      if (!ctx || !on) return;
+      const base = [620, 520, 700][n % 3];
+      const s0 = ctx.currentTime;
+      const o = ctx.createOscillator(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+      o.type = "sawtooth";
+      o.frequency.setValueAtTime(base * 0.8, s0);
+      o.frequency.linearRampToValueAtTime(base * 1.25, s0 + 0.18);
+      o.frequency.exponentialRampToValueAtTime(base * 0.7, s0 + 0.55);
+      f.type = "bandpass"; f.Q.value = 3;
+      f.frequency.setValueAtTime(900, s0); f.frequency.linearRampToValueAtTime(1800, s0 + 0.2); f.frequency.linearRampToValueAtTime(800, s0 + 0.55);
+      g.gain.setValueAtTime(0, s0); g.gain.linearRampToValueAtTime(0.25, s0 + 0.06); g.gain.exponentialRampToValueAtTime(0.001, s0 + 0.6);
+      o.connect(f); f.connect(g); g.connect(master); o.start(s0); o.stop(s0 + 0.65);
+    },
     pop() { tone(500, { dur: 0.12, vol: 0.12, glide: 1200 }); },
 
     /* soft generative music box loop */

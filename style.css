@@ -522,3 +522,25 @@ body.shake { animation: shake .45s; }
 .shelf-caption { margin: 4px 0 0; color: var(--lilac); }
 .favorites { grid-template-columns: repeat(3, 1fr); max-width: 760px; margin-left: auto; margin-right: auto; }
 @media (max-width: 600px) { .favorites { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+
+/* ================= our kids ================= */
+.kids { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 30px; padding: 10px 6px; }
+.kid { margin: 0; cursor: pointer; text-align: center; }
+.kid.reveal.in { transform: rotate(var(--tilt)); }
+.kid-frame {
+  position: relative; aspect-ratio: 4 / 5; padding: 10px; border-radius: 8px;
+  background: linear-gradient(135deg, #8a6446, #c9a27a 40%, #6e4c33);
+  box-shadow: inset 0 0 0 3px rgba(255,255,255,.15), 0 18px 40px rgba(0,0,0,.5);
+  transition: transform .35s cubic-bezier(.3,1.5,.5,1);
+}
+.kid-frame img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 3px; border: 3px solid #fff8ec; }
+.kid:hover .kid-frame { transform: translateY(-6px) rotate(calc(var(--tilt) * -1)); }
+.kid.meow .kid-frame { animation: meowWiggle .5s ease-in-out; }
+@keyframes meowWiggle { 25% { transform: rotate(-4deg) scale(1.03); } 50% { transform: rotate(3deg) scale(1.05); } 75% { transform: rotate(-2deg); } }
+.kid-paws { position: absolute; left: 50%; top: -14px; width: 60px; height: 22px; margin-left: -30px; background: radial-gradient(circle, var(--pink) 30%, transparent 32%) 0 0 / 20px 22px repeat-x; opacity: .9; }
+.kid figcaption { margin-top: 14px; }
+.kid figcaption b { display: block; font-family: var(--serif); font-size: 1.4rem; }
+.kid figcaption small { display: block; color: var(--pink); font-style: italic; margin-bottom: 6px; }
+.kid figcaption span { display: block; color: var(--lilac); font-size: .9rem; line-height: 1.45; }
+.kid.reveal.in { transform: none; }
+.kid-frame { transform: rotate(var(--tilt)); }

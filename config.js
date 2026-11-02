@@ -78,6 +78,13 @@ const ALTAR = {
     caption: "43 figures and counting. I counted 5 Shinobus, 5 Mikus and too many Giyus",
   },
 
+  // ---------- OUR KIDS (pictures in images/kids/) ----------
+  kids: [
+    { name: "Gato Chico", aka: "legally Raven", img: "gato-chico.webp", line: "Watches everyone from the top of the furniture. Nobody has called him Raven in years" },
+    { name: "Lloyd", aka: "ÑOYD", img: "lloyd.webp", line: "Her son. The fluffiest one, and the one I see on every video call instead of her" },
+    { name: "Miru", aka: "my kid", img: "miru.webp", line: "Falls asleep on me while I play. I'm not allowed to move until Miru wakes up" },
+  ],
+
   // ---------- MATCHING SOULS (couples, like our matching pfps) ----------
   couplesBanner: { img: "couples/giyu-shinobu-official.webp", caption: "GiyuShino. Official art, so it's basically canon" },
   couples: [

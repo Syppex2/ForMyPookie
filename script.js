@@ -313,6 +313,25 @@
     el.querySelectorAll(".cabinet").forEach((c) => c.addEventListener("click", (e) => { e.stopPropagation(); SFX.chime(); openLightbox(c.querySelector("img").src, sh.caption); }));
   }
 
+
+  /* ================= our kids ================= */
+  (ALTAR.kids || []).forEach((k, i) => {
+    const el = document.createElement("figure");
+    el.className = "kid reveal";
+    el.style.setProperty("--d", i * 0.12 + "s");
+    el.style.setProperty("--tilt", [-3, 2, -1.5][i % 3] + "deg");
+    el.innerHTML = `
+      <div class="kid-frame"><img src="images/kids/${esc(k.img)}" alt="${esc(k.name)}" loading="lazy" /><span class="kid-paws" aria-hidden="true"></span></div>
+      <figcaption><b>${esc(k.name)}</b>${k.aka ? `<small>${esc(k.aka)}</small>` : ""}<span>${esc(k.line)}</span></figcaption>`;
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      SFX.meow(i);
+      el.classList.remove("meow"); void el.offsetWidth; el.classList.add("meow");
+      heartsAt(e.clientX, e.clientY, 6);
+    });
+    $("#kids").appendChild(el);
+  });
+
   /* ================= hall of shame ================= */
   ALTAR.chats.forEach((c, i) => {
     const el = document.createElement("figure");
