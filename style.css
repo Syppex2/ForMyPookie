@@ -818,3 +818,6 @@ body.popup-open .walker { visibility: hidden; }
 .catch-fly svg { filter: drop-shadow(0 0 8px rgba(231,182,240,.9)); }
 .walker { bottom: 70px; }
 @media (min-width: 700px) { .walker { bottom: 12px; } }
+/* sections only draw inside their own box (for speed), so leave room for frames and shadows */
+main > section { padding: 14px 12px 40px; margin-left: -12px; margin-right: -12px; }
+section + section { margin-top: 26px; }
