@@ -546,7 +546,7 @@
   /* ================= freeze the page behind popups ================= */
   // While a letter, chat or ceremony is open, the page underneath stops moving,
   // so the phone only has to draw the popup.
-  const popups = ["#ow-modal", "#letter-stage", "#ceremony", "#wake", "#wish", "#lightbox"].map((q) => $(q)).filter(Boolean);
+  const popups = ["#ow-modal", "#letter-stage", "#ceremony", "#wake", "#wish", "#lightbox", "#install-modal"].map((q) => $(q)).filter(Boolean);
   let frozen = false, frozenVideos = [];
   function syncFreeze() {
     const open = popups.some((el) => !el.hidden);

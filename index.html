@@ -4,11 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Butterfly Altar</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦋</text></svg>" />
+  <link rel="icon" type="image/png" href="icons/favicon-32.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20261104l" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-180.png" />
+  <meta name="theme-color" content="#1a0f22" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Butterfly Altar" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="style.css?v=20261105b" />
 </head>
 <body>
   <!-- the rooftop night, blurred, behind the whole altar -->
@@ -46,6 +53,7 @@
       <h2>Everything <span class="her-name"></span> loves</h2>
       <p class="sub">Shoes off please, this is a sacred place</p>
     </header>
+    <aside id="daily" class="daily reveal" aria-label="Note of the day"></aside>
 
     <section class="shrine reveal">
       <div class="torii" aria-hidden="true"><span></span><span></span></div>
@@ -88,6 +96,7 @@
     <section>
       <h3 class="section-title reveal"><span>Our Story</span><small>five years, one chapter at a time</small></h3>
       <ol id="story" class="story"></ol>
+      <div id="countdown" class="countdown reveal"></div>
     </section>
 
     <section>
@@ -121,6 +130,16 @@
     </section>
 
     <section>
+      <h3 class="section-title reveal"><span>Caso Cerrado</span><small>the court of Pookie vs Syppex</small></h3>
+      <div id="court" class="court reveal"></div>
+    </section>
+
+    <section>
+      <h3 class="section-title reveal"><span>Butterfly Catch</span><small>catch Shinobu's butterflies before they fly away</small></h3>
+      <div id="catch" class="catch reveal"></div>
+    </section>
+
+    <section>
       <h3 class="section-title reveal"><span>Final Selection</span><small>how well do you know us?</small></h3>
       <div id="quiz" class="quiz reveal"></div>
     </section>
@@ -134,6 +153,7 @@
       <svg class="butterfly" viewBox="0 0 100 80" aria-hidden="true"><use href="#bfly" /></svg>
       <p id="from"></p>
       <p id="days" class="days" hidden></p>
+      <button id="install" class="install-link">Put the altar on your phone</button>
       <button id="call-crow" class="btn ghost">Maxwell has something for you</button>
     </footer>
   </main>
@@ -235,6 +255,18 @@
     </article>
   </div>
 
+  <!-- the kids walking by -->
+  <button id="walker" class="walker" hidden aria-label="One of our cats"><img alt="" /><span class="walker-note"></span></button>
+
+  <!-- how to install -->
+  <div id="install-modal" class="stage" hidden>
+    <article class="letter ow-letter">
+      <p class="ow-title">Put the altar on your phone</p>
+      <p class="ow-text" id="install-text"></p>
+      <button class="btn" id="install-close">Got it</button>
+    </article>
+  </div>
+
   <!-- lightbox -->
   <div id="lightbox" hidden><img alt="" /><p></p></div>
 
@@ -255,10 +287,11 @@
     </defs>
   </svg>
 
-  <script src="config.js?v=20261104l"></script>
-  <script src="sfx.js?v=20261104l"></script>
-  <script src="script.js?v=20261104l"></script>
-  <script src="extras.js?v=20261104l"></script>
-  <script src="surprise.js?v=20261104l"></script>
+  <script src="config.js?v=20261105b"></script>
+  <script src="sfx.js?v=20261105b"></script>
+  <script src="script.js?v=20261105b"></script>
+  <script src="extras.js?v=20261105b"></script>
+  <script src="fun.js?v=20261105b"></script>
+  <script src="surprise.js?v=20261105b"></script>
 </body>
 </html>

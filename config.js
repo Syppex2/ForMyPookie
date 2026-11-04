@@ -215,6 +215,61 @@ const ALTAR = {
     { when: "you pass the Final Selection", secret: true, text: "You know everything about us. Of course you do, you were there for all of it. Your reward: one hug that never expires, redeemable anytime, anywhere. I love you, pookie." },
   ],
 
+  // ---------- THE KIDS VISIT (they walk across the screen now and then) ----------
+  kidNotes: {
+    "Gato Chico": ["Gato Chico has been watching you from the top of the fridge. He approves", "Gato Chico says his name is Raven actually. Nobody listens", "Gato Chico wants food. And love. Mostly food", "Gato Chico is judging your sleep schedule"],
+    "Lloyd": ["ÑOYD misses you", "Lloyd says his mom is the best mom", "ÑOYD wants to be on the video call again", "Lloyd sat on the keyboard. Sorry about that"],
+    "Miru": ["Miru says go to sleep", "Miru is asleep on dad again. Send help", "Miru wants you to come visit", "Miru brought you a hug (and some fur)"],
+  },
+
+  // ---------- NOTE OF THE DAY (a different one every day) ----------
+  dailyNotes: [
+    "Good morning, pookie. Or good night. Either way, I love you",
+    "Drink some water. Shinobu's orders",
+    "You're doing better than you think",
+    "Reminder: you're my favorite notification",
+    "Today is a good day to send me ten WAKEUPs",
+    "If you're tired, rest. The world can wait, I'll wait too",
+    "I'm proud of you. For everything, but especially for not giving up",
+    "Somewhere right now, Lloyd is thinking about you",
+    "You make even boring days feel like an episode I want to rewatch",
+    "Eat something good today. You deserve it",
+    "You + me > every ship on this altar",
+    "Thank you for existing. Seriously",
+    "If today is heavy, put it down for a bit and come talk to me",
+    "You're cute. That's the note. That's all",
+    "Shinobu smiles when she's angry. You smile and I forget what day it is",
+    "Five years and I still get excited when you text me",
+    "Take a deep breath. In, out. Okay, now go be amazing",
+    "You're allowed to have a lazy day. Eepy is valid",
+    "Miru says hi. Gato Chico says nothing, he's busy",
+    "I'd start another rebellion for you. Sorry Baxth",
+    "Remember Caso Cerrado in Roblox? I'm laughing again just thinking about it",
+    "Whatever happens today, you still have me",
+    "You're the gigantic angry wife and I'm the happiest little guy",
+    "Your laugh is my favorite sound. Maxwell's song is second",
+    "Small steps still count. Every one of them",
+    "I really want to stay at your house",
+    "Ara ara, someone is checking the altar again. I love that",
+    "You're strong, but you don't always have to be. I've got you",
+    "Today's mission: be kind to yourself",
+    "I love you more than yesterday. Less than tomorrow",
+  ],
+
+  // ---------- CASO CERRADO: POOKIE VS SYPPEX ----------
+  cases: [
+    { title: "Pookie vs Syppex", subject: "The bedtime case", charge: "The defendant said he would go to sleep at 12. He was still online at 3.", defense: "Your honor, I was thinking about her. It's not my fault.", verdict: "GUILTY", sentence: "Sleep on time for a whole week, and send a goodnight message every night." },
+    { title: "Pookie vs Syppex", subject: "The ignored WAKEUP", charge: "The defendant took four whole minutes to answer a WAKEUP.", defense: "I was in the bathroom, your honor.", verdict: "GUILTY", sentence: "Reply to every WAKEUP in less than ten seconds, for the rest of his life." },
+    { title: "Syppex vs Pookie", subject: "The stolen heart", charge: "The accused stole the plaintiff's heart in Baxth's server in 2021 and never gave it back.", defense: "Pookie: I'm keeping it.", verdict: "NOT GUILTY", sentence: "The heart was given freely. She can keep it forever." },
+  ],
+
+  // ---------- BUTTERFLY CATCH (mini game) ----------
+  game: {
+    seconds: 30,
+    goal: 20,
+    win: "You caught them all, just like you caught me in 2021. Your prize: I owe you a movie night of your choice. No complaints allowed.",
+  },
+
   // ---------- WAKEUP SECRET ----------
   // Typing WAKEUP anywhere on the site (or tapping WAKEUP in the footer) opens this.
   wakeup: {
