@@ -167,9 +167,12 @@
   $("#call-crow").addEventListener("click", (e) => { e.stopPropagation(); callCrow(); });
   // Maxwell arrives by himself the first time she scrolls all the way down
   let maxTimer = null;
+  // "all the way down" = the last button on the page is fully on screen
   function nearBottom() {
-    const H = document.documentElement.scrollHeight;
-    return scrollY + innerHeight >= H - 250 && scrollY > innerHeight;
+    const last = document.querySelector("#call-crow");
+    if (!last || scrollY < innerHeight) return false;
+    const r = last.getBoundingClientRect();
+    return r.height > 0 && r.top >= 0 && r.bottom <= innerHeight;
   }
   addEventListener("scroll", () => {
     if (crowCame || maxTimer || document.querySelector("#gate") || $("#altar").hidden || !nearBottom()) return;

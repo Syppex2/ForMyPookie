@@ -726,3 +726,5 @@ body::before { animation: none; }                                   /* full-scre
 /* skip drawing sections that are far off-screen */
 main > section { content-visibility: auto; contain-intrinsic-size: auto 900px; }
 main > section.shrine { content-visibility: visible; }
+.wk-word { margin-left: .3em; animation: wkPulse 2.4s ease-in-out infinite; }
+@keyframes wkPulse { 50% { transform: scale(1.06); } }

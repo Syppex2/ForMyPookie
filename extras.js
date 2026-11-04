@@ -207,7 +207,7 @@
   const from = $("#from");
   if (from && from.textContent.includes("WAKEUP")) {
     const [a, b] = from.textContent.split("WAKEUP");
-    from.textContent = a;
+    from.textContent = a.trimEnd();
     const w = document.createElement("button");
     w.className = "wk-word"; w.textContent = "WAKEUP"; w.setAttribute("aria-label", "WAKEUP (secret)");
     w.addEventListener("click", (e) => { e.stopPropagation(); wakeup(); });
