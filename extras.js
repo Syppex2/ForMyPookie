@@ -106,13 +106,16 @@
   const box = $("#openwhen"), modal = $("#ow-modal");
   // the secret letter unlocks only for this visit: she has to pass the quiz each time
   let passedThisVisit = false;
+  // envelopes start sealed on every visit
+  const openedThisVisit = new Set();
+  try { Object.keys(localStorage).filter((k) => k.startsWith("altar-ow-")).forEach((k) => localStorage.removeItem(k)); } catch (e) {}
   try { localStorage.removeItem("altar-quiz-passed"); } catch (e) {}
   function renderLetters() {
     const passed = passedThisVisit;
     box.innerHTML = "";
     (ALTAR.openWhen || []).forEach((l, i) => {
       const locked = l.secret && !passed;
-      const opened = !locked && store.get("ow-" + i) === "1";
+      const opened = !locked && openedThisVisit.has(i);
       const b = document.createElement("button");
       b.className = "ow-env reveal in" + (l.secret ? " secret" : "") + (locked ? " locked" : "") + (opened ? " opened" : "");
       b.style.setProperty("--tilt", ((i * 37) % 7) - 3 + "deg");
@@ -131,7 +134,7 @@
   }
   function openLetter(l, i, b) {
     SFX.crack(); setTimeout(() => SFX.rustle(), 200);
-    store.set("ow-" + i, "1");
+    openedThisVisit.add(i);
     b.classList.add("opened");
     modal.querySelector(".ow-title").textContent = "Open when " + l.when;
     modal.querySelector(".ow-text").textContent = l.text;
