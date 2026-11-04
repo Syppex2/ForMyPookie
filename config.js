@@ -172,9 +172,9 @@ const ALTAR = {
   // Each chapter can have: img (one picture), pair (two pictures side by side),
   // youtube (a video id), kids: true (shows the cats), today: true (counts the days).
   story: [
-    { title: "Baxth", text: "We met talking in Baxth, a friend's Discord server. Two random people typing in the same chat. I had no idea." },
-    { title: "The rebellion", text: "Then we started a rebellion in Baxth. No regrets. I'd do it again." },
-    { title: "awa", text: "You made your own server, awa, and somehow I was there all the time. I think you knew what you were doing." },
+    { title: "Baxth's server", text: "We met talking in our friend Baxth's server. Two random people typing in the same chat. I had no idea what was coming." },
+    { title: "The rebellion", text: "Then we started a little rebellion against Baxth, just for fun. Don't worry, we're all friends again now. Hi Baxth." },
+    { title: "awa", text: "You made awa, our rebellion server, and somehow I was there all the time. That's where we became us." },
     { title: "July 25, 2021", text: "The day you became my girlfriend. Best day of my life, and every day after it is a close second." },
     { title: "Our first matching pfp", pair: ["couples/zhongli.webp", "couples/hutao.webp"], text: "Zhongli and Hu Tao. Our friend Wolf picked them for us, and honestly that's a big part of why we ended up together. Thank you, Wolf. The first of about a thousand matching pfps." },
     { title: "Our song", youtube: "KvMY1uzSC1E", text: "I Really Want to Stay at Your House. Every time it plays, I think of you." },
@@ -186,8 +186,8 @@ const ALTAR = {
   // ---------- FINAL SELECTION (quiz about us) ----------
   // The first option is always the right one (they get shuffled on the page).
   quiz: [
-    { q: "Where did we meet?", options: ["Baxth", "awa", "A Genshin lobby", "Roblox"] },
-    { q: "What's the name of the server you made?", options: ["awa", "owo", "uwu", "Baxth"] },
+    { q: "Where did we meet?", options: ["Baxth's server", "awa", "A Genshin lobby", "Roblox"] },
+    { q: "What was the name of our rebellion server?", options: ["awa", "owo", "uwu", "Baxth"] },
     { q: "When did we become a couple?", options: ["July 25, 2021", "June 25, 2021", "July 25, 2022", "August 25, 2021"] },
     { q: "What was our first matching pfp?", options: ["Zhongli and Hu Tao", "Giyu and Shinobu", "Denji and Reze", "Okarun and Momo"] },
     { q: "Who picked our first matching pfp?", options: ["Wolf", "Me", "You", "Maxwell"] },

@@ -94,7 +94,7 @@
       SFX.fanfare();
       for (let i = 0; i < 24; i++) setTimeout(() => FX.burst(Math.random() * innerWidth, innerHeight + 10, 1, true), i * 60);
       FX.heartRain(30);
-      store.set("quiz-passed", "1");
+      passedThisVisit = true;
       renderLetters();
       const sec = document.querySelector(".ow-env.secret");
       if (sec) sec.classList.add("just-unlocked");
@@ -104,12 +104,15 @@
 
   /* ================= OPEN WHEN ================= */
   const box = $("#openwhen"), modal = $("#ow-modal");
+  // the secret letter unlocks only for this visit: she has to pass the quiz each time
+  let passedThisVisit = false;
+  try { localStorage.removeItem("altar-quiz-passed"); } catch (e) {}
   function renderLetters() {
-    const passed = store.get("quiz-passed") === "1";
+    const passed = passedThisVisit;
     box.innerHTML = "";
     (ALTAR.openWhen || []).forEach((l, i) => {
       const locked = l.secret && !passed;
-      const opened = store.get("ow-" + i) === "1";
+      const opened = !locked && store.get("ow-" + i) === "1";
       const b = document.createElement("button");
       b.className = "ow-env reveal in" + (l.secret ? " secret" : "") + (locked ? " locked" : "") + (opened ? " opened" : "");
       b.style.setProperty("--tilt", ((i * 37) % 7) - 3 + "deg");

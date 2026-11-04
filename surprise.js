@@ -165,18 +165,20 @@
 
   /* ---------- triggers ---------- */
   $("#call-crow").addEventListener("click", (e) => { e.stopPropagation(); callCrow(); });
-  // the crow arrives by itself the first time she reaches the end of the altar
-  new IntersectionObserver((es, obs) => {
-    // only when she really scrolled down to the end (not while the page is still loading and short)
-    if (es.some((x) => x.isIntersecting) && !crowCame && !$("#altar").hidden && scrollY > innerHeight * 2) {
-      const tryCome = () => {
-        if (crowCame) return;
-        const w = document.querySelector("#wake");
-        if (w && !w.hidden) return setTimeout(tryCome, 1000); // wait until the WAKEUP secret is closed
-        const r = document.querySelector("footer").getBoundingClientRect();
-        if (r.top < innerHeight && r.bottom > 0) { obs.disconnect(); callCrow(); }
-      };
-      setTimeout(tryCome, 1200);
-    }
-  }, { threshold: 0.6 }).observe(document.querySelector("footer"));
+  // Maxwell arrives by himself the first time she scrolls all the way down
+  let maxTimer = null;
+  function nearBottom() {
+    const H = document.documentElement.scrollHeight;
+    return scrollY + innerHeight >= H - 250 && scrollY > innerHeight;
+  }
+  addEventListener("scroll", () => {
+    if (crowCame || maxTimer || document.querySelector("#gate") || $("#altar").hidden || !nearBottom()) return;
+    maxTimer = setTimeout(function tryCome() {
+      maxTimer = null;
+      if (crowCame || !nearBottom()) return;
+      const w = document.querySelector("#wake");
+      if (w && !w.hidden) { maxTimer = setTimeout(tryCome, 1000); return; } // wait until the WAKEUP secret is closed
+      callCrow();
+    }, 900);
+  }, { passive: true });
 })();

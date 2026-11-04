@@ -222,7 +222,7 @@
 
   /* ================= wisteria garland ================= */
   const wis = $("#wisteria");
-  const strands = innerWidth < 600 ? 14 : 30;
+  const strands = innerWidth < 600 ? 10 : 22;
   for (let i = 0; i < strands; i++) {
     const st = document.createElement("div");
     st.className = "strand";
@@ -453,7 +453,7 @@
   if (finePointer && !reduced)
     addEventListener("pointermove", (e) => {
       const now = performance.now();
-      if (now - lastSpark < 40) return;
+      if (now - lastSpark < 70) return;
       lastSpark = now;
       const s = document.createElement("span");
       s.className = "spark";
@@ -478,8 +478,8 @@
   );
 
   const small = innerWidth < 600;
-  for (let i = 0; i < (small ? 7 : 14); i++) flyer();
-  for (let i = 0; i < (small ? 12 : 26); i++) petal();
+  for (let i = 0; i < (small ? 5 : 9); i++) flyer();
+  for (let i = 0; i < (small ? 8 : 16); i++) petal();
 
   /* ================= gate: rainy night on the roof ================= */
   const rainCv = $("#rain"), rctx = rainCv.getContext("2d");

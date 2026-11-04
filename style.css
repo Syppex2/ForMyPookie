@@ -704,3 +704,25 @@ body.wk-ring { animation: shake .3s 4; }
 body.wk-ring #wake { animation: wkFlash .3s 4; }
 @keyframes wkFlash { 50% { background-color: rgba(255,111,174,.35); } }
 .wk-word { font: inherit; color: var(--hot-pink); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline dotted; text-underline-offset: 4px; animation: beat 2.4s ease-in-out infinite; display: inline-block; }
+
+/* ================= performance =================
+   Everything below swaps effects that made the browser repaint big areas
+   every frame for ones the graphics card can do on its own. */
+body::before { animation: none; }                                   /* full-screen filter animation */
+.backdrop { background-image: url("images/gate/rooftop-blur.webp"); filter: none; } /* pre-blurred file instead of a live blur */
+.flyer, .petal, .strand, .heart, .spark, .pop-heart { will-change: transform; }
+.flyer svg { filter: none; }                                         /* drop-shadow on 20 moving butterflies */
+.strand i { box-shadow: none; }
+.ch-card { backdrop-filter: none; background: rgba(43,24,56,.88); }
+.card.fav::before { animation: favGlow 3s ease-in-out infinite alternate; background: linear-gradient(135deg, var(--pink), var(--gold), var(--teal), var(--lilac)); }
+@keyframes favGlow { from { opacity: .35; } to { opacity: .7; } }
+.halo { background: conic-gradient(transparent, rgba(255,213,138,.6), transparent 30%, rgba(246,166,203,.6), transparent 60%, rgba(79,182,163,.5), transparent); animation: haloSpin 10s linear infinite; will-change: transform; }
+@keyframes haloSpin { to { transform: rotate(360deg); } }
+.glass { animation: none; background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.18) 42%, transparent 52%); }
+.section-title span, .goddess-name { animation: none; background-position: 0 0; }
+.btn { animation: none; }
+#enter { animation: pulse 2.4s ease-in-out infinite, fadeIn 1s 2s both; }
+.yt-play { animation: none; }
+/* skip drawing sections that are far off-screen */
+main > section { content-visibility: auto; contain-intrinsic-size: auto 900px; }
+main > section.shrine { content-visibility: visible; }
