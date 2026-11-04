@@ -25,7 +25,7 @@
   }
   async function callCrow() {
     if (busy) return;
-    const wk = document.querySelector("#wake"); if (wk && !wk.hidden) return;
+    if (document.body.classList.contains("popup-open")) return;
     busy = true; crowCame = true;
     const cat = $("#crow"), bubble = $("#crow-bubble");
     cat.hidden = false; cat.className = "crow maxwell";
@@ -140,9 +140,9 @@
     await wait(500);
     // grand finale
     SFX.fanfare();
-    for (let i = 0; i < 40; i++) setTimeout(() => FX.burst(Math.random() * innerWidth, innerHeight + 10, 1, true), i * 70);
-    FX.heartRain(60);
-    setTimeout(() => FX.heartRain(40), 1800);
+    for (let i = 0; i < 18; i++) setTimeout(() => FX.burst(Math.random() * innerWidth, innerHeight + 10, 1, true), i * 110);
+    FX.heartRain(28);
+    setTimeout(() => FX.heartRain(20), 1800);
     await wait(900);
     const fin = $("#finale");
     fin.classList.add("show");
@@ -179,8 +179,7 @@
     maxTimer = setTimeout(function tryCome() {
       maxTimer = null;
       if (crowCame || !nearBottom()) return;
-      const w = document.querySelector("#wake");
-      if (w && !w.hidden) { maxTimer = setTimeout(tryCome, 1000); return; } // wait until the WAKEUP secret is closed
+      if (document.body.classList.contains("popup-open")) { maxTimer = setTimeout(tryCome, 1000); return; } // wait until letters, chats or photos are closed
       callCrow();
     }, 900);
   }, { passive: true });

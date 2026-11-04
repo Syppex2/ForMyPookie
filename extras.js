@@ -92,8 +92,8 @@
     $("#quiz-again").addEventListener("click", (e) => { e.stopPropagation(); quizStart(); });
     if (pass) {
       SFX.fanfare();
-      for (let i = 0; i < 24; i++) setTimeout(() => FX.burst(Math.random() * innerWidth, innerHeight + 10, 1, true), i * 60);
-      FX.heartRain(30);
+      for (let i = 0; i < 12; i++) setTimeout(() => FX.burst(Math.random() * innerWidth, innerHeight + 10, 1, true), i * 90);
+      FX.heartRain(18);
       passedThisVisit = true;
       renderLetters();
       const sec = document.querySelector(".ow-env.secret");
@@ -182,8 +182,8 @@
     const typing = document.createElement("p"); typing.className = "wk-typing"; typing.textContent = `${W.myName} is typing...`; chat.appendChild(typing);
     await wait(1600); typing.remove();
     bubble(W.myName, W.myPfp, W.reply, true); SFX.heart();
-    for (let i = 0; i < 30; i++) setTimeout(() => FX.burst(Math.random() * innerWidth, innerHeight + 10, 1, true), i * 50);
-    FX.heartRain(35);
+    for (let i = 0; i < 14; i++) setTimeout(() => FX.burst(Math.random() * innerWidth, innerHeight + 10, 1, true), i * 80);
+    FX.heartRain(22);
     await wait(2200);
     chat.hidden = true;
     $("#wake-text").textContent = W.message;

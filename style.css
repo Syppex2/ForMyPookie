@@ -728,3 +728,17 @@ main > section { content-visibility: auto; contain-intrinsic-size: auto 900px; }
 main > section.shrine { content-visibility: visible; }
 .wk-word { margin-left: .3em; animation: wkPulse 2.4s ease-in-out infinite; }
 @keyframes wkPulse { 50% { transform: scale(1.06); } }
+
+/* ================= popups: lighter to draw =================
+   No live blur behind popups (it re-blurred the whole screen every frame);
+   a deeper tint looks almost the same. */
+.stage { backdrop-filter: none; background: radial-gradient(circle at 50% 40%, rgba(60,32,90,.93), rgba(14,8,20,.985) 70%); }
+#lightbox, #wish { backdrop-filter: none; background: rgba(20,11,28,.95); }
+.sound-btn { backdrop-filter: none; background: rgba(43,24,56,.92); }
+.letter { box-shadow: 0 24px 60px rgba(0,0,0,.55); contain: layout paint; }
+.letter, .wake-chat, .scroll, .envelope, .crow, .crow-bubble { will-change: transform; }
+/* everything behind an open popup stops animating */
+body.popup-open main *, body.popup-open #sky > .flyer:not(.short), body.popup-open #sky > .flyer:not(.short) *, body.popup-open #sky > .petal { animation-play-state: paused !important; }
+/* background butterflies and petals rest; celebration bursts (.short) still fly */
+body.popup-open #sky > .flyer:not(.short), body.popup-open #sky > .petal { visibility: hidden; }
+body.popup-open #fx { z-index: 70; }

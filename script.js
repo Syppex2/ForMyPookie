@@ -389,8 +389,8 @@
     wish.hidden = false;
     requestAnimationFrame(() => wish.classList.add("open"));
     SFX.wish();
-    for (let i = 0; i < 26; i++) setTimeout(() => burst(Math.random() * innerWidth, innerHeight + 20, 1, true), i * 60);
-    heartRain(40);
+    for (let i = 0; i < 14; i++) setTimeout(() => burst(Math.random() * innerWidth, innerHeight + 20, 1, true), i * 90);
+    heartRain(24);
   }
   function closeWish() { if (wish.hidden) return; wish.classList.remove("open"); setTimeout(() => (wish.hidden = true), 400); }
   wish.addEventListener("click", (e) => { e.stopPropagation(); closeWish(); });
@@ -410,7 +410,7 @@
     f.style.setProperty("--rot", Math.random() * 60 - 30 + "deg");
     f.style.animationDuration = dur + "s";
     if (!short) f.style.animationDelay = -Math.random() * dur + "s";
-    sky.appendChild(f);
+    (short ? fx : sky).appendChild(f); // celebration bursts fly in front of everything
     if (short) setTimeout(() => f.remove(), dur * 1000);
   }
   function burst(x, y, n = 3, big) { for (let i = 0; i < n; i++) flyer({ x, y, short: true, big }); }
@@ -543,5 +543,29 @@
     const on = SFX.toggle();
     e.currentTarget.textContent = on ? "🔊" : "🔇";
   });
+  /* ================= freeze the page behind popups ================= */
+  // While a letter, chat or ceremony is open, the page underneath stops moving,
+  // so the phone only has to draw the popup.
+  const popups = ["#ow-modal", "#letter-stage", "#ceremony", "#wake", "#wish", "#lightbox"].map((q) => $(q)).filter(Boolean);
+  let frozen = false, frozenVideos = [];
+  function syncFreeze() {
+    const open = popups.some((el) => !el.hidden);
+    if (open === frozen) return;
+    frozen = open;
+    document.body.classList.toggle("popup-open", open);
+    if (open) {
+      frozenVideos = [...document.querySelectorAll("main video")].filter((v) => !v.paused);
+      frozenVideos.forEach((v) => v.pause());
+      clearInterval(gTimer);
+    } else {
+      frozenVideos.forEach((v) => { const p = v.play(); if (p) p.catch(() => {}); });
+      frozenVideos = [];
+      if (!$("#altar").hidden) restartGoddess();
+      setTimeout(() => dispatchEvent(new Event("scroll")), 450); // lets Maxwell check if she's at the bottom
+    }
+  }
+  const mo = new MutationObserver(syncFreeze);
+  popups.forEach((el) => mo.observe(el, { attributes: true, attributeFilter: ["hidden"] }));
+
   window.FX = { burst, heartRain, flyer, heartsAt, openLightbox, reduced };
 })();
