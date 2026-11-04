@@ -88,6 +88,7 @@ const ALTAR = {
   // ---------- MATCHING SOULS (couples, like our matching pfps) ----------
   couplesBanner: { img: "couples/giyu-shinobu-official.webp", caption: "GiyuShino. Official art, so it's basically canon" },
   couples: [
+    { a: { name: "Zhongli", img: "couples/zhongli.webp" }, b: { name: "Hu Tao", img: "couples/hutao.webp" }, from: "Genshin Impact", note: "Our very first matching pfp. Wolf picked it, and that's kind of how we happened" },
     { a: { name: "Giyu",    img: "couples/giyu.png" },    b: { name: "Shinobu", img: "characters/shinobu.png" }, from: "Kimetsu no Yaiba", note: "She bullies him and he lets her. Sounds familiar" },
     { a: { name: "Obanai",  img: "couples/obanai.jpg" },  b: { name: "Mitsuri", img: "couples/mitsuri.png" },    from: "Kimetsu no Yaiba", note: "He wrote her letters. I made you a website" },
     { a: { name: "Sanemi",  img: "couples/sanemi.png" },  b: { name: "Kanae",   img: "couples/kanae.png" },      from: "Kimetsu no Yaiba", note: "Grumpy guy, sweet girl" },
@@ -165,6 +166,53 @@ const ALTAR = {
   // The section only shows up when this list has something in it.
   // { title: "Name of the doujin", by: "artist or circle", link: "https://...", note: "why we like it" },
   doujinshi: [
+  ],
+
+  // ---------- OUR STORY (timeline) ----------
+  // Each chapter can have: img (one picture), pair (two pictures side by side),
+  // youtube (a video id), kids: true (shows the cats), today: true (counts the days).
+  story: [
+    { title: "Baxth", text: "We met talking in Baxth, a friend's Discord server. Two random people typing in the same chat. I had no idea." },
+    { title: "The rebellion", text: "Then we started a rebellion in Baxth. No regrets. I'd do it again." },
+    { title: "awa", text: "You made your own server, awa, and somehow I was there all the time. I think you knew what you were doing." },
+    { title: "July 25, 2021", text: "The day you became my girlfriend. Best day of my life, and every day after it is a close second." },
+    { title: "Our first matching pfp", pair: ["couples/zhongli.webp", "couples/hutao.webp"], text: "Zhongli and Hu Tao. Our friend Wolf picked them for us, and honestly that's a big part of why we ended up together. Thank you, Wolf. The first of about a thousand matching pfps." },
+    { title: "Our song", youtube: "KvMY1uzSC1E", text: "I Really Want to Stay at Your House. Every time it plays, I think of you." },
+    { title: "Caso Cerrado, Roblox edition", gavel: true, text: "The night we watched the Caso Cerrado Roblox episode and couldn't breathe from laughing. Still one of my favorite memories with you." },
+    { title: "The family grew", kids: true, text: "Gato Chico, Lloyd and Miru. Three kids and none of them listen to us." },
+    { title: "Today", today: true, text: "And I'd still choose you. Every single time." },
+  ],
+
+  // ---------- FINAL SELECTION (quiz about us) ----------
+  // The first option is always the right one (they get shuffled on the page).
+  quiz: [
+    { q: "Where did we meet?", options: ["Baxth", "awa", "A Genshin lobby", "Roblox"] },
+    { q: "What's the name of the server you made?", options: ["awa", "owo", "uwu", "Baxth"] },
+    { q: "When did we become a couple?", options: ["July 25, 2021", "June 25, 2021", "July 25, 2022", "August 25, 2021"] },
+    { q: "What was our first matching pfp?", options: ["Zhongli and Hu Tao", "Giyu and Shinobu", "Denji and Reze", "Okarun and Momo"] },
+    { q: "Who picked our first matching pfp?", options: ["Wolf", "Me", "You", "Maxwell"] },
+    { q: "What's Gato Chico's real name?", options: ["Raven", "Miru", "Lloyd", "Gato Grande"] },
+    { q: "What's ÑOYD's actual name?", options: ["Lloyd", "Loid Forger", "Noyd", "Raven"] },
+    { q: "What's our song?", options: ["I Really Want to Stay at Your House", "Maxwell the Cat Theme", "Gurenge", "Kick Back"] },
+    { q: "What made us laugh until we couldn't breathe?", options: ["The Caso Cerrado Roblox episode", "The panda video", "Maxwell spinning", "Doggy jumpscares"] },
+    { q: "What do you yell when I take too long to answer?", options: ["STOP IGNORING ME", "Ara ara", "Tsun tsun", "Good morning"] },
+    { q: "Who is the real owner of this altar?", options: ["Shinobu", "You", "Maxwell", "Doggy"] },
+  ],
+  quizPass: 7, // how many right answers she needs
+  quizRight: ["WAWA, correct", "Ara ara, you know us too well", "Correct. Shinobu is impressed", "Yes! Of course you remember"],
+  quizWrong: ["Tsun tsun. Wrong", "Ara ara... that's not it", "STOP IGNORING THE RIGHT ANSWER", "Hmm. I'm telling Lloyd"],
+
+  // ---------- OPEN WHEN... (letters) ----------
+  // Rewrite any of these in your own words. "secret: true" stays locked until she passes the quiz.
+  openWhen: [
+    { when: "you can't sleep", text: "Eepy but can't sleep? Close your eyes and imagine I'm there. ÑOYD on your feet, Miru on me, and me telling you the most boring story in the world until you fall asleep. Sleep well, pookie. I'll be here when you wake up, and yes, you can send me ten WAKEUPs in the morning." },
+    { when: "you're mad at me", text: "Okay, I probably deserve it. I'm sorry, and I mean it, even if I'm being Giyu about it and not saying much. Take your time being mad. Tsun tsun is allowed. When you're ready, I'll be right here with a hug and probably a bad joke." },
+    { when: "you miss me", text: "I miss you too, more than you think. Put on our song, look at our first matching pfp, and remember that every day that passes is one day closer to seeing you. I really want to stay at your house." },
+    { when: "the immigration stuff is too much", text: "I know the rules keep changing and it feels unfair, like the ground keeps moving under your feet. You don't have to carry that alone. Whatever happens with the papers and the rules, it doesn't change us. We survived five years and a rebellion. We can handle this too. Breathe. I'm with you, every step." },
+    { when: "you had a bad day", text: "Bad days happen, even to Hashiras. Go to the Hall of Shame and look at the panda. Then come back and remember that someone on the other side of the screen thinks you're the best thing in the world. That's me. It's me." },
+    { when: "you feel ignored", text: "STOP IGNORING ME, I hear you. I promise I'm never ignoring you, I'm just slow at typing. WAWA. You matter more to me than anything else on my screen." },
+    { when: "you need a laugh", text: "Caso Cerrado. Roblox. That's it, that's the letter. Okay fine: remember how we couldn't breathe? Go rewatch it, then call me so I can hear you laugh." },
+    { when: "you pass the Final Selection", secret: true, text: "You know everything about us. Of course you do, you were there for all of it. Your reward: one hug that never expires, redeemable anytime, anywhere. I love you, pookie." },
   ],
 
   // ---------- THE BIG SURPRISE (Maxwell, love letter, Hashira scroll) ----------

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20261102f" />
+  <link rel="stylesheet" href="style.css?v=20261104a" />
 </head>
 <body>
   <!-- the rooftop night, blurred, behind the whole altar -->
@@ -86,6 +86,11 @@
     </section>
 
     <section>
+      <h3 class="section-title reveal"><span>Our Story</span><small>five years, one chapter at a time</small></h3>
+      <ol id="story" class="story"></ol>
+    </section>
+
+    <section>
       <h3 class="section-title reveal"><span>Matching Souls</span><small>every couple we've been in our matching pfps</small></h3>
       <figure id="couples-banner" class="couples-banner reveal"></figure>
       <div id="couples" class="couples"></div>
@@ -113,6 +118,16 @@
     <section>
       <h3 class="section-title reveal"><span>Hall of Shame</span><small>evidence from our chats, with love</small></h3>
       <div id="chats" class="chats"></div>
+    </section>
+
+    <section>
+      <h3 class="section-title reveal"><span>Final Selection</span><small>how well do you know us?</small></h3>
+      <div id="quiz" class="quiz reveal"></div>
+    </section>
+
+    <section>
+      <h3 class="section-title reveal"><span>Open When...</span><small>letters for whenever you need them</small></h3>
+      <div id="openwhen" class="openwhen"></div>
     </section>
 
     <footer class="reveal">
@@ -205,6 +220,11 @@
     </div>
   </div>
 
+  <!-- open-when letter -->
+  <div id="ow-modal" class="stage" hidden>
+    <article class="letter ow-letter"><p class="ow-title"></p><p class="ow-text"></p><button class="btn ow-close">Fold it back</button></article>
+  </div>
+
   <!-- lightbox -->
   <div id="lightbox" hidden><img alt="" /><p></p></div>
 
@@ -225,9 +245,10 @@
     </defs>
   </svg>
 
-  <script src="config.js?v=20261102f"></script>
-  <script src="sfx.js?v=20261102f"></script>
-  <script src="script.js?v=20261102f"></script>
-  <script src="surprise.js?v=20261102f"></script>
+  <script src="config.js?v=20261104a"></script>
+  <script src="sfx.js?v=20261104a"></script>
+  <script src="script.js?v=20261104a"></script>
+  <script src="extras.js?v=20261104a"></script>
+  <script src="surprise.js?v=20261104a"></script>
 </body>
 </html>
