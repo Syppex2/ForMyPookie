@@ -144,3 +144,68 @@
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) closeLetter(); });
   renderLetters();
 })();
+
+/* ================= WAKEUP secret ================= */
+(function () {
+  const W = ALTAR.wakeup; if (!W) return;
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const wait = (ms) => new Promise((r) => setTimeout(r, FX.reduced ? Math.min(ms, 60) : ms));
+  const modal = $("#wake"), chat = $("#wake-chat"), letter = $("#wake-letter");
+  let running = false;
+
+  function bubble(name, pfp, text, mine) {
+    const m = document.createElement("div");
+    m.className = "wk-msg" + (mine ? " mine" : "");
+    m.innerHTML = `<img src="images/${esc(pfp)}" alt="" /><div><b>${esc(name)} <small>Today</small></b><p>${esc(text)}</p></div>`;
+    chat.appendChild(m);
+    chat.scrollTop = chat.scrollHeight;
+  }
+  async function wakeup() {
+    if (running) return;
+    running = true;
+    SFX.init(); SFX.duck(true);
+    chat.innerHTML = ""; letter.hidden = true; chat.hidden = false;
+    modal.hidden = false; requestAnimationFrame(() => modal.classList.add("open"));
+    SFX.alarm();
+    document.body.classList.add("wk-ring");
+    setTimeout(() => document.body.classList.remove("wk-ring"), 1300);
+    await wait(500);
+    for (const t of W.spam) { bubble(W.herName, W.herPfp, t, false); SFX.ping(); await wait(380); }
+    await wait(900);
+    const typing = document.createElement("p"); typing.className = "wk-typing"; typing.textContent = `${W.myName} is typing...`; chat.appendChild(typing);
+    await wait(1600); typing.remove();
+    bubble(W.myName, W.myPfp, W.reply, true); SFX.heart();
+    for (let i = 0; i < 30; i++) setTimeout(() => FX.burst(Math.random() * innerWidth, innerHeight + 10, 1, true), i * 50);
+    FX.heartRain(35);
+    await wait(2200);
+    chat.hidden = true;
+    $("#wake-text").textContent = W.message;
+    letter.hidden = false; letter.classList.remove("in"); void letter.offsetWidth; letter.classList.add("in");
+    SFX.rustle();
+  }
+  function close() { modal.classList.remove("open"); SFX.duck(false); setTimeout(() => { modal.hidden = true; running = false; }, 400); }
+  $("#wake-close").addEventListener("click", (e) => { e.stopPropagation(); close(); });
+  modal.addEventListener("click", (e) => { e.stopPropagation(); if (e.target === modal && !letter.hidden) close(); });
+
+  // typing WAKEUP anywhere (not inside a text field)
+  let buf = "";
+  addEventListener("keydown", (e) => {
+    if (e.target.closest && e.target.closest("input, textarea")) return;
+    if (e.key === "Escape" && !modal.hidden && !letter.hidden) return close();
+    if (e.key.length !== 1) return;
+    buf = (buf + e.key.toUpperCase()).slice(-6);
+    if (buf === "WAKEUP" && !$("#gate")) { buf = ""; wakeup(); }
+  });
+  // phones: tap the word WAKEUP in the footer
+  const from = $("#from");
+  if (from && from.textContent.includes("WAKEUP")) {
+    const [a, b] = from.textContent.split("WAKEUP");
+    from.textContent = a;
+    const w = document.createElement("button");
+    w.className = "wk-word"; w.textContent = "WAKEUP"; w.setAttribute("aria-label", "WAKEUP (secret)");
+    w.addEventListener("click", (e) => { e.stopPropagation(); wakeup(); });
+    from.append(w, b || "");
+  }
+  window.WAKEUP = wakeup;
+})();

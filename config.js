@@ -215,6 +215,16 @@ const ALTAR = {
     { when: "you pass the Final Selection", secret: true, text: "You know everything about us. Of course you do, you were there for all of it. Your reward: one hug that never expires, redeemable anytime, anywhere. I love you, pookie." },
   ],
 
+  // ---------- WAKEUP SECRET ----------
+  // Typing WAKEUP anywhere on the site (or tapping WAKEUP in the footer) opens this.
+  wakeup: {
+    herName: "Mewtrelle", herPfp: "couples/hutao.webp",
+    myName: "Syppex", myPfp: "couples/zhongli.webp",
+    spam: ["WAKEUP", "WAKEUP", "I MISS U", "POOKIE", "WAWA", "STOP IGNORING ME"],
+    reply: "I'm awake. I'm always awake for you.",
+    message: "You found the secret. Of course you did, you've typed WAKEUP to me a thousand times. Here's the truth: every single one of those made my day. Even the ones at 7 in the morning. Keep waking me up for the rest of our lives, okay? I love you, pookie.",
+  },
+
   // ---------- THE BIG SURPRISE (Maxwell, love letter, Hashira scroll) ----------
   // The date you started dating (YYYY-MM-DD). Leave "" to hide the day counter.
   togetherSince: "2021-07-25",

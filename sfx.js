@@ -165,6 +165,16 @@ const SFX = (() => {
       r.g.gain.setTargetAtTime(0, ctx.currentTime, fade / 3);
       setTimeout(() => { try { r.src.stop(); } catch (e) {} }, fade * 1000 + 500);
     },
+    /* alarm clock: fast double bell rings */
+    alarm() {
+      for (let i = 0; i < 8; i++) {
+        const t = i * 0.16;
+        tone(1320, { t, dur: 0.12, type: "square", vol: 0.06 });
+        tone(1760, { t: t + 0.06, dur: 0.1, type: "square", vol: 0.05 });
+      }
+    },
+    /* discord-ish message ping */
+    ping() { tone(hz(84), { dur: 0.15, vol: 0.12, type: "triangle" }); tone(hz(91), { t: 0.07, dur: 0.2, vol: 0.1, type: "triangle" }); },
     pop() { tone(500, { dur: 0.12, vol: 0.12, glide: 1200 }); },
 
     /* soft generative music box loop */

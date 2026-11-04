@@ -684,3 +684,23 @@ body { background: transparent; }
 .ow-env.opened .ow-label small::after { content: " · read"; color: #b07fd9; }
 .ow-env.secret.opened::after { background: linear-gradient(180deg, #fff1d6, #f2d49b); }
 .ow-env.secret.opened .ow-flap { background: linear-gradient(0deg, #f2d49b, #e3b96a); }
+
+/* ================= WAKEUP secret ================= */
+.wake { z-index: 62; }
+.wake-chat { width: min(94vw, 520px); max-height: 80vh; overflow-y: auto; padding: 16px; border-radius: 16px; background: #313338; box-shadow: 0 30px 80px rgba(0,0,0,.6); font-family: "gg sans", "Noto Sans", var(--sans); }
+.wake-chat[hidden] { display: none; }
+.wk-msg { display: flex; gap: 12px; padding: 6px 4px; animation: wkIn .3s cubic-bezier(.3,1.5,.5,1); }
+.wk-msg img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none; }
+.wk-msg b { color: #f6a6cb; font-weight: 600; font-size: .95rem; }
+.wk-msg.mine b { color: #9ad7c9; }
+.wk-msg b small { color: #949ba4; font-weight: 400; font-size: .72rem; margin-left: 6px; }
+.wk-msg p { margin: 2px 0 0; color: #dbdee1; font-size: 1.05rem; letter-spacing: .02em; }
+.wk-msg:not(.mine) p { font-weight: 700; }
+@keyframes wkIn { from { opacity: 0; transform: translateY(14px) scale(.96); } }
+.wk-typing { color: #949ba4; font-size: .85rem; font-style: italic; margin: 8px 4px 0; animation: blink 1s steps(1) infinite; }
+.wake-letter { max-width: 560px; min-height: auto !important; }
+.wake-letter .btn { display: block; margin: 18px auto 0; animation: none; }
+body.wk-ring { animation: shake .3s 4; }
+body.wk-ring #wake { animation: wkFlash .3s 4; }
+@keyframes wkFlash { 50% { background-color: rgba(255,111,174,.35); } }
+.wk-word { font: inherit; color: var(--hot-pink); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline dotted; text-underline-offset: 4px; animation: beat 2.4s ease-in-out infinite; display: inline-block; }

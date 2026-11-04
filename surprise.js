@@ -25,6 +25,7 @@
   }
   async function callCrow() {
     if (busy) return;
+    const wk = document.querySelector("#wake"); if (wk && !wk.hidden) return;
     busy = true; crowCame = true;
     const cat = $("#crow"), bubble = $("#crow-bubble");
     cat.hidden = false; cat.className = "crow maxwell";
@@ -168,10 +169,14 @@
   new IntersectionObserver((es, obs) => {
     // only when she really scrolled down to the end (not while the page is still loading and short)
     if (es.some((x) => x.isIntersecting) && !crowCame && !$("#altar").hidden && scrollY > innerHeight * 2) {
-      setTimeout(() => {
+      const tryCome = () => {
+        if (crowCame) return;
+        const w = document.querySelector("#wake");
+        if (w && !w.hidden) return setTimeout(tryCome, 1000); // wait until the WAKEUP secret is closed
         const r = document.querySelector("footer").getBoundingClientRect();
-        if (!crowCame && r.top < innerHeight && r.bottom > 0) { obs.disconnect(); callCrow(); }
-      }, 1200);
+        if (r.top < innerHeight && r.bottom > 0) { obs.disconnect(); callCrow(); }
+      };
+      setTimeout(tryCome, 1200);
     }
   }, { threshold: 0.6 }).observe(document.querySelector("footer"));
 })();
