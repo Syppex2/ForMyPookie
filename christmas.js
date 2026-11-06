@@ -34,7 +34,7 @@
       "Wrap yourself in a blanket like a burrito. That's today's task",
       "Seven days in and I'm still thinking about you every single one",
       "Gato Chico wants to know if he's getting a present. He's been good. Mostly",
-      "Watch something cozy tonight. Christmas movie or Caso Cerrado, you choose",
+      "Watch something cozy tonight. A Christmas movie or the anime we're watching, you choose",
       "Ten days down. You're doing amazing, pookie",
       "Miru is sleeping under the tree again. Classic Miru",
       "Today is a good day for a long call. Just saying",
@@ -58,7 +58,7 @@
       paragraphs: [
         "Another Christmas with you. I don't know how I got this lucky, but I'm not going to question it.",
         "This year wasn't easy. The rules changed, things got heavy, and you kept going anyway. I saw all of it, and I'm so proud of you.",
-        "My Christmas wish is simple. More WAWAs, more matching pfps, more nights laughing at Caso Cerrado, and more years of being yours. Next year, and the one after that, and every one after.",
+        "My Christmas wish is simple. More WAWAs, more matching pfps, more anime nights together, and more years of being yours. Next year, and the one after that, and every one after.",
         "I love you. Merry Christmas from me, Miru, Lloyd and Gato Chico. And Maxwell, he insisted.",
       ],
       signature: "Your Giyu, always",

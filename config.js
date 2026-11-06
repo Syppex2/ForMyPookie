@@ -217,7 +217,7 @@ const ALTAR = {
     { when: "you feel sick", text: "Puki :c I hate it when you feel bad and I can't be there to take care of you. So here's the plan: water, something warm to eat, a blanket, and rest. No being strong today, no doing everything yourself. If you need a doctor, go, and tell me after so I know you're okay. I'll be checking on you either way. Ven aquí miamol, déjame mimarte, even from far away. Unlimited huggies until you feel better." },
     { when: "you had a bad day", text: "Bad days happen, even to Hashiras. Go to the Hall of Shame and look at the panda. Then come back and remember that someone on the other side of the screen thinks you're the best thing in the world. That's me. It's me." },
     { when: "you feel ignored", text: "STOP IGNORING ME, I hear you. I promise I'm never ignoring you, I'm just slow at typing. WAWA. You matter more to me than anything else on my screen." },
-    { when: "you need a laugh", text: "Caso Cerrado. Roblox. That's it, that's the letter. Okay fine: remember how we couldn't breathe? Go rewatch it, then call me so I can hear you laugh." },
+    { when: "you need a laugh", text: "Go to the Hall of Shame and watch the fish. blub blub blub. Then the panda. Then ÑOYD on the video call. Still not laughing? Call me, and I'll spin like Maxwell until you do." },
     { when: "you pass the Final Selection", secret: true, text: "You know everything about us. Of course you do, you were there for all of it. Your reward: one hug that never expires, redeemable anytime, anywhere. I love you, pookie." },
   ],
 
@@ -250,7 +250,7 @@ const ALTAR = {
     "You're allowed to have a lazy day. Eepy is valid",
     "Miru says hi. Gato Chico says nothing, he's busy",
     "I'd start another rebellion for you. Sorry Baxth",
-    "Remember Caso Cerrado in Roblox? I'm laughing again just thinking about it",
+    "Go watch the fish in the Hall of Shame. blub blub. You're welcome",
     "Whatever happens today, you still have me",
     "You're the gigantic angry wife and I'm the happiest little guy",
     "Your laugh is my favorite sound. Maxwell's song is second",
