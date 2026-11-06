@@ -39,7 +39,7 @@
     bubble.hidden = false;
     const t = $("#crow-text");
     t.textContent = "";
-    const msg = `has a letter for ${ALTAR.herName}. He won't stop spinning until you take it.`;
+    const msg = `tiene una carta para ${ALTAR.herName}. No va a dejar de girar hasta que la tomes.`;
     for (const ch of msg) { t.textContent += ch; await wait(28); }
   }
 
@@ -121,7 +121,7 @@
     $("#cert-forms").innerHTML = "";
     C.breathing.forEach((b) => { const li = document.createElement("li"); li.textContent = b; $("#cert-forms").appendChild(li); });
     const d = ALTAR.togetherSince ? Math.floor((Date.now() - new Date(ALTAR.togetherSince + "T00:00:00")) / 864e5) : -1;
-    $("#cert-days").textContent = d >= 0 ? `Together since ${new Date(ALTAR.togetherSince + "T00:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}. ${d} days and counting` : "";
+    $("#cert-days").textContent = d >= 0 ? `Juntos desde el ${new Date(ALTAR.togetherSince + "T00:00:00").toLocaleDateString("es", { month: "long", day: "numeric", year: "numeric" })}. ${d} días y contando` : "";
     requestAnimationFrame(() => cer.classList.add("open"));
 
     await wait(400);

@@ -21,10 +21,10 @@
     let title = ch.title;
     if (ch.today) {
       const d = daysTogether();
-      if (d != null) { const y = Math.floor(d / 365.25); title = `${y} years, ${d} days`; }
+      if (d != null) { const y = Math.floor(d / 365.25); title = `${y} años, ${d} días`; }
     }
     li.innerHTML = `
-      <span class="ch-num">Chapter ${i + 1}</span>
+      <span class="ch-num">Capítulo ${i + 1}</span>
       <div class="ch-card"><h4>${esc(title)}</h4>${media}<p>${esc(ch.text)}</p></div>`;
     li.addEventListener("pointerenter", () => SFX.hover());
     $("#story").appendChild(li);
@@ -54,8 +54,8 @@
       <div class="quiz-intro">
         <p class="quiz-kicker">最終選別</p>
         <h4>The Final Selection</h4>
-        <p>${Q.length} questions about us. Get ${ALTAR.quizPass} right to survive, and something secret unlocks.</p>
-        <button class="btn" id="quiz-go">Start</button>
+        <p>${Q.length} preguntas sobre nosotros. Acierta ${ALTAR.quizPass} para sobrevivir y se desbloquea algo secreto.</p>
+        <button class="btn" id="quiz-go">Empezar</button>
       </div>`;
     $("#quiz-go").addEventListener("click", (e) => { e.stopPropagation(); SFX.chime(); quizQuestion(); });
   }
@@ -63,7 +63,7 @@
     const item = Q[qi];
     const right = item.options[0];
     quiz.innerHTML = `
-      <div class="quiz-top"><span>Question ${qi + 1} of ${Q.length}</span><span class="quiz-bar"><i style="width:${(qi / Q.length) * 100}%"></i></span></div>
+      <div class="quiz-top"><span>Pregunta ${qi + 1} de ${Q.length}</span><span class="quiz-bar"><i style="width:${(qi / Q.length) * 100}%"></i></span></div>
       <h4 class="quiz-q">${esc(item.q)}</h4>
       <div class="quiz-opts">${shuffle(item.options).map((o) => `<button class="quiz-opt">${esc(o)}</button>`).join("")}</div>
       <p class="quiz-react" aria-live="polite"></p>`;
@@ -85,9 +85,9 @@
     quiz.innerHTML = `
       <div class="quiz-end ${pass ? "pass" : "fail"}">
         <p class="quiz-score">${score} / ${Q.length}</p>
-        <h4>${pass ? "You survived the Final Selection" : "Shinobu says: ara ara, try again"}</h4>
-        <p>${pass ? "Of course you did. A secret letter just unlocked in Ábrela cuando." : `You need ${ALTAR.quizPass} to pass. I believe in you. Tsun tsun.`}</p>
-        <button class="btn ${pass ? "ghost" : ""}" id="quiz-again">${pass ? "Play again" : "Try again"}</button>
+        <h4>${pass ? "Sobreviviste a la Final Selection" : "Shinobu dice: ara ara, inténtalo otra vez"}</h4>
+        <p>${pass ? "Obvio que sí. Se desbloqueó una carta secreta en Ábrela cuando." : `Necesitas ${ALTAR.quizPass} para pasar. Yo creo en ti. Tsun tsun.`}</p>
+        <button class="btn ${pass ? "ghost" : ""}" id="quiz-again">${pass ? "Jugar otra vez" : "Intentar otra vez"}</button>
       </div>`;
     $("#quiz-again").addEventListener("click", (e) => { e.stopPropagation(); quizStart(); });
     if (pass) {
@@ -169,7 +169,7 @@
   function bubble(name, pfp, text, mine) {
     const m = document.createElement("div");
     m.className = "wk-msg" + (mine ? " mine" : "");
-    m.innerHTML = `<img src="images/${esc(pfp)}" alt="" /><div><b>${esc(name)} <small>Today</small></b><p>${esc(text)}</p></div>`;
+    m.innerHTML = `<img src="images/${esc(pfp)}" alt="" /><div><b>${esc(name)} <small>Hoy</small></b><p>${esc(text)}</p></div>`;
     chat.appendChild(m);
     chat.scrollTop = chat.scrollHeight;
   }
@@ -185,7 +185,7 @@
     await wait(500);
     for (const t of W.spam) { bubble(W.herName, W.herPfp, t, false); SFX.ping(); await wait(380); }
     await wait(900);
-    const typing = document.createElement("p"); typing.className = "wk-typing"; typing.textContent = `${W.myName} is typing...`; chat.appendChild(typing);
+    const typing = document.createElement("p"); typing.className = "wk-typing"; typing.textContent = `${W.myName} está escribiendo...`; chat.appendChild(typing);
     await wait(1600); typing.remove();
     bubble(W.myName, W.myPfp, W.reply, true); SFX.heart();
     for (let i = 0; i < 14; i++) setTimeout(() => FX.burst(Math.random() * innerWidth, innerHeight + 10, 1, true), i * 80);

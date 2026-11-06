@@ -9,7 +9,7 @@
     set(k, v) { try { localStorage.setItem("altar-" + k, v); } catch (e) {} },
   };
   const busy = () => document.body.classList.contains("popup-open") || !!$("#gate") || $("#altar").hidden;
-  const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const MONTHS = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 
   /* ================= NOTE OF THE DAY ================= */
   const notes = ALTAR.dailyNotes || [];
@@ -17,9 +17,9 @@
     const now = new Date();
     const dayNumber = Math.floor((new Date(now.getFullYear(), now.getMonth(), now.getDate()) - new Date(2021, 6, 25)) / 864e5);
     $("#daily").innerHTML = `
-      <span class="daily-tag">${ALTAR.dailyTag ? esc(ALTAR.dailyTag) : `Note of the day · ${MONTHS[now.getMonth()]} ${now.getDate()}`}</span>
+      <span class="daily-tag">${ALTAR.dailyTag ? esc(ALTAR.dailyTag) : `Nota del día · ${now.getDate()} de ${MONTHS[now.getMonth()]}`}</span>
       <p>${esc(notes[((dayNumber % notes.length) + notes.length) % notes.length])}</p>
-      <small>a new one every day</small>`;
+      <small>una nueva cada día</small>`;
   } else $("#daily").remove();
 
   /* ================= COUNTDOWN TO THE NEXT ANNIVERSARY ================= */
@@ -35,7 +35,7 @@
       if (isToday) {
         if (!cd.dataset.today) {
           cd.dataset.today = "1";
-          cd.innerHTML = `<p class="cd-title">Happy ${ord(year - sy)} anniversary, pookie</p><p class="cd-sub">${ord(year - sy)} July 25 together. Best day of the year, every year.</p>`;
+          cd.innerHTML = `<p class="cd-title">Feliz aniversario número ${year - sy}, puki</p><p class="cd-sub">Otro 25 de julio juntos. El mejor día del año, todos los años.</p>`;
           if (!celebrated) { celebrated = true; setTimeout(() => { FX.heartRain(24); SFX.chime(); }, 800); }
         }
         return;
@@ -49,9 +49,9 @@
       if (!cd.dataset.built) {
         cd.dataset.built = "1";
         cd.innerHTML = `
-          <p class="cd-title">Until our ${ord(year - sy)} anniversary</p>
-          <div class="cd-boxes">${["days", "hours", "minutes", "seconds"].map((u) => `<div><b data-u="${u}">0</b><span>${u}</span></div>`).join("")}</div>
-          <p class="cd-sub">${MONTHS[sm - 1]} ${sd}, ${year}</p>`;
+          <p class="cd-title">Para nuestro aniversario número ${year - sy}</p>
+          <div class="cd-boxes">${[["days", "días"], ["hours", "horas"], ["minutes", "minutos"], ["seconds", "segundos"]].map(([u, label]) => `<div><b data-u="${u}">0</b><span>${label}</span></div>`).join("")}</div>
+          <p class="cd-sub">${sd} de ${MONTHS[sm - 1]}, ${year}</p>`;
       }
       cd.querySelector('[data-u="days"]').textContent = d;
       cd.querySelector('[data-u="hours"]').textContent = String(h).padStart(2, "0");
@@ -86,7 +86,7 @@
     SFX.meow(kids.findIndex((k) => k.name === name));
     walker.classList.add("stopped");
     const note = walker.querySelector(".walker-note");
-    note.textContent = pick(kidNotes[name] || [name + " says hi"]);
+    note.textContent = pick(kidNotes[name] || [name + " dice hola"]);
     // keep the note bubble inside the screen
     note.style.marginLeft = "0px";
     const nr = note.getBoundingClientRect();
@@ -108,18 +108,18 @@
     court.innerHTML = `
       <div class="court-head">
         <span class="court-seal" aria-hidden="true">⚖️</span>
-        <div><p class="court-num">Case ${String(ci + 1).padStart(3, "0")} · ${esc(c.subject)}</p><h4>${esc(c.title)}</h4></div>
+        <div><p class="court-num">Caso ${String(ci + 1).padStart(3, "0")} · ${esc(c.subject)}</p><h4>${esc(c.title)}</h4></div>
       </div>
-      <div class="court-row"><b>The accusation</b><p>${esc(c.charge)}</p></div>
-      <div class="court-row"><b>The defense</b><p>"${esc(c.defense)}"</p></div>
+      <div class="court-row"><b>La acusación</b><p>${esc(c.charge)}</p></div>
+      <div class="court-row"><b>La defensa</b><p>"${esc(c.defense)}"</p></div>
       <div class="court-verdict" hidden>
-        <p class="court-v ${c.verdict.startsWith("NOT") ? "free" : ""}">${esc(c.verdict)}</p>
-        <p class="court-s"><b>Sentence:</b> ${esc(c.sentence)}</p>
+        <p class="court-v ${c.free || c.verdict.startsWith("NOT") ? "free" : ""}">${esc(c.verdict)}</p>
+        <p class="court-s"><b>Sentencia:</b> ${esc(c.sentence)}</p>
         <div class="court-stamp">¡CASO CERRADO!</div>
       </div>
       <div class="court-btns">
-        <button class="btn" id="court-go">Hear the verdict</button>
-        <button class="btn ghost" id="court-next" hidden>Next case</button>
+        <button class="btn" id="court-go">Escuchar el veredicto</button>
+        <button class="btn ghost" id="court-next" hidden>Siguiente caso</button>
       </div>`;
     $("#court-go").addEventListener("click", (e) => {
       e.stopPropagation();
@@ -143,15 +143,15 @@
     const best = Number(store.get("catch-best") || 0);
     box.innerHTML = `
       <div class="catch-intro">
-        ${extra || `<h4>Catch ${G.goal} butterflies in ${G.seconds} seconds</h4><p>Tap them before they fly away. Gold ones are worth 3.</p>`}
-        ${best ? `<p class="catch-best">Your best: ${best}</p>` : ""}
-        <button class="btn" id="catch-go">${extra ? "Play again" : "Start"}</button>
+        ${extra || `<h4>Atrapa ${G.goal} mariposas en ${G.seconds} segundos</h4><p>Tócalas antes de que se escapen. Las doradas valen 3.</p>`}
+        ${best ? `<p class="catch-best">Tu récord: ${best}</p>` : ""}
+        <button class="btn" id="catch-go">${extra ? "Jugar otra vez" : "Empezar"}</button>
       </div>`;
     $("#catch-go").addEventListener("click", (e) => { e.stopPropagation(); start(); });
   }
   function start() {
     score = 0; timeLeft = G.seconds; running = true; flies = [];
-    box.innerHTML = `<div class="catch-hud"><span>Caught <b id="catch-score">0</b> / ${G.goal}</span><span><b id="catch-time">${timeLeft}</b>s</span></div><div class="catch-field" id="catch-field"></div>`;
+    box.innerHTML = `<div class="catch-hud"><span>Atrapadas <b id="catch-score">0</b> / ${G.goal}</span><span><b id="catch-time">${timeLeft}</b>s</span></div><div class="catch-field" id="catch-field"></div>`;
     SFX.chime();
     spawnT = setInterval(spawn, 520);
     clockT = setInterval(() => { timeLeft--; $("#catch-time").textContent = timeLeft; if (timeLeft <= 0) end(); }, 1000);
@@ -211,8 +211,8 @@
     if (won) { SFX.fanfare(); FX.heartRain(20); } else SFX.candleOff();
     gameIntro(`
       <p class="catch-final">${score}</p>
-      <h4>${won ? "You caught them all" : "They got away this time"}</h4>
-      <p>${won ? esc(G.win) : `You need ${G.goal}. Shinobu believes in you. Try again.`}</p>`);
+      <h4>${won ? "Las atrapaste todas" : "Esta vez se escaparon"}</h4>
+      <p>${won ? esc(G.win) : `Necesitas ${G.goal}. Shinobu cree en ti. Inténtalo otra vez.`}</p>`);
     if (won) box.querySelector(".catch-intro").classList.add("won");
   }
   gameIntro();
@@ -228,8 +228,8 @@
     if (installEvt) { installEvt.prompt(); try { await installEvt.userChoice; } catch (err) {} installEvt = null; return; }
     const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
     $("#install-text").textContent = ios
-      ? "On iPhone: open this page in Safari, tap the Share button (the square with the arrow), then \"Add to Home Screen\". The butterfly will be on your phone like an app."
-      : "On Android: tap the menu (the three dots in Chrome), then \"Add to Home screen\" or \"Install app\". The butterfly will be on your phone like an app.";
+      ? "En iPhone: abre esta página en Safari, toca el botón Compartir (el cuadrado con la flecha) y después \"Agregar a inicio\". La mariposa va a quedar en tu celular como una app."
+      : "En Android: toca el menú (los tres puntitos de Chrome) y después \"Agregar a la pantalla principal\" o \"Instalar app\". La mariposa va a quedar en tu celular como una app.";
     const m = $("#install-modal");
     m.hidden = false; requestAnimationFrame(() => m.classList.add("open"));
   });

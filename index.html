@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,7 +15,7 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Butterfly Altar" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <link rel="stylesheet" href="style.css?v=20261106g" />
+  <link rel="stylesheet" href="style.css?v=20261106h" />
 </head>
 <body>
   <!-- the rooftop night, blurred, behind the whole altar -->
@@ -35,11 +35,11 @@
     <div class="shoji right" aria-hidden="true"></div>
     <div class="gate-inner">
       <svg id="gate-bfly" class="butterfly big" viewBox="0 0 100 80" aria-hidden="true"><use href="#bfly" /></svg>
-      <p class="kicker">蝶屋敷 · that night on the roof</p>
+      <p class="kicker">蝶屋敷 · esa noche en el techo</p>
       <h1 id="gate-title"></h1>
       <p id="welcome" class="sub typed"></p>
-      <button id="enter" class="btn"><span>Come in</span></button>
-      <p id="gate-hint" class="hint">turn your sound on and tap anywhere</p>
+      <button id="enter" class="btn"><span>Entra</span></button>
+      <p id="gate-hint" class="hint">sube el volumen y toca donde sea</p>
     </div>
   </section>
 
@@ -49,9 +49,9 @@
   <main id="altar" hidden>
     <div id="wisteria" class="wisteria" aria-hidden="true"></div>
     <header class="hero">
-      <p class="kicker">for my favorite person</p>
-      <h2>Everything <span class="her-name"></span> loves</h2>
-      <p class="sub">Shoes off please, this is a sacred place</p>
+      <p class="kicker">para mi persona favorita</p>
+      <h2>Todo lo que <span class="her-name"></span> ama</h2>
+      <p class="sub">Sácate los zapatos, este es un lugar sagrado</p>
     </header>
     <aside id="daily" class="daily reveal" aria-label="Note of the day"></aside>
 
@@ -60,7 +60,7 @@
       <div class="lanterns" aria-hidden="true"><i></i><i></i></div>
 
       <div class="goddess">
-        <p class="kicker">蟲柱 · the owner of this altar</p>
+        <p class="kicker">蟲柱 · la dueña de este altar</p>
         <div id="goddess-frame" class="goddess-frame" role="button" tabindex="0" aria-label="Next Shinobu picture">
           <div class="wing w-left" aria-hidden="true"><svg viewBox="0 0 100 80"><use href="#bfly" /></svg></div>
           <div class="wing w-right" aria-hidden="true"><svg viewBox="0 0 100 80"><use href="#bfly" /></svg></div>
@@ -72,75 +72,75 @@
         <div id="goddess-dots" class="dots"></div>
       </div>
 
-      <p class="kicker" style="margin-top:46px">the chosen ones</p>
+      <p class="kicker" style="margin-top:46px">los elegidos</p>
       <div id="favorites" class="favorites"></div>
       <div class="candles">
         <button class="candle" aria-label="Light a candle"><i></i></button>
         <button class="candle" aria-label="Light a candle"><i></i></button>
         <button class="candle" aria-label="Light a candle"><i></i></button>
       </div>
-      <p class="hint">tap the candles (light all three)</p>
+      <p class="hint">toca las velas (prende las tres)</p>
       <p id="candle-msg" class="candle-msg" aria-live="polite"></p>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Her Shelf</span><small>straight from her MyFigureCollection</small></h3>
+      <h3 class="section-title reveal"><span>Her Shelf</span><small>directo de su MyFigureCollection</small></h3>
       <div id="shelf" class="shelf reveal"></div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Our Kids</span><small>Gato Chico, Lloyd and Miru</small></h3>
+      <h3 class="section-title reveal"><span>Our Kids</span><small>Gato Chico, Lloyd y Miru</small></h3>
       <div id="kids" class="kids"></div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Our Story</span><small>five years, one chapter at a time</small></h3>
+      <h3 class="section-title reveal"><span>Our Story</span><small>cinco años, un capítulo a la vez</small></h3>
       <ol id="story" class="story"></ol>
       <div id="countdown" class="countdown reveal"></div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Matching Souls</span><small>every couple we've been in our matching pfps</small></h3>
+      <h3 class="section-title reveal"><span>Matching Souls</span><small>todas las parejas que hemos sido en nuestras matching pfps</small></h3>
       <figure id="couples-banner" class="couples-banner reveal"></figure>
       <div id="couples" class="couples"></div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>GiyuShino Archive</span><small>canon moments, for the record</small></h3>
+      <h3 class="section-title reveal"><span>GiyuShino Archive</span><small>momentos canon, para que conste</small></h3>
       <ol id="archive" class="archive"></ol>
       <div id="doujin-wrap" class="doujin-wrap reveal" hidden>
-        <h4>Our GiyuShino doujinshi shelf</h4>
+        <h4>Nuestro estante de doujinshi GiyuShino</h4>
         <ul id="doujin" class="doujin"></ul>
       </div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Butterfly Cinema</span><small>Shinobu on loop</small></h3>
+      <h3 class="section-title reveal"><span>Butterfly Cinema</span><small>Shinobu en loop</small></h3>
       <div id="cinema" class="cinema"></div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Offerings</span><small>one for every show you watched</small></h3>
+      <h3 class="section-title reveal"><span>Offerings</span><small>una por cada serie que viste</small></h3>
       <div id="offerings" class="grid"></div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Hall of Shame</span><small>evidence from our chats, with love</small></h3>
+      <h3 class="section-title reveal"><span>Hall of Shame</span><small>evidencia de nuestros chats, con cariño</small></h3>
       <div id="chats" class="chats"></div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Caso Cerrado</span><small>the court of Pookie vs Syppex</small></h3>
+      <h3 class="section-title reveal"><span>Caso Cerrado</span><small>el tribunal de Pookie vs Syppex</small></h3>
       <div id="court" class="court reveal"></div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Butterfly Catch</span><small>catch Shinobu's butterflies before they fly away</small></h3>
+      <h3 class="section-title reveal"><span>Butterfly Catch</span><small>atrapa las mariposas de Shinobu antes de que se escapen</small></h3>
       <div id="catch" class="catch reveal"></div>
     </section>
 
     <section>
-      <h3 class="section-title reveal"><span>Final Selection</span><small>how well do you know us?</small></h3>
+      <h3 class="section-title reveal"><span>Final Selection</span><small>¿qué tan bien nos conoces?</small></h3>
       <div id="quiz" class="quiz reveal"></div>
     </section>
 
@@ -153,13 +153,13 @@
       <svg class="butterfly" viewBox="0 0 100 80" aria-hidden="true"><use href="#bfly" /></svg>
       <p id="from"></p>
       <p id="days" class="days" hidden></p>
-      <button id="install" class="install-link">Put the altar on your phone</button>
-      <button id="call-crow" class="btn ghost">Maxwell has something for you</button>
+      <button id="install" class="install-link">Pon el altar en tu celular</button>
+      <button id="call-crow" class="btn ghost">Maxwell tiene algo para ti</button>
     </footer>
   </main>
 
   <!-- surprise overlay (all candles lit) -->
-  <div id="wish" hidden><div class="wish-card"><div class="big-heart">💗</div><p></p><small>tap to close</small></div></div>
+  <div id="wish" hidden><div class="wish-card"><div class="big-heart">💗</div><p></p><small>toca para cerrar</small></div></div>
 
   <!-- ===== THE BIG SURPRISE ===== -->
   <div id="crow" class="crow maxwell" hidden aria-hidden="true">
@@ -187,7 +187,7 @@
   </div>
   <div id="crow-bubble" class="crow-bubble" hidden>
     <p><b>Maxwell</b> <span id="crow-text"></span></p>
-    <button id="take-letter" class="btn">Take the letter</button>
+    <button id="take-letter" class="btn">Toma la carta</button>
   </div>
 
   <div id="letter-stage" class="stage" hidden>
@@ -209,11 +209,11 @@
         <path class="flap-closed" d="M0 6 Q0 0 8 0 H292 Q300 0 300 6 L162 118 Q150 128 138 118 Z" fill="url(#envFlap)"/>
       </svg>
       <div class="seal"><svg viewBox="0 0 100 80"><use href="#bfly" /></svg></div>
-      <p class="env-hint">tap the butterfly seal</p>
+      <p class="env-hint">toca el sello de mariposa</p>
     </div>
     <article id="letter" class="letter" hidden>
       <div id="letter-body"></div>
-      <button id="accept" class="btn" hidden>Get your new rank</button>
+      <button id="accept" class="btn" hidden>Recibe tu nuevo rango</button>
     </article>
   </div>
 
@@ -221,13 +221,13 @@
     <div id="scroll" class="scroll">
       <div class="rod top"></div>
       <div class="scroll-paper">
-        <p class="cert-org">鬼殺隊 · Demon Slayer Corps of My Heart</p>
-        <p class="cert-small">It is hereby declared that</p>
+        <p class="cert-org">鬼殺隊 · Cuerpo de Cazadores de mi Corazón</p>
+        <p class="cert-small">Por la presente se declara que</p>
         <h2 class="cert-name her-name"></h2>
-        <p class="cert-small">is promoted to the rank of</p>
+        <p class="cert-small">es ascendida al rango de</p>
         <div class="cert-kanji" id="cert-kanji"></div>
         <h3 class="cert-rank" id="cert-rank"></h3>
-        <p class="cert-small">Mastered breathing style · <b>Breath of Love</b></p>
+        <p class="cert-small">Estilo de respiración dominado · <b>Respiración del Amor</b></p>
         <ul id="cert-forms" class="cert-forms"></ul>
         <p id="cert-days" class="cert-small"></p>
         <div id="hanko" class="hanko">愛<br/>印</div>
@@ -236,8 +236,8 @@
     </div>
     <p id="finale" class="finale"></p>
     <div class="finale-btns" id="finale-btns" hidden>
-      <button id="again" class="btn ghost">Read the letter again</button>
-      <button id="close-ceremony" class="btn">Back to the altar</button>
+      <button id="again" class="btn ghost">Leer la carta otra vez</button>
+      <button id="close-ceremony" class="btn">Volver al altar</button>
     </div>
   </div>
 
@@ -250,9 +250,9 @@
   <div id="wake" class="stage wake" hidden>
     <div class="wake-chat" id="wake-chat"></div>
     <article class="letter wake-letter" id="wake-letter" hidden>
-      <p class="ow-title">You said the magic word</p>
+      <p class="ow-title">Dijiste la palabra mágica</p>
       <p class="ow-text" id="wake-text"></p>
-      <button class="btn" id="wake-close">Go back to sleep (no)</button>
+      <button class="btn" id="wake-close">Vuelve a dormir (no)</button>
     </article>
   </div>
 
@@ -262,9 +262,9 @@
   <!-- how to install -->
   <div id="install-modal" class="stage" hidden>
     <article class="letter ow-letter">
-      <p class="ow-title">Put the altar on your phone</p>
+      <p class="ow-title">Pon el altar en tu celular</p>
       <p class="ow-text" id="install-text"></p>
-      <button class="btn" id="install-close">Got it</button>
+      <button class="btn" id="install-close">Entendido</button>
     </article>
   </div>
 
@@ -288,12 +288,12 @@
     </defs>
   </svg>
 
-  <script src="config.js?v=20261106g"></script>
-  <script src="sfx.js?v=20261106g"></script>
-  <script src="christmas.js?v=20261106g"></script>
-  <script src="script.js?v=20261106g"></script>
-  <script src="extras.js?v=20261106g"></script>
-  <script src="fun.js?v=20261106g"></script>
-  <script src="surprise.js?v=20261106g"></script>
+  <script src="config.js?v=20261106h"></script>
+  <script src="sfx.js?v=20261106h"></script>
+  <script src="christmas.js?v=20261106h"></script>
+  <script src="script.js?v=20261106h"></script>
+  <script src="extras.js?v=20261106h"></script>
+  <script src="fun.js?v=20261106h"></script>
+  <script src="surprise.js?v=20261106h"></script>
 </body>
 </html>

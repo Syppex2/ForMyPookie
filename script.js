@@ -12,7 +12,7 @@
   // title letters drop in one by one
   const title = $("#gate-title");
   // letters drop in one by one, grouped into words so a word never breaks across lines
-  const words = [..."The Altar of".split(" ").map((w) => [w, false]), ...ALTAR.herName.split(" ").map((w) => [w, true])];
+  const words = [..."El Altar de".split(" ").map((w) => [w, false]), ...ALTAR.herName.split(" ").map((w) => [w, true])];
   let k = 0;
   words.forEach(([w, special], wi) => {
     if (wi) title.appendChild(document.createTextNode(" "));
@@ -299,7 +299,7 @@
 
   if (ALTAR.togetherSince) {
     const days = Math.floor((Date.now() - new Date(ALTAR.togetherSince + "T00:00:00")) / 864e5);
-    if (days >= 0) { $("#days").hidden = false; $("#days").textContent = `${days} days together`; }
+    if (days >= 0) { $("#days").hidden = false; $("#days").textContent = `${days} días juntos`; }
   }
 
 
@@ -309,7 +309,7 @@
     el.innerHTML = `
       <div class="shelf-head">
         <img class="shelf-avatar" src="images/characters/shinobu.png" alt="" />
-        <div><p class="shelf-bio">"${esc(sh.bio)}"</p><a href="${esc(sh.link)}" target="_blank" rel="noopener">her profile on MyFigureCollection</a></div>
+        <div><p class="shelf-bio">"${esc(sh.bio)}"</p><a href="${esc(sh.link)}" target="_blank" rel="noopener">su perfil en MyFigureCollection</a></div>
       </div>
       <figure class="cabinet"><img src="images/${esc(sh.figures)}" alt="Her figure collection" loading="lazy" /><div class="glass"></div></figure>
       ${sh.goods ? `<figure class="cabinet small"><img src="images/${esc(sh.goods)}" alt="Her goods" loading="lazy" /><div class="glass"></div></figure>` : ""}
@@ -526,7 +526,7 @@
     if (rainSound || !$("#gate")) return;
     rainSound = true;
     SFX.init(); SFX.rainStart(!!window.XMAS);
-    const h = $("#gate-hint"); if (h) h.textContent = window.XMAS ? "listen to the winter night" : "listen to the rain";
+    const h = $("#gate-hint"); if (h) h.textContent = window.XMAS ? "escucha la noche de invierno" : "escucha la lluvia";
   }
   $("#gate").addEventListener("pointerdown", startRainSound);
   addEventListener("keydown", startRainSound, { once: true });
@@ -534,7 +534,7 @@
   let gateClicks = 0;
   $("#gate-bfly").addEventListener("click", () => {
     SFX.init(); SFX.pop();
-    if (++gateClicks === 5) document.querySelector("#gate .kicker").textContent = "ara ara, you found me. Shinobu";
+    if (++gateClicks === 5) document.querySelector("#gate .kicker").textContent = "ara ara, me encontraste. Shinobu";
   });
   $("#enter").addEventListener("click", () => {
     SFX.init();

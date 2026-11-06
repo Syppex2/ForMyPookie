@@ -16,44 +16,44 @@ const ALTAR = {
   herName: "Pookie",
 
   // Shown on the entrance screen
-  welcome: "I made you a little altar",
+  welcome: "Te hice un altar chiquito",
 
   // Signature at the bottom
-  from: "From your Giyu, who would choose you in every life",
+  from: "From your Giyu, que te elegiría en todas las vidas",
 
   // Shown when all three candles are lit
-  allCandlesMessage: "You lit all three. Your wish is granted: you get me, forever. No refunds.",
+  allCandlesMessage: "Prendiste las tres. Wish granted: me tienes a mí, forever. No hay devoluciones.",
 
   // Random messages that appear when she lights a candle
   candleMessages: [
     "WAWA. I miss you too",
     "hallo puki. /huggies",
     "Amor, estás muy stinky. But you're my stinky",
-    "blub blub blub (am fish). Translation: I love you",
+    "blub blub blub (am fish). Traducción: te amo",
     "Te debo un besito de buenas noches. Here, have ten",
-    "Official ranking: you, then Shinobu, then Giyu",
-    "Shinobu approves of this relationship",
-    "Not even Maomao could figure out how you're this cute",
-    "Doggy says hi. He still wants to catch you",
+    "Ranking oficial: tú, después Shinobu, después Giyu",
+    "Shinobu aprueba esta relación",
+    "Ni Maomao podría descubrir cómo eres tan cute",
+    "Doggy dice hola. Todavía te quiere atrapar",
     "You're my favorite episode",
-    "Shinobu smiled at you. Either she likes you or you've been poisoned",
-    "We're GiyuShino in real life. I'm Giyu, sorry",
-    "Loading matching pfp number 1000...",
-    "Miru, Lloyd and Gato Chico say hi to their mom",
-    "Gato Chico's real name is Raven. Nobody has ever called him that",
-    "Lloyd, also known as ÑOYD, approves of this altar",
-    "Miru wants to know when you're coming over",
-    "Eepy and in love with Shinobu. I read your bio, I know everything",
+    "Shinobu te sonrió. O le caes bien o ya te envenenó",
+    "Somos GiyuShino en la vida real. Yo soy Giyu, sorry",
+    "Cargando matching pfp número 1000...",
+    "Miru, Lloyd y Gato Chico saludan a su mamá",
+    "Gato Chico se llama Raven. Nadie le ha dicho así nunca",
+    "Lloyd, alias ÑOYD, aprueba este altar",
+    "Miru quiere saber cuándo vienes",
+    "Eepy and in love with Shinobu. Leí tu bio, lo sé todo",
   ],
 
   // ---------- THE CHOSEN ONES (shown big, under Shinobu) ----------
   favorites: [
-    { name: "Giyu Tomioka", from: "Kimetsu no Yaiba", img: "../couples/giyu.png", emoji: "🌊", note: "He's not disliked (he is a little)" },
-    { name: "Rei Ayanami",  from: "Neon Genesis Evangelion", img: "rei.jpg", emoji: "🤖", note: "On her favorites list since forever", ani: "Neon Genesis Evangelion", match: "Rei" },
+    { name: "Giyu Tomioka", from: "Kimetsu no Yaiba", img: "../couples/giyu.png", emoji: "🌊", note: "No lo odian (bueno, un poquito)" },
+    { name: "Rei Ayanami",  from: "Neon Genesis Evangelion", img: "rei.jpg", emoji: "🤖", note: "En su lista de favoritos since forever", ani: "Neon Genesis Evangelion", match: "Rei" },
     { name: "Denji",  from: "Chainsaw Man",        img: "denji.png",  emoji: "🪚", note: "Woof woof", ani: "Chainsaw Man", match: "Denji" },
-    { name: "Doggy",  from: "Piggy (Roblox)",      img: "doggy.webp",  emoji: "🐶", note: "Scary but cute somehow" },
-    { name: "Maomao", from: "The Apothecary Diaries", img: "maomao.png", emoji: "🧪", note: "Would drink your poison just to rate it", ani: "Kusuriya no Hitorigoto", match: "Maomao" },
-    { name: "Akaza",  from: "Kimetsu no Yaiba",    img: "akaza.png",  emoji: "👊", note: "Still mad about Rengoku. Still on the list", ani: "Kimetsu no Yaiba: Mugen Ressha-hen", match: "Akaza" },
+    { name: "Doggy",  from: "Piggy (Roblox)",      img: "doggy.webp",  emoji: "🐶", note: "Da miedo pero es cute igual" },
+    { name: "Maomao", from: "The Apothecary Diaries", img: "maomao.png", emoji: "🧪", note: "Se tomaría tu veneno solo para ponerle nota", ani: "Kusuriya no Hitorigoto", match: "Maomao" },
+    { name: "Akaza",  from: "Kimetsu no Yaiba",    img: "akaza.png",  emoji: "👊", note: "Sigo enojado por Rengoku. Igual está en la lista", ani: "Kimetsu no Yaiba: Mugen Ressha-hen", match: "Akaza" },
   ],
 
   // ---------- SHINOBU (center of the altar) ----------
@@ -65,11 +65,11 @@ const ALTAR = {
     ],
     // Lines that change with each picture
     quotes: [
-      "Ara ara, wouldn't it be nice if we could all get along?",
+      "Ara ara, ¿no sería lindo que todos nos lleváramos bien?",
       "Insect Hashira, Kocho Shinobu. 蟲柱 胡蝶しのぶ",
-      "Smiles at you, then poisons you. You do the same thing to me",
-      "Too small to cut off a demon's head, so she invented a poison. Legend",
-      "The owner of this altar. You're just visiting",
+      "Te sonríe y después te envenena. Tú me haces lo mismo",
+      "Muy bajita para cortarle la cabeza a un demonio, así que inventó un veneno. Legend",
+      "La dueña de este altar. Tú solo estás de visita",
     ],
   },
 
@@ -79,32 +79,32 @@ const ALTAR = {
     link: "https://myfigurecollection.net/profile/mew_owo",
     figures: "shelf/figures.webp",
     goods: "shelf/goods.webp",
-    caption: "43 figures and counting. I counted 5 Shinobus, 5 Mikus and too many Giyus",
+    caption: "43 figuras and counting. Conté 5 Shinobus, 5 Mikus y demasiados Giyus",
   },
 
   // ---------- OUR KIDS (pictures in images/kids/) ----------
   kids: [
-    { name: "Gato Chico", aka: "legally Raven", img: "gato-chico.webp", line: "Watches everyone from the top of the furniture. Nobody has called him Raven in years" },
-    { name: "Lloyd", aka: "ÑOYD", img: "lloyd.webp", line: "Her son. The fluffiest one, and the one I see on every video call instead of her" },
-    { name: "Miru", aka: "my kid", img: "miru.webp", line: "Falls asleep on me while I play. I'm not allowed to move until Miru wakes up" },
+    { name: "Gato Chico", aka: "legalmente Raven", img: "gato-chico.webp", line: "Vigila a todos desde arriba de los muebles. Nadie le dice Raven hace años" },
+    { name: "Lloyd", aka: "ÑOYD", img: "lloyd.webp", line: "Su hijo. El más esponjoso, y el que veo en cada videollamada en vez de a ella" },
+    { name: "Miru", aka: "my kid", img: "miru.webp", line: "Se queda dormido encima mío mientras juego. No me puedo mover hasta que Miru despierte" },
   ],
 
   // ---------- MATCHING SOULS (couples, like our matching pfps) ----------
-  couplesBanner: { img: "couples/giyu-shinobu-official.webp", caption: "GiyuShino. Official art, so it's basically canon" },
+  couplesBanner: { img: "couples/giyu-shinobu-official.webp", caption: "GiyuShino. Arte oficial, so it's basically canon" },
   couples: [
-    { a: { name: "Zhongli", img: "couples/zhongli.webp" }, b: { name: "Hu Tao", img: "couples/hutao.webp" }, from: "Genshin Impact", note: "Our very first matching pfp. Wolf picked it, and that's kind of how we happened" },
-    { a: { name: "Giyu",    img: "couples/giyu.png" },    b: { name: "Shinobu", img: "characters/shinobu.png" }, from: "Kimetsu no Yaiba", note: "She bullies him and he lets her. Sounds familiar" },
-    { a: { name: "Obanai",  img: "couples/obanai.jpg" },  b: { name: "Mitsuri", img: "couples/mitsuri.png" },    from: "Kimetsu no Yaiba", note: "He wrote her letters. I made you a website" },
-    { a: { name: "Sanemi",  img: "couples/sanemi.png" },  b: { name: "Kanae",   img: "couples/kanae.png" },      from: "Kimetsu no Yaiba", note: "Grumpy guy, sweet girl" },
-    { a: { name: "Tanjiro", img: "couples/tanjiro.png" }, b: { name: "Kanao",   img: "couples/kanao.png" },      from: "Kimetsu no Yaiba", note: "A coin flip decided it" },
-    { a: { name: "Zenitsu", img: "couples/zenitsu.png" }, b: { name: "Nezuko",  img: "couples/nezuko.png" },     from: "Kimetsu no Yaiba", note: "He actually won in the end" },
-    { a: { name: "Akaza",   img: "characters/akaza.png" },b: { name: "Koyuki",  img: "couples/koyuki.png" },     from: "Kimetsu no Yaiba", note: "We don't talk about this one" },
-    { a: { name: "L",       img: "characters/l.png" },    b: { name: "Misa",    img: "couples/misa.png" },       from: "Death Note", note: "Cake and chaos" },
-    { a: { name: "Okarun",  img: "characters/okarun.png" },b:{ name: "Momo",    img: "couples/momo.png" },       from: "Dandadan", note: "She likes Ken Takakura. The real one" },
-    { a: { name: "Yuta",    img: "couples/yuta.jpg" },    b: { name: "Maki",    img: "couples/maki.png" },       from: "Jujutsu Kaisen", note: "Both of them could beat me up" },
-    { a: { name: "Gojo",    img: "characters/gojo.png" }, b: { name: "Geto",    img: "couples/geto.png" },       from: "Jujutsu Kaisen", note: "Best friends. Sure" },
-    { a: { name: "Denji",   img: "characters/denji.png" },b: { name: "Reze",    img: "couples/reze.png" },       from: "Chainsaw Man", note: "He should have gone to the café" },
-    { a: { name: "David",   img: "couples/david.png" },   b: { name: "Lucy",    img: "characters/lucy.jpg" },    from: "Cyberpunk: Edgerunners", note: "I'd take you to the moon too" },
+    { a: { name: "Zhongli", img: "couples/zhongli.webp" }, b: { name: "Hu Tao", img: "couples/hutao.webp" }, from: "Genshin Impact", note: "Nuestra primera matching pfp. La eligió Wolf, y así más o menos empezó lo nuestro" },
+    { a: { name: "Giyu",    img: "couples/giyu.png" },    b: { name: "Shinobu", img: "characters/shinobu.png" }, from: "Kimetsu no Yaiba", note: "Ella lo bullea y él se deja. Me suena familiar" },
+    { a: { name: "Obanai",  img: "couples/obanai.jpg" },  b: { name: "Mitsuri", img: "couples/mitsuri.png" },    from: "Kimetsu no Yaiba", note: "Él le escribía cartas. Yo te hice una página" },
+    { a: { name: "Sanemi",  img: "couples/sanemi.png" },  b: { name: "Kanae",   img: "couples/kanae.png" },      from: "Kimetsu no Yaiba", note: "Él gruñón, ella un amor" },
+    { a: { name: "Tanjiro", img: "couples/tanjiro.png" }, b: { name: "Kanao",   img: "couples/kanao.png" },      from: "Kimetsu no Yaiba", note: "Lo decidió una moneda" },
+    { a: { name: "Zenitsu", img: "couples/zenitsu.png" }, b: { name: "Nezuko",  img: "couples/nezuko.png" },     from: "Kimetsu no Yaiba", note: "Al final sí ganó" },
+    { a: { name: "Akaza",   img: "characters/akaza.png" },b: { name: "Koyuki",  img: "couples/koyuki.png" },     from: "Kimetsu no Yaiba", note: "De esta no hablamos" },
+    { a: { name: "L",       img: "characters/l.png" },    b: { name: "Misa",    img: "couples/misa.png" },       from: "Death Note", note: "Pastel y caos" },
+    { a: { name: "Okarun",  img: "characters/okarun.png" },b:{ name: "Momo",    img: "couples/momo.png" },       from: "Dandadan", note: "A ella le gusta Ken Takakura. El de verdad" },
+    { a: { name: "Yuta",    img: "couples/yuta.jpg" },    b: { name: "Maki",    img: "couples/maki.png" },       from: "Jujutsu Kaisen", note: "Los dos me podrían pegar" },
+    { a: { name: "Gojo",    img: "characters/gojo.png" }, b: { name: "Geto",    img: "couples/geto.png" },       from: "Jujutsu Kaisen", note: "Mejores amigos. Sure" },
+    { a: { name: "Denji",   img: "characters/denji.png" },b: { name: "Reze",    img: "couples/reze.png" },       from: "Chainsaw Man", note: "Debió ir al café" },
+    { a: { name: "David",   img: "couples/david.png" },   b: { name: "Lucy",    img: "characters/lucy.jpg" },    from: "Cyberpunk: Edgerunners", note: "Yo también te llevaría a la luna" },
   ],
 
   // ---------- OFFERINGS (one card per show she watched) ----------
@@ -140,31 +140,31 @@ const ALTAR = {
 
   // ---------- HALL OF SHAME (her chat screenshots) ----------
   chats: [
-    { img: "pookie-wakeup.png", caption: "WAKEUP, I MISS U, POOKIE. Four messages in the same minute. Then she asked ChatGPT to draw what talking to her is like, and it was right" },
-    { img: "u-gigantic-angry-wife.png", caption: "She sent this with just \"U\". I'm the little one, she's the gigantic angry wife. Correct" },
+    { img: "pookie-wakeup.png", caption: "WAKEUP, I MISS U, POOKIE. Cuatro mensajes en el mismo minuto. Después le pidió a ChatGPT que dibujara cómo es hablar con ella, y le atinó" },
+    { img: "u-gigantic-angry-wife.png", caption: "Mandó esto solo con una \"U\". Yo soy el chiquito, ella la gigantic angry wife. Correcto" },
     { img: "panda-dance.webp", caption: "PANDA" },
     { img: "videocall-cat.webp", caption: "She showing me our son, ÑOYD" },
     { video: "blub-blub", caption: "I'll paw you" },
-    { img: "gato-no-da-mas.png", caption: "Her after studying for ten minutes. Gato culiao que no da más" },
+    { img: "gato-no-da-mas.png", caption: "Ella después de estudiar diez minutos. Gato culiao que no da más" },
   ],
 
   // ---------- BUTTERFLY CINEMA (looping clips in images/gifs/) ----------
   cinema: [
-    { video: "shinobu-victory-2", caption: "\"Oh, did I use too much poison? Silly me.\"" },
-    { video: "shinobu-dragonfly", caption: "Insect Breathing, Dance of the Dragonfly: Compound Eye Hexagon" },
-    { video: "shinobu-academy",   caption: "Kimetsu Gakuen Shinobu" },
-    { video: "shinobu-horsefly",  caption: "Insect Breathing, Dance of the Horsefly" },
-    { video: "shinobu-victory",   caption: "Walking away like nothing happened" },
-    { video: "shinobu-centipede", caption: "Insect Breathing, Dance of the Centipede: Hundred-Legged Zigzag" },
+    { video: "shinobu-victory-2", caption: "\"Ara, ¿usé demasiado veneno? Silly me.\"" },
+    { video: "shinobu-dragonfly", caption: "Respiración del Insecto, Danza de la Libélula: Ojo Compuesto Hexagonal" },
+    { video: "shinobu-academy", caption: "Shinobu de Kimetsu Gakuen" },
+    { video: "shinobu-horsefly", caption: "Respiración del Insecto, Danza del Tábano" },
+    { video: "shinobu-victory", caption: "Yéndose como si nada hubiera pasado" },
+    { video: "shinobu-centipede", caption: "Respiración del Insecto, Danza del Ciempiés: Zigzag de Cien Patas" },
   ],
 
   // ---------- GIYUSHINO ARCHIVE (canon moments) ----------
   giyushino: [
-    { video: "giyushino-mission",   title: "Always sent on missions together", text: "Oyakata-sama sends both of them to Mount Natagumo. They got paired up a lot." },
-    { video: "giyushino-victory",   title: "\"If only humans and demons could get along\"", text: "She says it smiling. He stands next to her and says nothing, like always." },
-    { img: "couples/giyu-shinobu-official.webp", title: "\"That's why everyone dislikes you\"", text: "Giyu blocks her attack to protect Nezuko, so she tells him that's why people don't like him. His answer: \"I'm not disliked.\" He is, a little." },
-    { video: "giyushino-victory-2", title: "She wants him to talk more", text: "She teases him all the time, but she really wants him to open up. He tells her she works hard and worries about her without saying it. Even Gyomei noticed they like talking to each other." },
-    { img: "shinobu/shinobu-2.webp", title: "He remembers her smile", text: "When Giyu hears the news, the first thing he thinks of is her smiling. Okay I'm not crying." },
+    { video: "giyushino-mission", title: "Siempre los mandaban juntos de misión", text: "Oyakata-sama manda a los dos al Monte Natagumo. Los emparejaban mucho." },
+    { video: "giyushino-victory", title: "\"Si tan solo los humanos y los demonios pudieran llevarse bien\"", text: "Ella lo dice sonriendo. Él está a su lado sin decir nada, como siempre." },
+    { img: "couples/giyu-shinobu-official.webp", title: "\"Por eso todos te odian\"", text: "Giyu bloquea su ataque para proteger a Nezuko, y ella le dice que por eso nadie lo quiere. Su respuesta: \"No me odian.\" Sí lo odian, un poquito." },
+    { video: "giyushino-victory-2", title: "Ella quiere que él hable más", text: "Lo molesta todo el tiempo, pero de verdad quiere que se abra. Él le dice que trabaja duro y se preocupa por ella sin decirlo. Hasta Gyomei notó que les gusta hablar entre ellos." },
+    { img: "shinobu/shinobu-2.webp", title: "Él recuerda su sonrisa", text: "Cuando Giyu se entera, lo primero que piensa es en ella sonriendo. Ok, no estoy llorando." },
   ],
 
   // Optional: your favorite GiyuShino doujinshi.
@@ -177,35 +177,35 @@ const ALTAR = {
   // Each chapter can have: img (one picture), pair (two pictures side by side),
   // youtube (a video id), kids: true (shows the cats), today: true (counts the days).
   story: [
-    { title: "Baxth's server", text: "We met talking in our friend Baxth's server. Two random people typing in the same chat. I had no idea what was coming." },
-    { title: "The rebellion", text: "Then we started a little rebellion against Baxth, just for fun. Don't worry, we're all friends again now. Hi Baxth." },
-    { title: "awa", text: "You made awa, our rebellion server, and somehow I was there all the time. That's where we became us." },
-    { title: "July 25, 2021", text: "The day you became my girlfriend. Best day of my life, and every day after it is a close second." },
-    { title: "Our first matching pfp", pair: ["couples/zhongli.webp", "couples/hutao.webp"], text: "Zhongli and Hu Tao. Our friend Wolf picked them for us, and honestly that's a big part of why we ended up together. Thank you, Wolf. The first of about a thousand matching pfps." },
-    { title: "Our song", youtube: "KvMY1uzSC1E", text: "I Really Want to Stay at Your House. Every time it plays, I think of you." },
-    { title: "Caso Cerrado, Roblox edition", gavel: true, text: "The night we watched the Caso Cerrado Roblox episode and couldn't breathe from laughing. Still one of my favorite memories with you." },
-    { title: "The family grew", kids: true, text: "Gato Chico, Lloyd and Miru. Three kids and none of them listen to us." },
-    { title: "Today", today: true, text: "And I'd still choose you. Every single time." },
+    { title: "El server de Baxth", text: "Nos conocimos hablando en el server de nuestro amigo Baxth. Dos randoms escribiendo en el mismo chat. No tenía idea de lo que venía." },
+    { title: "La rebelión", text: "Después armamos una pequeña rebelión contra Baxth, just for fun. Tranqui, ya somos todos amigos otra vez. Hi Baxth." },
+    { title: "awa", text: "Hiciste awa, nuestro server rebelde, y de alguna forma yo estaba ahí todo el tiempo. Ahí nos volvimos nosotros." },
+    { title: "25 de julio, 2021", text: "El día que te volviste mi novia. El mejor día de mi vida, y todos los que vinieron después le siguen muy de cerca." },
+    { title: "Nuestra primera matching pfp", pair: ["couples/zhongli.webp", "couples/hutao.webp"], text: "Zhongli y Hu Tao. Nuestro amigo Wolf las eligió por nosotros, y honestamente eso tuvo mucho que ver con que termináramos juntos. Thank you, Wolf. La primera de como mil matching pfps." },
+    { title: "Nuestra canción", youtube: "KvMY1uzSC1E", text: "I Really Want to Stay at Your House. Cada vez que suena, pienso en ti." },
+    { title: "Caso Cerrado, Roblox edition", gavel: true, text: "La noche que vimos el episodio de Caso Cerrado en Roblox y no podíamos ni respirar de la risa. Sigue siendo uno de mis recuerdos favoritos contigo." },
+    { title: "La familia creció", kids: true, text: "Gato Chico, Lloyd y Miru. Tres hijos y ninguno nos hace caso." },
+    { title: "Hoy", today: true, text: "Y te seguiría eligiendo. Every single time." },
   ],
 
   // ---------- FINAL SELECTION (quiz about us) ----------
   // The first option is always the right one (they get shuffled on the page).
   quiz: [
-    { q: "Where did we meet?", options: ["Baxth's server", "awa", "A Genshin lobby", "Roblox"] },
-    { q: "What was the name of our rebellion server?", options: ["awa", "owo", "uwu", "Baxth"] },
-    { q: "When did we become a couple?", options: ["July 25, 2021", "June 25, 2021", "July 25, 2022", "August 25, 2021"] },
-    { q: "What was our first matching pfp?", options: ["Zhongli and Hu Tao", "Giyu and Shinobu", "Denji and Reze", "Okarun and Momo"] },
-    { q: "Who picked our first matching pfp?", options: ["Wolf", "Me", "You", "Maxwell"] },
-    { q: "What's Gato Chico's real name?", options: ["Raven", "Miru", "Lloyd", "Gato Grande"] },
-    { q: "What's ÑOYD's actual name?", options: ["Lloyd", "Loid Forger", "Noyd", "Raven"] },
-    { q: "What's our song?", options: ["I Really Want to Stay at Your House", "Maxwell the Cat Theme", "Gurenge", "Kick Back"] },
-    { q: "What made us laugh until we couldn't breathe?", options: ["The Caso Cerrado Roblox episode", "The panda video", "Maxwell spinning", "Doggy jumpscares"] },
-    { q: "What do you yell when I take too long to answer?", options: ["STOP IGNORING ME", "Ara ara", "Tsun tsun", "Good morning"] },
-    { q: "Who is the real owner of this altar?", options: ["Shinobu", "You", "Maxwell", "Doggy"] },
+    { q: "¿Dónde nos conocimos?", options: ["En el server de Baxth", "En awa", "En un lobby de Genshin", "En Roblox"] },
+    { q: "¿Cómo se llamaba nuestro server rebelde?", options: ["awa", "owo", "uwu", "Baxth"] },
+    { q: "¿Cuándo empezamos a ser pareja?", options: ["25 de julio, 2021", "25 de junio, 2021", "25 de julio, 2022", "25 de agosto, 2021"] },
+    { q: "¿Cuál fue nuestra primera matching pfp?", options: ["Zhongli y Hu Tao", "Giyu y Shinobu", "Denji y Reze", "Okarun y Momo"] },
+    { q: "¿Quién eligió nuestra primera matching pfp?", options: ["Wolf", "Yo", "Tú", "Maxwell"] },
+    { q: "¿Cuál es el nombre real de Gato Chico?", options: ["Raven", "Miru", "Lloyd", "Gato Grande"] },
+    { q: "¿Cómo se llama ÑOYD de verdad?", options: ["Lloyd", "Loid Forger", "Noyd", "Raven"] },
+    { q: "¿Cuál es nuestra canción?", options: ["I Really Want to Stay at Your House", "Maxwell the Cat Theme", "Gurenge", "Kick Back"] },
+    { q: "¿Qué nos hizo reír hasta no poder respirar?", options: ["El episodio de Caso Cerrado en Roblox", "El video del panda", "Maxwell girando", "Los jumpscares de Doggy"] },
+    { q: "¿Qué gritas cuando me demoro en contestar?", options: ["STOP IGNORING ME", "Ara ara", "Tsun tsun", "Buenos días"] },
+    { q: "¿Quién es la verdadera dueña de este altar?", options: ["Shinobu", "Tú", "Maxwell", "Doggy"] },
   ],
   quizPass: 7, // how many right answers she needs
-  quizRight: ["WAWA, correct", "Ara ara, you know us too well", "Correct. Shinobu is impressed", "Yes! Of course you remember"],
-  quizWrong: ["Tsun tsun. Wrong", "Ara ara... that's not it", "STOP IGNORING THE RIGHT ANSWER", "Hmm. I'm telling Lloyd"],
+  quizRight: ["WAWA, correcto", "Ara ara, nos conoces demasiado bien", "Correcto. Shinobu está impresionada", "Yes! Obvio que te acuerdas"],
+  quizWrong: ["Tsun tsun. Incorrecto", "Ara ara... no era esa", "STOP IGNORING THE RIGHT ANSWER", "Hmm. Le voy a contar a Lloyd"],
 
   // ---------- OPEN WHEN... (letters) ----------
   // Rewrite any of these in your own words. "secret: true" stays locked until she passes the quiz.
@@ -227,62 +227,62 @@ const ALTAR = {
 
   // ---------- THE KIDS VISIT (they walk across the screen now and then) ----------
   kidNotes: {
-    "Gato Chico": ["Gato Chico has been watching you from the top of the fridge. He approves", "Gato Chico says his name is Raven actually. Nobody listens", "Gato Chico wants food. And love. Mostly food", "Gato Chico is judging your sleep schedule", "blub blub. Gato Chico thinks he's a fish today"],
-    "Lloyd": ["ÑOYD misses you", "Lloyd says his mom is the best mom", "ÑOYD wants to be on the video call again", "Lloyd sat on the keyboard. Sorry about that", "Lloyd says mom is stinky. He means it with love"],
-    "Miru": ["Miru says go to sleep", "Miru is asleep on dad again. Send help", "Miru wants you to come visit", "Miru brought you a hug (and some fur)", "Miru wants huggies too"],
+    "Gato Chico": ["Gato Chico te ha estado vigilando desde arriba del refri. Aprueba", "Gato Chico dice que en realidad se llama Raven. Nadie le hace caso", "Gato Chico quiere comida. Y amor. Más que nada comida", "Gato Chico está juzgando tu horario de sueño", "blub blub. Hoy Gato Chico cree que es un pez"],
+    "Lloyd": ["ÑOYD te extraña", "Lloyd dice que su mamá es la mejor mamá", "ÑOYD quiere salir en la videollamada otra vez", "Lloyd se sentó en el teclado. Sorry", "Lloyd dice que mamá está stinky. Con cariño"],
+    "Miru": ["Miru dice que te vayas a dormir", "Miru se durmió encima de papá otra vez. Send help", "Miru quiere que vengas de visita", "Miru te trae un abrazo (y pelos)", "Miru también quiere huggies"],
   },
 
   // ---------- NOTE OF THE DAY (a different one every day) ----------
   dailyNotes: [
-    "Good morning, pookie. Or good night. Either way, I love you",
-    "Drink some water. Shinobu's orders",
-    "You're doing better than you think",
-    "Reminder: you're my favorite notification",
-    "Today is a good day for a tiny rebellion. Just a small one",
-    "If you're tired, rest. The world can wait, I'll wait too",
-    "I'm proud of you. For everything, but especially for not giving up",
-    "Somewhere right now, Lloyd is thinking about you",
-    "You make even boring days feel like an episode I want to rewatch",
-    "Eat something good today. You deserve it",
-    "You + me > every ship on this altar",
-    "Thank you for existing. Seriously",
-    "If today is heavy, put it down for a bit and come talk to me",
-    "You're cute. That's the note. That's all",
-    "Shinobu smiles when she's angry. You smile and I forget what day it is",
-    "Five years and I still get excited when you text me",
-    "Take a deep breath. In, out. Okay, now go be amazing",
-    "You're allowed to have a lazy day. Eepy is valid",
-    "Miru says hi. Gato Chico says nothing, he's busy",
-    "I'd start another rebellion for you. Sorry Baxth",
-    "Go watch the fish in the Hall of Shame. blub blub. You're welcome",
-    "Whatever happens today, you still have me",
-    "You're the gigantic angry wife and I'm the happiest little guy",
-    "Your laugh is my favorite sound. Maxwell's song is second",
-    "Small steps still count. Every one of them",
+    "Good morning, puki. O good night. Da igual, te amo",
+    "Toma agua. Órdenes de Shinobu",
+    "Lo estás haciendo mejor de lo que crees",
+    "Recordatorio: eres mi notificación favorita",
+    "Hoy es buen día para una mini rebelión. Chiquita nomás",
+    "Si estás cansada, descansa. El mundo puede esperar, yo también",
+    "Estoy orgulloso de ti. Por todo, pero sobre todo por no rendirte",
+    "En este momento, Lloyd está pensando en ti",
+    "Haces que hasta los días aburridos se sientan como un episodio que quiero volver a ver",
+    "Come algo rico hoy. You deserve it",
+    "Tú + yo > todos los ships de este altar",
+    "Gracias por existir. En serio",
+    "Si hoy pesa, déjalo un rato y ven a hablarme",
+    "Eres cute. Esa es la nota. Eso es todo",
+    "Shinobu sonríe cuando está enojada. Tú sonríes y se me olvida qué día es",
+    "Cinco años y todavía me emociono cuando me escribes",
+    "Respira hondo. Inhala, exhala. Ok, now go be amazing",
+    "Tienes permiso para un día flojo. Eepy is valid",
+    "Miru dice hola. Gato Chico no dice nada, está ocupado",
+    "Empezaría otra rebelión por ti. Sorry Baxth",
+    "Anda a ver el pez al Hall of Shame. blub blub. De nada",
+    "Pase lo que pase hoy, me sigues teniendo",
+    "Tú eres la gigantic angry wife y yo el little guy más feliz",
+    "Tu risa es mi sonido favorito. La canción de Maxwell va segunda",
+    "Los pasos chiquitos también cuentan. Todos",
     "I really want to stay at your house",
-    "Ara ara, someone is checking the altar again. I love that",
-    "You're strong, but you don't always have to be. I've got you",
-    "Today's mission: be kind to yourself",
-    "I love you more than yesterday. Less than tomorrow",
-    "Today you get unlimited huggies. No limit. /huggies",
-    "hallo puki. Did you drink water today? :c",
-    "Stinky, but mine",
-    "blub blub blub. That's fish for I miss you",
-    "If today feels like too much, ven aquí miamol. Let me spoil you a little",
+    "Ara ara, alguien está revisando el altar otra vez. I love that",
+    "Eres fuerte, pero no siempre tienes que serlo. I've got you",
+    "Misión de hoy: ser buena contigo misma",
+    "Te amo más que ayer. Menos que mañana",
+    "Hoy tienes huggies ilimitados. Sin límite. /huggies",
+    "hallo puki. ¿Tomaste agua hoy? :c",
+    "Stinky, pero mía",
+    "blub blub blub. Así se dice te extraño en pez",
+    "Si hoy se siente demasiado, ven aquí miamol. Déjame mimarte un poquito",
   ],
 
   // ---------- CASO CERRADO: POOKIE VS SYPPEX ----------
   cases: [
-    { title: "Pookie vs Syppex", subject: "The bedtime case", charge: "The defendant said he would go to sleep at 12. He was still online at 3.", defense: "Your honor, I was thinking about her. It's not my fault.", verdict: "GUILTY", sentence: "Sleep on time for a whole week, and send a goodnight message every night." },
-    { title: "Pookie vs Syppex", subject: "Left on read", charge: "The defendant left the plaintiff on read for four whole minutes. She had to type STOP IGNORING ME three times.", defense: "I was in the bathroom, your honor.", verdict: "GUILTY", sentence: "Answer every STOP IGNORING ME in less than ten seconds, for the rest of his life." },
-    { title: "Syppex vs Pookie", subject: "The stolen heart", charge: "The accused stole the plaintiff's heart in Baxth's server in 2021 and never gave it back.", defense: "Pookie: I'm keeping it.", verdict: "NOT GUILTY", sentence: "The heart was given freely. She can keep it forever." },
+    { title: "Pookie vs Syppex", subject: "El caso de la hora de dormir", charge: "El acusado dijo que se iba a dormir a las 12. A las 3 seguía conectado.", defense: "Su señoría, estaba pensando en ella. No es mi culpa.", verdict: "CULPABLE", sentence: "Dormir a la hora por una semana entera, y mandar un mensaje de buenas noches cada noche." },
+    { title: "Pookie vs Syppex", subject: "Dejada en visto", charge: "El acusado dejó a la demandante en visto cuatro minutos enteros. Ella tuvo que escribir STOP IGNORING ME tres veces.", defense: "Estaba en el baño, su señoría.", verdict: "CULPABLE", sentence: "Contestar cada STOP IGNORING ME en menos de diez segundos, por el resto de su vida." },
+    { title: "Syppex vs Pookie", subject: "El corazón robado", charge: "La acusada le robó el corazón al demandante en el server de Baxth en 2021 y nunca se lo devolvió.", defense: "Pookie: Me lo quedo.", verdict: "INOCENTE", free: true, sentence: "El corazón fue entregado por voluntad propia. Se lo puede quedar para siempre." },
   ],
 
   // ---------- BUTTERFLY CATCH (mini game) ----------
   game: {
     seconds: 30,
     goal: 20,
-    win: "You caught them all, just like you caught me in 2021. Your prize: I owe you a movie night of your choice. No complaints allowed.",
+    win: "Las atrapaste todas, igual que me atrapaste a mí en 2021. Tu premio: te debo una movie night, tú eliges la peli. Sin quejas.",
   },
 
   // ---------- WAKEUP SECRET ----------
@@ -292,7 +292,7 @@ const ALTAR = {
     myName: "Syppex", myPfp: "couples/zhongli.webp",
     spam: ["WAKEUP", "I want huggies", ":c", "POOKIE", "WAWA", "STOP IGNORING ME"],
     reply: "hallo puki. /huggies",
-    message: "You found the secret. Of course you did, you've typed WAKEUP to me a thousand times. Here's the truth: every single one of those made my day. Even the ones at 7 in the morning. Keep waking me up for the rest of our lives, okay? I love you, pookie.",
+    message: "Encontraste el secreto. Obvio, si me has escrito WAKEUP como mil veces. Here's the truth: cada uno de esos me alegró el día. Hasta los de las 7 de la mañana. Sigue despertándome por el resto de nuestras vidas, ¿ok? Te amo, puki.",
   },
 
   // ---------- THE BIG SURPRISE (Maxwell, love letter, Hashira scroll) ----------
@@ -306,25 +306,25 @@ const ALTAR = {
 
   // WRITE THIS IN YOUR OWN WORDS. It's the most important part of the site.
   letter: {
-    greeting: "Hi pookie,",
+    greeting: "Hola puki,",
     paragraphs: [
-      "I'm sorry for every fight we've had, and for all the nights I stayed up way past my bedtime after promising you I'd go to sleep. I know I'm not always easy.",
-      "But every moment I've spent by your side has been the best thing that's ever happened to me. Five years together and my heart still jumps when your name shows up on my phone, even when it's just a random WAWA.",
-      "Thank you for loving me, for all our matching pfps, for Miru, Lloyd and Gato Chico, and for being my gigantic angry wife.",
-      "And if I ever get reincarnated, I'd find you again and choose you again. In every life, it's always going to be you.",
+      "Perdón por cada pelea que hemos tenido, y por todas las noches que me quedé despierto hasta tarde después de prometerte que me iba a dormir. Sé que no siempre soy fácil.",
+      "Pero cada momento a tu lado ha sido lo mejor que me ha pasado en la vida. Cinco años juntos y mi corazón todavía salta cuando aparece tu nombre en mi celular, aunque sea un WAWA random.",
+      "Gracias por amarme, por todas nuestras matching pfps, por Miru, Lloyd y Gato Chico, y por ser mi gigantic angry wife.",
+      "Y si alguna vez reencarno, te buscaría otra vez y te elegiría otra vez. En todas las vidas, siempre vas a ser tú.",
     ],
-    signature: "Yours always, your Giyu",
+    signature: "Yours always, tu Giyu",
   },
   certificate: {
-    rank: "Butterfly Hashira of My Heart",
+    rank: "Hashira Mariposa de mi Corazón",
     kanji: "蝶柱",
     breathing: [
-      "First Form: STOP IGNORING ME (in all caps)",
-      "Second Form: Gigantic Angry Wife",
-      "Third Form: Showing me ÑOYD instead of her face",
-      "Fourth Form: Being the best mom to Miru, Lloyd and Gato Chico",
-      "Final Form: Making me fall for her again every day",
+      "Primera Forma: STOP IGNORING ME (en mayúsculas)",
+      "Segunda Forma: Gigantic Angry Wife",
+      "Tercera Forma: Mostrarme a ÑOYD en vez de su cara",
+      "Cuarta Forma: Ser la mejor mamá de Miru, Lloyd y Gato Chico",
+      "Forma Final: Hacer que me enamore de ella otra vez cada día",
     ],
-    finale: "Ara ara. It's official, you're stuck with me now",
+    finale: "Ara ara. Ya es oficial, ahora estás stuck conmigo",
   },
 };

@@ -16,52 +16,52 @@
   const X = {
     shinobu: ["shinobu-xmas-2025.webp", "shinobu-xmas-2023.webp", "shinobu-xmas-2022.webp", "shinobu-xmas-2024.webp", "shinobu-xmas-2020.webp"],
     quotes: [
-      "Ara ara, Merry Christmas. Did you behave this year?",
-      "Santa Shinobu has a list. You're on the nice one. Barely",
-      "Even the Insect Hashira takes a day off for Christmas",
+      "Ara ara, Merry Christmas. ¿Te portaste bien este año?",
+      "Santa Shinobu tiene una lista. Estás en la de los buenos. Apenas",
+      "Hasta la Hashira del Insecto se toma el día libre en Navidad",
     ],
     candles: [
-      "All I want for Christmas is you (and ÑOYD)",
-      "Santa called. He says you're my favorite gift",
-      "Hot chocolate, a blanket and you. Perfect Christmas",
+      "All I want for Christmas is you (y ÑOYD)",
+      "Llamó Santa. Dice que eres mi regalo favorito",
+      "Chocolate caliente, una mantita y tú. Navidad perfecta",
     ],
     advent: [
-      "Day 1. The countdown starts. I already know my favorite gift: you",
-      "Hot chocolate today. Extra marshmallows. Doctor's orders (Shinobu is the doctor)",
-      "Put on a Christmas song and dance a little. Nobody's watching except Lloyd",
-      "Fact: you look cuter in December. I don't make the rules",
-      "Make a wish today. I'll try to make it come true",
-      "Wrap yourself in a blanket like a burrito. That's today's task",
-      "Seven days in and I'm still thinking about you every single one",
-      "Gato Chico wants to know if he's getting a present. He's been good. Mostly",
-      "Watch something cozy tonight. A Christmas movie or the anime we're watching, you choose",
-      "Ten days down. You're doing amazing, pookie",
-      "Miru is sleeping under the tree again. Classic Miru",
-      "Today is a good day for a long call. Just saying",
-      "Thirteen days, and I'm still the luckiest guy on the server",
-      "Remember to eat something warm today. Soup counts",
-      "Halfway there. The present under the altar is getting impatient",
-      "Write down one good thing from this year. I'll start: you",
-      "If it's cold where you are, I'm sending you a hug through the screen",
-      "ÑOYD would like you to know he deserves a gift. He's very convincing",
-      "Six days left. I promise the present is worth it",
-      "Light the candles on the altar today. All three",
-      "The longest night of the year. I'd stay up all of it talking to you",
-      "Three days left. Don't you dare open the present early",
-      "Two more sleeps",
-      "Christmas Eve. Tomorrow you can open the present under the altar",
-      "Merry Christmas, pookie. Go open your present",
-      "Christmas is over, but I'm still yours. That part doesn't expire",
+      "Día 1. Empieza la cuenta regresiva. Ya sé cuál es mi regalo favorito: tú",
+      "Hoy toca chocolate caliente. Extra marshmallows. Órdenes de la doctora (la doctora es Shinobu)",
+      "Pon una canción navideña y baila un poquito. Nadie te ve, solo Lloyd",
+      "Dato: en diciembre te ves más cute. Yo no pongo las reglas",
+      "Pide un deseo hoy. Voy a tratar de cumplirlo",
+      "Envuélvete en una mantita como burrito. Esa es la tarea de hoy",
+      "Siete días y sigo pensando en ti todos y cada uno",
+      "Gato Chico quiere saber si le toca regalo. Se portó bien. Más o menos",
+      "Ve algo cozy esta noche. Una peli navideña o el anime que estamos viendo, tú eliges",
+      "Diez días. Lo estás haciendo increíble, puki",
+      "Miru está durmiendo debajo del árbol otra vez. Classic Miru",
+      "Hoy es buen día para una llamada larga. Solo digo",
+      "Trece días y sigo siendo el más suertudo del server",
+      "Acuérdate de comer algo calentito hoy. La sopa cuenta",
+      "Vamos por la mitad. El regalo debajo del altar se está impacientando",
+      "Escribe una cosa buena de este año. Empiezo yo: tú",
+      "Si hace frío donde estás, te mando un abrazo por la pantalla",
+      "ÑOYD quiere que sepas que se merece un regalo. Es muy convincente",
+      "Faltan seis días. Te prometo que el regalo vale la pena",
+      "Prende las velas del altar hoy. Las tres",
+      "La noche más larga del año. Me la pasaría entera hablando contigo",
+      "Faltan tres días. Ni se te ocurra abrir el regalo antes",
+      "Dos noches más",
+      "Nochebuena. Mañana puedes abrir el regalo debajo del altar",
+      "Merry Christmas, puki. Anda a abrir tu regalo",
+      "Ya pasó la Navidad, pero yo sigo siendo tuyo. Eso no vence",
     ],
     letter: {
-      greeting: "Merry Christmas, pookie",
+      greeting: "Merry Christmas, puki",
       paragraphs: [
-        "Another Christmas with you. I don't know how I got this lucky, but I'm not going to question it.",
-        "This year wasn't easy. The rules changed, things got heavy, and you kept going anyway. I saw all of it, and I'm so proud of you.",
-        "My Christmas wish is simple. More WAWAs, more matching pfps, more anime nights together, and more years of being yours. Next year, and the one after that, and every one after.",
-        "I love you. Merry Christmas from me, Miru, Lloyd and Gato Chico. And Maxwell, he insisted.",
+        "Otra Navidad contigo. No sé cómo tuve tanta suerte, pero no lo voy a cuestionar.",
+        "Este año no fue fácil. Cambiaron las reglas, las cosas se pusieron pesadas y tú seguiste igual. Lo vi todo, y estoy muy orgulloso de ti.",
+        "Mi deseo de Navidad es simple. Más WAWAs, más matching pfps, más noches de anime juntos y más años siendo tuyo. El próximo año, y el siguiente, y todos los que vengan.",
+        "Te amo. Merry Christmas de parte mía, de Miru, Lloyd y Gato Chico. Y de Maxwell, insistió.",
       ],
-      signature: "Your Giyu, always",
+      signature: "Tu Giyu, always",
     },
   };
 
@@ -70,7 +70,7 @@
   ALTAR.shinobu.quotes = [...X.quotes, ...ALTAR.shinobu.quotes];
   ALTAR.candleMessages = [...X.candles, ...ALTAR.candleMessages];
   ALTAR.dailyNotes = [X.advent[day - 1]];
-  ALTAR.dailyTag = day <= 25 ? `Advent · Day ${day} of 25` : "Merry Christmas";
+  ALTAR.dailyTag = day <= 25 ? `Adviento · Día ${day} de 25` : "Merry Christmas";
   ALTAR.xmasLetter = X.letter;
   document.documentElement.classList.add("xmas");
 
@@ -78,8 +78,8 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   // entrance text
-  const gk = $("#gate .kicker"); if (gk) gk.textContent = "蝶屋敷 · a snowy night on the roof";
-  const hint = $("#gate-hint"); if (hint) hint.textContent = "turn your sound on and tap anywhere";
+  const gk = $("#gate .kicker"); if (gk) gk.textContent = "蝶屋敷 · una noche nevada en el techo";
+  const hint = $("#gate-hint"); if (hint) hint.textContent = "sube el volumen y toca donde sea";
 
   // string of lights across the top of the altar
   const lights = document.createElement("div");
@@ -91,8 +91,8 @@
   // the big Christmas banner under the note of the day
   const banner = document.createElement("figure");
   banner.className = "xmas-banner reveal";
-  banner.innerHTML = `<img src="images/christmas/banner-2025.webp" alt="All the Hashira at Christmas" loading="lazy" /><figcaption>Merry Christmas from all the Hashira (and me)</figcaption>`;
-  banner.addEventListener("click", (e) => { e.stopPropagation(); window.FX && FX.openLightbox(banner.querySelector("img").src, "Merry Christmas from all the Hashira (and me)"); });
+  banner.innerHTML = `<img src="images/christmas/banner-2025.webp" alt="All the Hashira at Christmas" loading="lazy" /><figcaption>Merry Christmas de todos los Hashira (y de mí)</figcaption>`;
+  banner.addEventListener("click", (e) => { e.stopPropagation(); window.FX && FX.openLightbox(banner.querySelector("img").src, "Merry Christmas de todos los Hashira (y de mí)"); });
   $("#daily").after(banner);
 
   // the present under the altar
@@ -103,7 +103,7 @@
     <button class="xmas-gift ${ready ? "ready" : ""}" aria-label="Christmas present">
       <span class="g-lid"></span><span class="g-box"></span><span class="g-ribbon-v"></span><span class="g-bow"></span>
     </button>
-    <p class="xmas-gift-tag">${ready ? "It's Christmas. Open it" : "Don't open until December 25"}</p>`;
+    <p class="xmas-gift-tag">${ready ? "Es Navidad. Ábrelo" : "No abrir hasta el 25 de diciembre"}</p>`;
   $(".candles").before(gift);
 
   const modal = document.createElement("div");
@@ -113,7 +113,7 @@
       <p class="ow-title">${esc(X.letter.greeting)}</p>
       ${X.letter.paragraphs.map((p) => `<p class="ow-text">${esc(p)}</p>`).join("")}
       <p class="l-sign">${esc(X.letter.signature)}</p>
-      <button class="btn" id="gift-close">Close the present</button>
+      <button class="btn" id="gift-close">Cerrar el regalo</button>
     </article>`;
   document.body.appendChild(modal);
   const close = () => { modal.classList.remove("open"); setTimeout(() => (modal.hidden = true), 400); };
@@ -124,7 +124,7 @@
     const g = e.currentTarget;
     if (!ready) {
       const left = 25 - day;
-      gift.querySelector(".xmas-gift-tag").textContent = left === 1 ? "Ara ara, not yet. One more day" : `Ara ara, not yet. ${left} more days`;
+      gift.querySelector(".xmas-gift-tag").textContent = left === 1 ? "Ara ara, todavía no. Falta un día" : `Ara ara, todavía no. Faltan ${left} días`;
       g.classList.remove("nope"); void g.offsetWidth; g.classList.add("nope");
       window.SFX && SFX.candleOff();
       return;
