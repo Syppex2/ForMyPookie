@@ -203,15 +203,13 @@
     buf = (buf + e.key.toUpperCase()).slice(-6);
     if (buf === "WAKEUP" && !$("#gate")) { buf = ""; wakeup(); }
   });
-  // phones: tap the word WAKEUP in the footer
-  const from = $("#from");
-  if (from && from.textContent.includes("WAKEUP")) {
-    const [a, b] = from.textContent.split("WAKEUP");
-    from.textContent = a.trimEnd();
-    const w = document.createElement("button");
-    w.className = "wk-word"; w.textContent = "WAKEUP"; w.setAttribute("aria-label", "WAKEUP (secret)");
-    w.addEventListener("click", (e) => { e.stopPropagation(); wakeup(); });
-    from.append(w, b || "");
+  // phones (no keyboard): tap the butterfly at the very bottom of the page
+  const fb = document.querySelector("footer .butterfly");
+  if (fb) {
+    fb.classList.add("wk-bfly");
+    fb.setAttribute("role", "button"); fb.setAttribute("tabindex", "0"); fb.setAttribute("aria-label", "A secret");
+    fb.addEventListener("click", (e) => { e.stopPropagation(); wakeup(); });
+    fb.addEventListener("keydown", (e) => { if (e.key === "Enter") wakeup(); });
   }
   window.WAKEUP = wakeup;
 })();

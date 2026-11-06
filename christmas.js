@@ -58,7 +58,7 @@
       paragraphs: [
         "Another Christmas with you. I don't know how I got this lucky, but I'm not going to question it.",
         "This year wasn't easy. The rules changed, things got heavy, and you kept going anyway. I saw all of it, and I'm so proud of you.",
-        "My Christmas wish is simple. More WAKEUPs, more matching pfps, more nights laughing at Caso Cerrado, and more years of being yours. Next year, and the one after that, and every one after.",
+        "My Christmas wish is simple. More WAWAs, more matching pfps, more nights laughing at Caso Cerrado, and more years of being yours. Next year, and the one after that, and every one after.",
         "I love you. Merry Christmas from me, Miru, Lloyd and Gato Chico. And Maxwell, he insisted.",
       ],
       signature: "Your Giyu, always",

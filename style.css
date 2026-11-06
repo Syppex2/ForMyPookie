@@ -855,3 +855,4 @@ section + section { margin-top: 26px; }
 .xmas-gift-tag { margin: 10px 0 0; font-family: var(--serif); color: var(--gold); font-size: 1.05rem; }
 .xmas-letter .l-sign { text-align: right; font-weight: 700; color: #c2185b; font-size: 1.1em; }
 .xmas-letter .ow-text { margin: 0 0 12px; }
+.wk-bfly { cursor: pointer; }

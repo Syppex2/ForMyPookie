@@ -19,14 +19,14 @@ const ALTAR = {
   welcome: "I made you a little altar",
 
   // Signature at the bottom
-  from: "From the one who always wakes up when you say WAKEUP",
+  from: "From your Giyu, who would choose you in every life",
 
   // Shown when all three candles are lit
   allCandlesMessage: "You lit all three. Your wish is granted: you get me, forever. No refunds.",
 
   // Random messages that appear when she lights a candle
   candleMessages: [
-    "WAKEUP. I miss you too",
+    "WAWA. I miss you too",
     "Official ranking: you, then Shinobu, then Giyu",
     "Shinobu approves of this relationship",
     "Not even Maomao could figure out how you're this cute",
@@ -228,7 +228,7 @@ const ALTAR = {
     "Drink some water. Shinobu's orders",
     "You're doing better than you think",
     "Reminder: you're my favorite notification",
-    "Today is a good day to send me ten WAKEUPs",
+    "Today is a good day for a tiny rebellion. Just a small one",
     "If you're tired, rest. The world can wait, I'll wait too",
     "I'm proud of you. For everything, but especially for not giving up",
     "Somewhere right now, Lloyd is thinking about you",
@@ -259,7 +259,7 @@ const ALTAR = {
   // ---------- CASO CERRADO: POOKIE VS SYPPEX ----------
   cases: [
     { title: "Pookie vs Syppex", subject: "The bedtime case", charge: "The defendant said he would go to sleep at 12. He was still online at 3.", defense: "Your honor, I was thinking about her. It's not my fault.", verdict: "GUILTY", sentence: "Sleep on time for a whole week, and send a goodnight message every night." },
-    { title: "Pookie vs Syppex", subject: "The ignored WAKEUP", charge: "The defendant took four whole minutes to answer a WAKEUP.", defense: "I was in the bathroom, your honor.", verdict: "GUILTY", sentence: "Reply to every WAKEUP in less than ten seconds, for the rest of his life." },
+    { title: "Pookie vs Syppex", subject: "Left on read", charge: "The defendant left the plaintiff on read for four whole minutes. She had to type STOP IGNORING ME three times.", defense: "I was in the bathroom, your honor.", verdict: "GUILTY", sentence: "Answer every STOP IGNORING ME in less than ten seconds, for the rest of his life." },
     { title: "Syppex vs Pookie", subject: "The stolen heart", charge: "The accused stole the plaintiff's heart in Baxth's server in 2021 and never gave it back.", defense: "Pookie: I'm keeping it.", verdict: "NOT GUILTY", sentence: "The heart was given freely. She can keep it forever." },
   ],
 
@@ -271,7 +271,7 @@ const ALTAR = {
   },
 
   // ---------- WAKEUP SECRET ----------
-  // Typing WAKEUP anywhere on the site (or tapping WAKEUP in the footer) opens this.
+  // Typing WAKEUP anywhere on the site (or, on phones, tapping the butterfly at the very bottom) opens this.
   wakeup: {
     herName: "Mewtrelle", herPfp: "couples/hutao.webp",
     myName: "Syppex", myPfp: "couples/zhongli.webp",
@@ -294,7 +294,7 @@ const ALTAR = {
     greeting: "Hi pookie,",
     paragraphs: [
       "I'm sorry for every fight we've had, and for all the nights I stayed up way past my bedtime after promising you I'd go to sleep. I know I'm not always easy.",
-      "But every moment I've spent by your side has been the best thing that's ever happened to me. Five years together and my heart still jumps when your name shows up on my phone, even when it's ten WAKEUPs in a row.",
+      "But every moment I've spent by your side has been the best thing that's ever happened to me. Five years together and my heart still jumps when your name shows up on my phone, even when it's just a random WAWA.",
       "Thank you for loving me, for all our matching pfps, for Miru, Lloyd and Gato Chico, and for being my gigantic angry wife.",
       "And if I ever get reincarnated, I'd find you again and choose you again. In every life, it's always going to be you.",
     ],
@@ -304,7 +304,7 @@ const ALTAR = {
     rank: "Butterfly Hashira of My Heart",
     kanji: "蝶柱",
     breathing: [
-      "First Form: Four WAKEUPs in the same minute",
+      "First Form: STOP IGNORING ME (in all caps)",
       "Second Form: Gigantic Angry Wife",
       "Third Form: Showing me ÑOYD instead of her face",
       "Fourth Form: Being the best mom to Miru, Lloyd and Gato Chico",
