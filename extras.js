@@ -132,12 +132,18 @@
       box.appendChild(b);
     });
   }
+  // a letter with a "date" shows "text" only on that day, and "after" from the next day on
+  function letterText(l) {
+    if (!l.date || !l.after) return l.text;
+    const d = new Date(), today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+    return today > l.date ? l.after : l.text;
+  }
   function openLetter(l, i, b) {
     SFX.crack(); setTimeout(() => SFX.rustle(), 200);
     openedThisVisit.add(i);
     b.classList.add("opened");
     modal.querySelector(".ow-title").textContent = "Open when " + l.when;
-    modal.querySelector(".ow-text").textContent = l.text;
+    modal.querySelector(".ow-text").textContent = letterText(l);
     modal.hidden = false;
     const art = modal.querySelector(".ow-letter");
     art.classList.remove("in"); void art.offsetWidth; art.classList.add("in");
