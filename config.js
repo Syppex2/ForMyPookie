@@ -144,7 +144,8 @@ const ALTAR = {
     { img: "u-gigantic-angry-wife.png", caption: "Mandó esto solo con una \"U\". Yo soy el chiquito, ella la gigantic angry wife. Correcto" },
     { img: "panda-dance.webp", caption: "PANDA" },
     { img: "videocall-cat.webp", caption: "She showing me our son, ÑOYD" },
-    { video: "blub-blub", caption: "I'll paw you" },
+    { video: "blub-blub", caption: "blub blub blub. Así nos decimos te amo" },
+    { img: "ill-paw-you.webp", caption: "I'll paw you" },
     { img: "gato-no-da-mas.png", caption: "Ella después de estudiar diez minutos. Gato culiao que no da más" },
   ],
 
