@@ -821,3 +821,37 @@ body.popup-open .walker { visibility: hidden; }
 /* sections only draw inside their own box (for speed), so leave room for frames and shadows */
 main > section { padding: 14px 12px 40px; margin-left: -12px; margin-right: -12px; }
 section + section { margin-top: 26px; }
+
+/* ================= CHRISTMAS MODE (html.xmas) ================= */
+.santa-hat { display: none; }
+.xmas .santa-hat { display: inline; }
+.xmas .petal { width: 7px; height: 7px; border-radius: 50%; background: #fff !important; opacity: .85; box-shadow: 0 0 6px rgba(255,255,255,.7); }
+.xmas .petal:nth-child(3n) { width: 4px; height: 4px; }
+.xmas #gate .shoji { opacity: .3; }
+.xmas-lights { position: absolute; top: 0; left: 0; right: 0; z-index: 3; display: flex; justify-content: space-around; padding: 0 4%; pointer-events: none; }
+.xmas-lights::before { content: ""; position: absolute; left: 0; right: 0; top: 6px; height: 2px; background: #2c4a2a; }
+.xmas-lights i { position: relative; top: 6px; width: 10px; height: 15px; border-radius: 50% 50% 45% 45%; background: #ff4d6d; box-shadow: 0 0 12px 3px rgba(255,77,109,.7); animation: bulb 1.8s ease-in-out infinite alternate; will-change: opacity; }
+.xmas-lights i:nth-child(4n+2) { background: #ffd166; box-shadow: 0 0 12px 3px rgba(255,209,102,.7); }
+.xmas-lights i:nth-child(4n+3) { background: #4ade80; box-shadow: 0 0 12px 3px rgba(74,222,128,.6); }
+.xmas-lights i:nth-child(4n) { background: #60a5fa; box-shadow: 0 0 12px 3px rgba(96,165,250,.7); }
+@keyframes bulb { from { opacity: 1; } to { opacity: .35; } }
+.xmas .wisteria { top: 18px; }
+.xmas-banner { position: relative; max-width: 900px; margin: 0 auto 40px; border-radius: 20px; overflow: hidden; cursor: zoom-in; border: 3px solid #d62839; box-shadow: 0 0 0 3px #fffaf3, 0 20px 50px rgba(0,0,0,.45); }
+.xmas-banner img { display: block; width: 100%; }
+.xmas-banner figcaption { position: absolute; inset: auto 0 0 0; padding: 40px 18px 14px; text-align: center; font-family: var(--serif); font-size: 1.2rem; background: linear-gradient(transparent, rgba(26,15,34,.92)); }
+
+/* the present */
+.xmas-gift-wrap { margin: 40px auto 0; text-align: center; }
+.xmas-gift { position: relative; width: 120px; height: 110px; padding: 0; border: 0; background: none; cursor: pointer; animation: giftWiggle 3.2s ease-in-out infinite; }
+.xmas-gift.ready { animation: giftWiggle 1.2s ease-in-out infinite; filter: drop-shadow(0 0 18px rgba(255,209,102,.8)); }
+@keyframes giftWiggle { 0%, 80%, 100% { transform: rotate(0); } 84% { transform: rotate(-6deg); } 88% { transform: rotate(5deg); } 92% { transform: rotate(-3deg); } }
+.g-box { position: absolute; left: 10px; right: 10px; bottom: 0; height: 70px; border-radius: 6px; background: linear-gradient(90deg, #b5172f, #e0344c 50%, #b5172f); box-shadow: 0 10px 22px rgba(0,0,0,.45); }
+.g-lid { position: absolute; left: 4px; right: 4px; bottom: 66px; height: 22px; border-radius: 5px; z-index: 2; background: linear-gradient(90deg, #c41e37, #ef4a61 50%, #c41e37); transition: transform .7s cubic-bezier(.3,1.4,.5,1), opacity .7s; }
+.g-ribbon-v { position: absolute; left: 50%; bottom: 0; width: 16px; height: 88px; margin-left: -8px; z-index: 3; background: linear-gradient(90deg, #e8b04a, #ffe08a, #e8b04a); }
+.g-bow { position: absolute; left: 50%; bottom: 84px; width: 54px; height: 26px; margin-left: -27px; z-index: 4; background: radial-gradient(ellipse at 25% 50%, #ffe08a 0 40%, transparent 42%), radial-gradient(ellipse at 75% 50%, #ffe08a 0 40%, transparent 42%), radial-gradient(circle at 50% 55%, #e8b04a 0 18%, transparent 20%); transition: transform .7s cubic-bezier(.3,1.4,.5,1), opacity .7s; }
+.xmas-gift.opened { animation: none; }
+.xmas-gift.opened .g-lid, .xmas-gift.opened .g-bow { transform: translate(40px, -90px) rotate(35deg); opacity: 0; }
+.xmas-gift.nope { animation: shake .4s; }
+.xmas-gift-tag { margin: 10px 0 0; font-family: var(--serif); color: var(--gold); font-size: 1.05rem; }
+.xmas-letter .l-sign { text-align: right; font-weight: 700; color: #c2185b; font-size: 1.1em; }
+.xmas-letter .ow-text { margin: 0 0 12px; }

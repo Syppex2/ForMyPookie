@@ -141,8 +141,21 @@ const SFX = (() => {
       o.connect(f); f.connect(g); g.connect(master); o.start(s0); o.stop(s0 + 0.65);
     },
     /* soft night rain for the entrance */
-    rainStart() {
+    rainStart(snow) {
       if (!ctx || !on || rain) return;
+      if (snow) { // soft winter wind instead of rain
+        const len = ctx.sampleRate * 4, buf = ctx.createBuffer(1, len, ctx.sampleRate), d = buf.getChannelData(0);
+        let last = 0; for (let i = 0; i < len; i++) { last = (last + 0.02 * (Math.random() * 2 - 1)) / 1.02; d[i] = last * 3.5; }
+        const src = ctx.createBufferSource(); src.buffer = buf; src.loop = true;
+        const lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 700;
+        const g = ctx.createGain(); g.gain.value = 0;
+        const lfo = ctx.createOscillator(), lg = ctx.createGain(); lfo.frequency.value = 0.12; lg.gain.value = 300; lfo.connect(lg); lg.connect(lp.frequency); lfo.start();
+        src.connect(lp); lp.connect(g); g.connect(ctx.destination); src.start();
+        g.gain.linearRampToValueAtTime(0.2, ctx.currentTime + 3);
+        const drops = setInterval(() => { if (on && Math.random() < 0.35) bell(hz(96 + PENTA[Math.random() * 5 | 0]), 0, 0.03, 1.5); }, 1400);
+        rain = { src, g, drops };
+        return;
+      }
       const len = ctx.sampleRate * 3, buf = ctx.createBuffer(2, len, ctx.sampleRate);
       for (let c = 0; c < 2; c++) { const d = buf.getChannelData(c); let last = 0;
         for (let i = 0; i < len; i++) { const w = Math.random() * 2 - 1; last = (last + 0.06 * w) / 1.06; d[i] = w * 0.55 + last * 2.5; } }
@@ -180,6 +193,25 @@ const SFX = (() => {
     /* soft generative music box loop */
     music() {
       if (!ctx || !on || musicTimer) return;
+      if (window.XMAS) { // Jingle Bells (public domain) on the music box, with sleigh bells
+        const B = 0.3, E = 64, G = 67, C = 60, D = 62, F = 65;
+        const tune = [[E,1],[E,1],[E,2],[E,1],[E,1],[E,2],[E,1],[G,1],[C,1.5],[D,.5],[E,4],[F,1],[F,1],[F,1.5],[F,.5],[F,1],[E,1],[E,1],[E,.5],[E,.5],[E,1],[D,1],[D,1],[E,1],[D,2],[G,2],
+                      [E,1],[E,1],[E,2],[E,1],[E,1],[E,2],[E,1],[G,1],[C,1.5],[D,.5],[E,4],[F,1],[F,1],[F,1.5],[F,.5],[F,1],[E,1],[E,1],[E,.5],[E,.5],[G,1],[G,1],[F,1],[D,1],[C,4]];
+        const total = tune.reduce((a, n) => a + n[1], 0) * B;
+        const play = () => {
+          let t = 0;
+          for (const [n, len] of tune) {
+            tone(hz(n + 12), { t, dur: Math.max(0.35, len * B * 1.4), vol: 0.13, type: "triangle", out: musicGain });
+            t += len * B;
+          }
+          for (let b = 0; b < total / B; b++) { // sleigh bells on every beat
+            noise({ t: b * B, dur: 0.07, vol: 0.025, from: 7000, to: 9000, q: 3 });
+            if (b % 4 === 0) tone(hz(48), { t: b * B, dur: 0.6, vol: 0.12, out: musicGain });
+          }
+        };
+        play(); musicTimer = setInterval(play, total * 1000 + 1200);
+        return;
+      }
       const roots = [60, 57, 53, 55]; let bar = 0;
       const play = () => {
         const r = roots[bar++ % roots.length];

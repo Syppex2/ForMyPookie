@@ -487,7 +487,9 @@
   function sizeRain() {
     rainCv.width = innerWidth * devicePixelRatio; rainCv.height = innerHeight * devicePixelRatio;
     const n = Math.round((innerWidth * innerHeight) / 7000);
-    drops = Array.from({ length: n }, () => ({ x: Math.random() * innerWidth, y: Math.random() * innerHeight, l: 10 + Math.random() * 18, v: 9 + Math.random() * 9, a: 0.15 + Math.random() * 0.35 }));
+    drops = Array.from({ length: n }, () => window.XMAS
+      ? { x: Math.random() * innerWidth, y: Math.random() * innerHeight, r: 1 + Math.random() * 2.6, v: 0.6 + Math.random() * 1.4, a: 0.35 + Math.random() * 0.55, s: Math.random() * 6 }
+      : { x: Math.random() * innerWidth, y: Math.random() * innerHeight, l: 10 + Math.random() * 18, v: 9 + Math.random() * 9, a: 0.15 + Math.random() * 0.35 });
   }
   function drawRain() {
     if (!rainOn) return;
@@ -495,6 +497,17 @@
     rctx.setTransform(d, 0, 0, d, 0, 0);
     rctx.clearRect(0, 0, innerWidth, innerHeight);
     rctx.lineCap = "round";
+    if (window.XMAS) { // snow instead of rain
+      rctx.fillStyle = "#fff";
+      for (const p of drops) {
+        p.s += 0.02; p.y += p.v; p.x += Math.sin(p.s) * 0.5;
+        if (p.y > innerHeight + 4) { p.y = -4; p.x = Math.random() * innerWidth; }
+        rctx.globalAlpha = p.a; rctx.beginPath(); rctx.arc(p.x, p.y, p.r, 0, 6.283); rctx.fill();
+      }
+      rctx.globalAlpha = 1;
+      requestAnimationFrame(drawRain);
+      return;
+    }
     for (const p of drops) {
       rctx.strokeStyle = `rgba(214,200,255,${p.a})`; rctx.lineWidth = 1;
       rctx.beginPath(); rctx.moveTo(p.x, p.y); rctx.lineTo(p.x - p.l * 0.18, p.y + p.l); rctx.stroke();
@@ -509,8 +522,8 @@
   function startRainSound() {
     if (rainSound || !$("#gate")) return;
     rainSound = true;
-    SFX.init(); SFX.rainStart();
-    const h = $("#gate-hint"); if (h) h.textContent = "listen to the rain";
+    SFX.init(); SFX.rainStart(!!window.XMAS);
+    const h = $("#gate-hint"); if (h) h.textContent = window.XMAS ? "listen to the winter night" : "listen to the rain";
   }
   $("#gate").addEventListener("pointerdown", startRainSound);
   addEventListener("keydown", startRainSound, { once: true });
@@ -546,7 +559,7 @@
   /* ================= freeze the page behind popups ================= */
   // While a letter, chat or ceremony is open, the page underneath stops moving,
   // so the phone only has to draw the popup.
-  const popups = ["#ow-modal", "#letter-stage", "#ceremony", "#wake", "#wish", "#lightbox", "#install-modal"].map((q) => $(q)).filter(Boolean);
+  const popups = ["#ow-modal", "#letter-stage", "#ceremony", "#wake", "#wish", "#lightbox", "#install-modal", "#gift-modal"].map((q) => $(q)).filter(Boolean);
   let frozen = false, frozenVideos = [];
   function syncFreeze() {
     const open = popups.some((el) => !el.hidden);

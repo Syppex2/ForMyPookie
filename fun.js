@@ -17,7 +17,7 @@
     const now = new Date();
     const dayNumber = Math.floor((new Date(now.getFullYear(), now.getMonth(), now.getDate()) - new Date(2021, 6, 25)) / 864e5);
     $("#daily").innerHTML = `
-      <span class="daily-tag">Note of the day · ${MONTHS[now.getMonth()]} ${now.getDate()}</span>
+      <span class="daily-tag">${ALTAR.dailyTag ? esc(ALTAR.dailyTag) : `Note of the day · ${MONTHS[now.getMonth()]} ${now.getDate()}`}</span>
       <p>${esc(notes[((dayNumber % notes.length) + notes.length) % notes.length])}</p>
       <small>a new one every day</small>`;
   } else $("#daily").remove();
