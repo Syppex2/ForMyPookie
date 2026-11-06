@@ -86,7 +86,7 @@
       <div class="quiz-end ${pass ? "pass" : "fail"}">
         <p class="quiz-score">${score} / ${Q.length}</p>
         <h4>${pass ? "You survived the Final Selection" : "Shinobu says: ara ara, try again"}</h4>
-        <p>${pass ? "Of course you did. A secret letter just unlocked in Open When." : `You need ${ALTAR.quizPass} to pass. I believe in you. Tsun tsun.`}</p>
+        <p>${pass ? "Of course you did. A secret letter just unlocked in Ábrela cuando." : `You need ${ALTAR.quizPass} to pass. I believe in you. Tsun tsun.`}</p>
         <button class="btn ${pass ? "ghost" : ""}" id="quiz-again">${pass ? "Play again" : "Try again"}</button>
       </div>`;
     $("#quiz-again").addEventListener("click", (e) => { e.stopPropagation(); quizStart(); });
@@ -122,8 +122,8 @@
       b.innerHTML = `
         <span class="ow-flap" aria-hidden="true"></span>
         <span class="ow-seal" aria-hidden="true">${locked ? "🔒" : ""}</span>
-        <span class="ow-label"><small>Open when</small>${esc(l.when)}</span>
-        ${locked ? `<span class="ow-lock">pass the Final Selection to open</span>` : ""}`;
+        <span class="ow-label"><small>Ábrela cuando</small>${esc(l.when)}</span>
+        ${locked ? `<span class="ow-lock">pasa la Final Selection para abrirla</span>` : ""}`;
       b.addEventListener("click", (e) => {
         e.stopPropagation();
         if (locked) { SFX.candleOff(); b.classList.remove("nope"); void b.offsetWidth; b.classList.add("nope"); return; }
@@ -142,7 +142,7 @@
     SFX.crack(); setTimeout(() => SFX.rustle(), 200);
     openedThisVisit.add(i);
     b.classList.add("opened");
-    modal.querySelector(".ow-title").textContent = "Open when " + l.when;
+    modal.querySelector(".ow-title").textContent = "Ábrela cuando " + l.when;
     modal.querySelector(".ow-text").textContent = letterText(l);
     modal.hidden = false;
     const art = modal.querySelector(".ow-letter");

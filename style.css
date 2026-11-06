@@ -681,7 +681,7 @@ body { background: transparent; }
 .ow-env.opened::after { content: ""; position: absolute; z-index: 2; left: 0; right: 0; top: 44%; bottom: 0; background: linear-gradient(180deg, #ecd3f8, #d8b4ee); clip-path: polygon(0 0, 50% 38%, 100% 0, 100% 100%, 0 100%); }
 .ow-env.opened .ow-seal { display: none; }
 .ow-env.opened .ow-label { z-index: 3; }
-.ow-env.opened .ow-label small::after { content: " · read"; color: #b07fd9; }
+.ow-env.opened .ow-label small::after { content: " · leída"; color: #b07fd9; }
 .ow-env.secret.opened::after { background: linear-gradient(180deg, #fff1d6, #f2d49b); }
 .ow-env.secret.opened .ow-flap { background: linear-gradient(0deg, #f2d49b, #e3b96a); }
 
