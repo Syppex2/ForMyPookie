@@ -856,3 +856,4 @@ section + section { margin-top: 26px; }
 .xmas-letter .l-sign { text-align: right; font-weight: 700; color: #c2185b; font-size: 1.1em; }
 .xmas-letter .ow-text { margin: 0 0 12px; }
 .wk-bfly { cursor: pointer; }
+.polaroid video { width: 100%; display: block; border-radius: 3px; background: #ddd; }

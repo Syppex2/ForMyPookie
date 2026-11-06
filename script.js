@@ -342,11 +342,14 @@
     el.className = "polaroid reveal";
     el.style.setProperty("--tilt", (i % 2 ? 2 : -2) + Math.random() * 1.5 + "deg");
     el.style.setProperty("--d", (i % 3) * 0.12 + "s");
-    el.innerHTML = `<div class="tape"></div><img src="images/chat/${esc(c.img)}" alt="chat screenshot" loading="lazy" /><p>${esc(c.caption)}</p>`;
+    el.innerHTML = c.video
+      ? `<div class="tape"></div><video src="images/chat/${esc(c.video)}.mp4" poster="images/chat/${esc(c.video)}.jpg" muted loop playsinline preload="none"></video><p>${esc(c.caption)}</p>`
+      : `<div class="tape"></div><img src="images/chat/${esc(c.img)}" alt="chat screenshot" loading="lazy" /><p>${esc(c.caption)}</p>`;
+    if (c.video) { const v = el.querySelector("video"); v.muted = true; vio.observe(v); }
     el.addEventListener("click", () => {
       SFX.shutter();
       el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
-      setTimeout(() => openLightbox(el.querySelector("img").src, c.caption), 180);
+      if (!c.video) setTimeout(() => openLightbox(el.querySelector("img").src, c.caption), 180);
     });
     $("#chats").appendChild(el);
   });

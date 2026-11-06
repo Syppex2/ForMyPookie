@@ -27,6 +27,10 @@ const ALTAR = {
   // Random messages that appear when she lights a candle
   candleMessages: [
     "WAWA. I miss you too",
+    "hallo puki. /huggies",
+    "Amor, estás muy stinky. But you're my stinky",
+    "blub blub blub (am fish). Translation: I love you",
+    "Te debo un besito de buenas noches. Here, have ten",
     "Official ranking: you, then Shinobu, then Giyu",
     "Shinobu approves of this relationship",
     "Not even Maomao could figure out how you're this cute",
@@ -140,6 +144,7 @@ const ALTAR = {
     { img: "u-gigantic-angry-wife.png", caption: "She sent this with just \"U\". I'm the little one, she's the gigantic angry wife. Correct" },
     { img: "panda-dance.webp", caption: "PANDA" },
     { img: "videocall-cat.webp", caption: "She showing me our son, ÑOYD" },
+    { video: "blub-blub", caption: "I'll paw you" },
     { img: "gato-no-da-mas.png", caption: "Her after studying for ten minutes. Gato culiao que no da más" },
   ],
 
@@ -209,6 +214,7 @@ const ALTAR = {
     { when: "you're mad at me", text: "Okay, I probably deserve it. I'm sorry, and I mean it, even if I'm being Giyu about it and not saying much. Take your time being mad. Tsun tsun is allowed. When you're ready, I'll be right here with a hug and probably a bad joke." },
     { when: "you miss me", text: "I miss you too, more than you think. Put on our song, look at our first matching pfp, and remember that every day that passes is one day closer to seeing you. I really want to stay at your house." },
     { when: "the immigration stuff is too much", text: "Pookie, I know how much you wanted this. You planned for it, you worked for it, you did everything right, and then they changed the rules again like none of that mattered. It's okay to be angry. It's okay to be sad. It's okay to not know what to do right now.\n\nPlease don't think this happened because you weren't good enough or didn't try hard enough. You did. This is a system changing the floor under people's feet, and you happened to be standing on it. That's not on you.\n\nYou don't have to figure out the whole plan tonight. Tonight you just have to breathe, eat something, and let me take care of you a little. Tomorrow we can look at the options together, one small step at a time, and if one door closes we'll look for the next one. I'll read every page and every rule with you if I have to.\n\nI know it feels like your future is in someone else's hands right now. But this part isn't: me. I'm not going anywhere. No rule, no visa, no country can change that. Five years, a rebellion, three cats and a thousand matching pfps. We've already proven we can get through anything.\n\nWhatever happens, you'll never face it alone. I'm right here, holding your hand from wherever I am. I love you, and I'm so proud of you for still fighting." },
+    { when: "you feel sick", text: "Puki :c I hate it when you feel bad and I can't be there to take care of you. So here's the plan: water, something warm to eat, a blanket, and rest. No being strong today, no doing everything yourself. If you need a doctor, go, and tell me after so I know you're okay. I'll be checking on you either way. Ven aquí miamol, déjame mimarte, even from far away. Unlimited huggies until you feel better." },
     { when: "you had a bad day", text: "Bad days happen, even to Hashiras. Go to the Hall of Shame and look at the panda. Then come back and remember that someone on the other side of the screen thinks you're the best thing in the world. That's me. It's me." },
     { when: "you feel ignored", text: "STOP IGNORING ME, I hear you. I promise I'm never ignoring you, I'm just slow at typing. WAWA. You matter more to me than anything else on my screen." },
     { when: "you need a laugh", text: "Caso Cerrado. Roblox. That's it, that's the letter. Okay fine: remember how we couldn't breathe? Go rewatch it, then call me so I can hear you laugh." },
@@ -217,9 +223,9 @@ const ALTAR = {
 
   // ---------- THE KIDS VISIT (they walk across the screen now and then) ----------
   kidNotes: {
-    "Gato Chico": ["Gato Chico has been watching you from the top of the fridge. He approves", "Gato Chico says his name is Raven actually. Nobody listens", "Gato Chico wants food. And love. Mostly food", "Gato Chico is judging your sleep schedule"],
-    "Lloyd": ["ÑOYD misses you", "Lloyd says his mom is the best mom", "ÑOYD wants to be on the video call again", "Lloyd sat on the keyboard. Sorry about that"],
-    "Miru": ["Miru says go to sleep", "Miru is asleep on dad again. Send help", "Miru wants you to come visit", "Miru brought you a hug (and some fur)"],
+    "Gato Chico": ["Gato Chico has been watching you from the top of the fridge. He approves", "Gato Chico says his name is Raven actually. Nobody listens", "Gato Chico wants food. And love. Mostly food", "Gato Chico is judging your sleep schedule", "blub blub. Gato Chico thinks he's a fish today"],
+    "Lloyd": ["ÑOYD misses you", "Lloyd says his mom is the best mom", "ÑOYD wants to be on the video call again", "Lloyd sat on the keyboard. Sorry about that", "Lloyd says mom is stinky. He means it with love"],
+    "Miru": ["Miru says go to sleep", "Miru is asleep on dad again. Send help", "Miru wants you to come visit", "Miru brought you a hug (and some fur)", "Miru wants huggies too"],
   },
 
   // ---------- NOTE OF THE DAY (a different one every day) ----------
@@ -254,6 +260,11 @@ const ALTAR = {
     "You're strong, but you don't always have to be. I've got you",
     "Today's mission: be kind to yourself",
     "I love you more than yesterday. Less than tomorrow",
+    "Today you get unlimited huggies. No limit. /huggies",
+    "hallo puki. Did you drink water today? :c",
+    "Stinky, but mine",
+    "blub blub blub. That's fish for I miss you",
+    "If today feels like too much, ven aquí miamol. Let me spoil you a little",
   ],
 
   // ---------- CASO CERRADO: POOKIE VS SYPPEX ----------
@@ -275,8 +286,8 @@ const ALTAR = {
   wakeup: {
     herName: "Mewtrelle", herPfp: "couples/hutao.webp",
     myName: "Syppex", myPfp: "couples/zhongli.webp",
-    spam: ["WAKEUP", "WAKEUP", "I MISS U", "POOKIE", "WAWA", "STOP IGNORING ME"],
-    reply: "I'm awake. I'm always awake for you.",
+    spam: ["WAKEUP", "I want huggies", ":c", "POOKIE", "WAWA", "STOP IGNORING ME"],
+    reply: "hallo puki. /huggies",
     message: "You found the secret. Of course you did, you've typed WAKEUP to me a thousand times. Here's the truth: every single one of those made my day. Even the ones at 7 in the morning. Keep waking me up for the rest of our lives, okay? I love you, pookie.",
   },
 
